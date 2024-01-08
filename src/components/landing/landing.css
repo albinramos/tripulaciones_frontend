@@ -1,0 +1,7 @@
+body{
+  background-image: url("../../assets/circular-1.png");
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}

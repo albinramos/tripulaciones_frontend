@@ -1,0 +1,79 @@
+.imagen-circular{
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 45px;
+  left: 24%;
+  background: white;
+  border-radius: 50%;
+}
+
+.login-second-div{
+  display: flex;
+  flex-direction: column;
+}
+
+.p-login{
+position: absolute;
+left: 9.23%;
+right: 74.62%;
+top: 40.17%;
+bottom: 52.01%;
+font-family: 'Avenir';
+font-style: normal;
+font-weight: 900;
+font-size: 30px;
+line-height: 33px;
+color: #000000;
+}
+
+.form-email{
+  position: absolute;
+  right: 10%;
+  top: 45%;
+  width: 80%;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.form-password{
+  position: absolute;
+  right: 10%;
+  top: 56%;
+  width: 80%;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.p-login-forgot-passsword{
+position: absolute;
+left: 44%;
+top: 63%;
+bottom: 37.09%;
+font-family: 'Bai Jamjuree';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 20px;
+color: #000000;
+}
+
+.button-login{
+  position: absolute;
+  right: 10%;
+  top: 68%;
+  width: 80%;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: white;
+  background-color: black;
+  font-family: 'Bai Jamjuree';
+  font-weight: 900;
+}
+
