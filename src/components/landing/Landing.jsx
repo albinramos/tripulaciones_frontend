@@ -1,9 +1,17 @@
 import React, { useState, useRef} from "react";
 import "./landing.css"
 import { AiOutlineTrophy } from "react-icons/ai";
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const Landing = () => {
+
+const navigate = useNavigate();
+
+const handleContactaClick = () => {
+  navigate('/contacta');
+};
+
   return(
     <>
       <section className="landing-main-container">
@@ -22,7 +30,7 @@ const Landing = () => {
         </div>
         <div className="landing-third-div">
           <button className="landing-button-votar">VOTAR</button>
-          <button className="landing-button-contacta">CONTACTA</button>
+          <button className="landing-button-contacta" onClick={handleContactaClick}>CONTACTA</button>
         </div>
         <div className="landing-fourth-div">
           <button className="landing-button-felicita">FELICITA A TU COMPAÑERO/A</button>
