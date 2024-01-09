@@ -20,6 +20,14 @@ const Landing = () => {
             <p className="landing-p-puntos-letras">puntos</p>
           </div>
         </div>
+        <div className="landing-third-div">
+          <button className="landing-button-votar">VOTAR</button>
+          <button className="landing-button-contacta">CONTACTA</button>
+        </div>
+        <div className="landing-fourth-div">
+          <button className="landing-button-felicita">FELICITA A TU COMPAÑERO/A</button>
+          <button className="landing-button-cierre">CERRAR SESIÓN</button>
+        </div>
       </section>
     </>
   )
