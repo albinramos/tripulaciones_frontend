@@ -4,6 +4,7 @@ import Voting from './components/voting/Voting.jsx';
 import Landing from './components/landing/Landing.jsx';
 import Login from './components/login/Login.jsx';
 import Contacta from './components/contacta/Contacta.jsx';
+import Recuperar from './components/recuperar/Recuperar.jsx';
 import './App.css'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path='/voting' element={<Voting />} />
             <Route path='/' element={<Landing />} />
             <Route path='/contacta' element={<Contacta />} />
+            <Route path='/recuperar' element={<Recuperar />} />
           </Routes>
         </div>
       </Router>

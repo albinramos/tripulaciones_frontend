@@ -43,6 +43,11 @@ const Login = () => {
       setErrorMessage("Error al iniciar sesión")
     }
   }
+
+  const handleForgotPasswordClick = () => {
+    navigate('/recuperar');
+  };
+
   return(
     <>
       <div >
@@ -55,7 +60,7 @@ const Login = () => {
           <form className="form-login" onSubmit={submitHandler}>
           <input type="email" placeholder="E-mail" className='form-email' name='email' />
           <input type="password" placeholder="Password" className='form-password' name='password' />
-          <p className="p-login-forgot-passsword">¿Olvidaste la contraseña?</p>
+          <p className="p-login-forgot-passsword" onClick={handleForgotPasswordClick}>¿Olvidaste la contraseña?</p>
           <button className="button-login">Login</button>
           </form>
         </div>
