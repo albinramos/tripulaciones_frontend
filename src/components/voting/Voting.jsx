@@ -5,9 +5,10 @@ const Voting = () => {
 
   return (
     <>
+    <div id="root">
       <section className='main-container'>
         <div className='main-first-div'>
-          <h1 className='title-landing'>FeelHub</h1>
+          <img src='../src/assets/moodup-logo.png' alt='imagen-logo' className="imagen-logo"/>
           <img src='../src/assets/circular-1.png' alt='imagen retrato' className='imagen-circular-mini'/>
         </div>
         <div className='main-second-div'>
@@ -24,6 +25,7 @@ const Voting = () => {
 
         </div>
       </section>
+      </div>
     </>
   )
 }

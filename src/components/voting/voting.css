@@ -4,10 +4,13 @@
   box-sizing: border-box;
 }
 
+div#root {
+  width: 100dvw;
+}
 
 body{
-  background: rgb(242,42,102) !important;
-  background: radial-gradient(circle, rgba(242,42,102,0.26516544117647056) 0%, rgba(255,206,183,1) 62%, rgba(239,249,242,1) 100%) !important;
+  background: rgb(242,42,102);
+  background: radial-gradient(circle, rgba(242,42,102,0.26516544117647056) 0%, rgba(255,206,183,1) 62%, rgba(239,249,242,1) 100%);
 }
 
 .imagen-circular-mini{
@@ -15,21 +18,16 @@ body{
   width: 55px;
   height: 55px;
   right: 10px;
-  top: 42px;
+  top: 110px;
   background: white;
   border-radius: 50%;
 }
 
-.title-landing{
-  margin-top: 5px;
-  font-size: 3.2em;
-  line-height: 1.1;
-  font-family: 'Avenir';
+.imagen-logo{
+  height: 120px;
+  top: 75px;
+  left: 15px;
   position: absolute;
-  width: 154px;
-  height: 138px;
-  left: 10px;
-  top: 3px;
 }
 
 
@@ -38,7 +36,7 @@ body{
   width: 100%;
   height: 33px;
   left: 16px;
-  top: 113px;
+  top: 200px;
   font-family: 'Avenir';
   font-style: normal;
   font-weight: 100;
@@ -52,7 +50,7 @@ position: absolute;
 width: 25%;
 height: 40px;
 left: 16px;
-top: 166px;
+top: 250px;
 font-family: 'Avenir';
 font-style: normal;
 font-weight: 500;
@@ -74,7 +72,7 @@ position: absolute;
 width: 25%;
 height: 40px;
 left: 34%;
-top: 166px;
+top: 250px;
 font-family: 'Avenir';
 font-style: normal;
 font-weight: 500;
@@ -96,23 +94,23 @@ text-align: center;
 }
 
 .p-landing {
-position: absolute;
-width: 296px;
+width: 100%;
 height: 33px;
-left: 22%;
-top: 225px;
 font-family: 'Avenir';
 font-style: normal;
 font-weight: 900;
 font-size: 24px;
-line-height: 33px;
+text-align: center;
 }
 
 .main-faces-div{
   height: 50px;
   background-color: white;
   width:100%;
+  top: 450px;
   margin-block-start: none !important;
+  display: flex;
+  position: absolute;
 }
 
 

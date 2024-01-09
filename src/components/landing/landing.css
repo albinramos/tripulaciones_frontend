@@ -1,7 +1,69 @@
-body{
-  background-image: url("../../assets/circular-1.png");
-  height: 100%;
-  width: 100%;
+div#root {
+  width: 100dvw;
+  height: 2000px
+}
+
+.landing-p-name{
+position: absolute;
+width: 139px;
+height: 74px;
+left: 17px;
+top: 113px;
+font-family: 'Avenir';
+font-style: normal;
+font-weight: 900;
+font-size: 30px;
+line-height: 41px;
+color: #100F11;
+}
+
+.landing-p-lastname{
+position: absolute;
+width: 139px;
+height: 74px;
+left: 17px;
+top: 150px;
+font-family: 'Avenir';
+font-style: normal;
+font-weight: 300;
+font-size: 30px;
+line-height: 41px;
+color: #100F11;
+}
+
+.landing-main-container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  height: 100vh;
+}
+
+.landing-company-logo {
+  width: 600px;
+  height: 550px;
+  margin-top: 100px;
+}
+
+.landing-second-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -40px;
+  background-color: white;
+  width: 350px;
+  height: 150px;
+}
+
+.landing-trophy {
+  font-size: 100px;
+  }
+
+.landing-second-div-text{
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-p-puntos-numero{
+  
 }

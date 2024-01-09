@@ -1,12 +1,22 @@
+
 .imagen-circular{
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  top: 45px;
-  left: 24%;
-  background: white;
-  border-radius: 50%;
+  width: 500px;
+  height: 450px;
+  align-items: center;
 }
+
+.circulo-login{
+  display: flex;
+  justify-content: center;
+  top: 0%;
+  left: -5%;
+  position: absolute;
+}
+
+div#root {
+  width: 100dvw;
+}
+
 
 .login-second-div{
   display: flex;
@@ -36,6 +46,7 @@ color: #000000;
   padding: 15px;
   border-radius: 10px;
   font-size: 20px;
+  font-family: 'Avenir';
 }
 
 .form-password{
@@ -47,11 +58,12 @@ color: #000000;
   padding: 15px;
   border-radius: 10px;
   font-size: 20px;
+  font-family: 'Avenir';
 }
 
 .p-login-forgot-passsword{
 position: absolute;
-left: 44%;
+left: 34%;
 top: 63%;
 bottom: 37.09%;
 font-family: 'Bai Jamjuree';
@@ -76,4 +88,6 @@ color: #000000;
   font-family: 'Bai Jamjuree';
   font-weight: 900;
 }
+
+
 
