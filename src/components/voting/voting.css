@@ -227,6 +227,11 @@ position: absolute;
   margin-right: 20px;
   height: 40px;
   justify-content: center;
+  border-radius: 10px;
+  background: transparent;
+  font-family: 'Avenir';
+  font-style: normal;
+  border: 2.5px solid #000000;
 }
 
 

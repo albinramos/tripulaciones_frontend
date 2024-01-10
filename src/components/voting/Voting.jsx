@@ -39,6 +39,10 @@ const Voting = () => {
             <button className="button-voting-conciliacion">Conciliación</button>
             <button className="button-voting-horario">Horario</button>
           </div>
+          <div className="main-seventh-div-dos">
+            <button className="button-voting-ambiente">Ambiente laboral</button>
+            <button className="button-voting-motivacion">Motivación</button>
+          </div>
         </div>
       </section>
       </div>
