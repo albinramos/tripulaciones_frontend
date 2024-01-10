@@ -22,7 +22,7 @@ const Login = () => {
       password
     }
     try{
-      const result = await fetch("http://localhost:3000/login", {
+      const result = await fetch("http://localhost:3006/login", {
         method: "POST",
         credentials: "include",
         headers: {
