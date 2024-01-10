@@ -22,7 +22,23 @@ const Voting = () => {
           <p className='p-landing'>¿Cómo te sientes hoy?</p>
         </div>
         <div className='main-faces-div'>
-
+          <img src="../src/assets/enfado.png" alt="enfado" className="imagen-enfado"/>
+          <img src="../src/assets/triste.png" alt="triste" className="imagen-triste"/>
+          <img src="../src/assets/neutral.png" alt="neutral" className="imagen-neutral"/>
+          <img src="../src/assets/feliz.png" alt="feliz" className="imagen-feliz"/>
+          <img src="../src/assets/muy-feliz.png" alt="muy-feliz" className="imagen-muy-feliz"/>
+        </div>
+        <div className='main-fifth-div'>
+          <p className='p-voting-cuentanos'>¡Cuéntanos más!</p>
+          <p className='p-voting-cuentanos-mini'>Selecciona la razón por la que te sientes así</p>
+        </div>
+        <div className='main-sixth-div'>
+          <p className="p-voting-razones">Razón</p>
+          <div className="main-sixth-div-tres">
+            <button className="button-voting-personal">Personal</button>
+            <button className="button-voting-conciliacion">Conciliación</button>
+            <button className="button-voting-horario">Horario</button>
+          </div>
         </div>
       </section>
       </div>

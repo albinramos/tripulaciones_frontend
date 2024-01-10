@@ -91,6 +91,7 @@ text-align: center;
 .main-fourth-div {
   text-align: center;
   justify-content: center;
+  top: 400px;
 }
 
 .p-landing {
@@ -100,7 +101,9 @@ font-family: 'Avenir';
 font-style: normal;
 font-weight: 900;
 font-size: 24px;
+top: 350px;
 text-align: center;
+position: absolute;
 }
 
 .main-faces-div{
@@ -111,6 +114,119 @@ text-align: center;
   margin-block-start: none !important;
   display: flex;
   position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  box-shadow: 0px 8px 0px 0px #FF145A;
+
+}
+
+.imagen-enfado,
+.imagen-triste,
+.imagen-neutral,
+.imagen-feliz,
+.imagen-muy-feliz{
+  position: relative;
+  top: -10px;
+  height: 70px;
+  border: 5px solid white;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 18px 0px -10px #FF145A;
+  cursor: pointer;
+}
+
+.imagen-enfado:hover{
+  scale: 1.2;
+  box-shadow: 0px 20px 0px -8px #FF145A;
+}
+
+.imagen-triste:hover{
+  scale: 1.2;
+  box-shadow: 0px 16px 0px -6px #FF145A;
+}
+
+.imagen-neutral:hover{
+  scale: 1.2;
+  box-shadow: 0px 16px 0px -6px #FF145A;
+}
+
+.imagen-feliz:hover{
+  scale: 1.2;
+  box-shadow: 0px 16px 0px -6px #FF145A;
+}
+
+.imagen-muy-feliz:hover{
+  scale: 1.2;
+  box-shadow: 0px 16px 0px -6px #FF145A;
+}
+
+.main-fifth-div{
+  height: 50px;
+  width:100%;
+  top: 600px;
+  margin-block-start: none !important;
+  display: flex;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.p-voting-cuentanos{
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.p-voting-cuentanos-mini{
+  margin-top: 15px;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+.main-sixth-div{
+  height: 50px;
+  width:100%;
+  top: 680px;
+  margin-block-start: none !important;
+  display: flex;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.p-voting-razones{
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.main-sixth-div-tres{
+  height: 25px;
+  width:100%;
+  top: 30px;
+  margin-block-start: none !important;
+  display: flex;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+
+.button-voting-personal,
+.button-voting-conciliacion,
+.button-voting-horario{
+  width: 25%;
+  margin-right: 20px;
+  height: 40px;
+  justify-content: center;
 }
 
 
