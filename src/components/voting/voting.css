@@ -67,6 +67,14 @@ background-color: #ff3b7684;
 text-align: center;
 }
 
+.h4-landing-entrada.voted {
+  background-color: transparent;
+}
+
+.h4-landing-salida.voted {
+  background-color: #ff3b7684;
+}
+
 .h4-landing-salida{
 position: absolute;
 width: 25%;
@@ -232,6 +240,57 @@ position: absolute;
   font-family: 'Avenir';
   font-style: normal;
   border: 2.5px solid #000000;
+  cursor: pointer;
 }
 
+.button-voting-ambiente,
+.button-voting-motivacion{
+  width: 40%;
+  height: 40px;
+  border-radius: 10px;
+  background: transparent;
+  font-family: 'Avenir';
+  font-style: normal;
+  border: 2.5px solid #000000;
+  cursor: pointer;
+}
 
+.main-seventh-div-dos{
+  height: 25px;
+  width:100%;
+  top: 60px;
+  margin-block-start: none !important;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.button-voting-ambiente,
+.button-voting-motivacion{
+  margin-right: 40px;
+}
+
+.main-eighth-div-dos{
+  height: 25px;
+  width:100%;
+  top: 90px;
+  margin-block-start: none !important;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.button-voting-relacion,
+.button-voting-otro{
+  width: 42%;
+  height: 40px;
+  border-radius: 10px;
+  background: transparent;
+  font-family: 'Avenir';
+  font-style: normal;
+  border: 2.5px solid #000000;
+  margin-right: 35px;
+  cursor: pointer;
+}
