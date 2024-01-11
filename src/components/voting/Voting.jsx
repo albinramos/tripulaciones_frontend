@@ -1,7 +1,11 @@
 import React, { useState, useRef, useEffect} from "react";
 import "./voting.css"
+import { Navigate, useNavigate } from 'react-router-dom';
+import moment from "moment";
 
 const Voting = () => {
+
+  const navigate = useNavigate();
 
   const [randomImage, setRandomImage] = useState(null);
   const [type, setType] = useState(null);
@@ -28,10 +32,24 @@ const Voting = () => {
   }
 
   const assignType = (data) => {
-    if(data.clockinvote === null && data.clockoutvote === null || data.message === 'User has not voted today'){
+    const currentTime = moment().format('HH');
+
+    if(data.message === 'User has not voted today') {
+      if(currentTime < 12) {
+        return 'entrada';
+      }
+      else if(currentTime >= 12) {
+        return 'salida';
+      }
+    }
+  
+    if(data.clockinvote === null && data.clockoutvote === null && currentTime < 12) {
       return 'entrada';
     }
-    else if(data.clockinvote !== null && data.clockoutvote === null){
+    else if(data.clockinvote !== null && data.clockoutvote === null && currentTime >= 12){
+      return 'update';
+    }
+    else if(data.clockinvote === null && data.clockoutvote === null && currentTime >= 12){
       return 'salida';
     }
     else {
@@ -61,59 +79,54 @@ const Voting = () => {
   const handleVote = async (e) => {
     e.preventDefault();
 
-    const clockinvote = e.target.clockin.value;
-    const clockoutvote = e.target.clockout.value;
-    const tag = e.target.tag.value;
-
   try{
-    if(clockinvote==="" && state === 'entrada'){
-      const response = await fetch("http://localhost:3006/voting/clockin", {
+    if(type === 'entrada'){
+      const response = await fetch("http://localhost:3006/vote/clockin", {
         method: "POST",
         credentials: "include",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({clockinvote: clockinvote, tag: tag})
+        body: JSON.stringify({clockinvote: mood, tag: tag})
       })
       if (response.ok) {
         console.log("Votación de entrada exitosa");
+        navigate('/');
       } else {
         console.error("Error en la votación de entrada");
       }
-      if (response.ok) {
-        console.log("Votación de salida exitosa");
-      } else {
-        console.error("Error en la votación de salida");
-      }
+
     }
-    else if(!clockoutvote && state === 'salida'){
-      const response = await fetch("http://localhost:3006/voting/clockout", {
+    else if(type === 'salida'){
+      const response = await fetch("http://localhost:3006/vote/clockout", {
         method: "POST",
         credentials: "include",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({clockoutvote: clockoutvote, tag: tag})
+        body: JSON.stringify({clockoutvote: mood, tag: tag})
       })
       if (response.ok) {
         console.log("Votación de salida exitosa");
+        navigate('/');
       } else {
         console.error("Error en la votación de salida");
       }
     }
-    else{
-      const response  = await fetch("http://localhost:3006/voting/updateclockout", {
+    else if(type === 'update'){
+      const response  = await fetch("http://localhost:3006/vote/updateclockout", {
         method: "POST",
         credentials: "include",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({clockoutvote: clockoutvote, tag: tag})
+        body: JSON.stringify({clockoutvote: mood, tag: tag})
       });
       if (response.ok) {
-        console.log("Actualización de votación de salida exitosa");
+        console.log("Votación de salida exitosa");
+        navigate('/');
       } else {
-        console.error("Error en la actualización de votación de salida");
+        console.error("Error en la votación de salida");
       }
     }
   }
@@ -156,6 +169,11 @@ const Voting = () => {
     }
   }
 
+  if(type === 'completed'){
+    return(
+      navigate('/')
+    )
+  }
 
   return (
     <>
@@ -231,6 +249,7 @@ const Voting = () => {
             <button className={tagClassName('otro motivo')} onClick={() =>handleTag('otro motivo')}>Otro motivo</button>
           </div>
         </div>
+        <button className='button-voting' onClick={handleVote}>Votar</button>
       </section>
       </div>
     </>
