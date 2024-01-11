@@ -59,7 +59,7 @@ const Voting = () => {
 
   const fetchRandomImage = () => {
     try {
-      const imageList = ["perfil-1.jpg", "perfil-2.jpg","perfil-3.jpg","perfil-4.jpg","perfil-5.jpg","perfil-7.jpg","perfil-8.jpg","perfil-9.jpg", "perfil-10.jpg"];
+      const imageList = ["perfil-1.png", "perfil-2.jpg","perfil-3.jpg","perfil-4.jpg","perfil-5.jpg","perfil-7.jpg","perfil-8.jpg","perfil-9.jpg", "perfil-10.jpg"];
 
       const randomIndex = Math.floor(Math.random() * imageList.length);
 
@@ -75,6 +75,10 @@ const Voting = () => {
   const handleMood = (mood) => {
     setMood(mood);
   };
+
+  const handleNoVote = async () => {
+    navigate('/');
+  }
 
   const handleVote = async (e) => {
     e.preventDefault();
@@ -250,6 +254,7 @@ const Voting = () => {
           </div>
         </div>
         <button className='button-voting' onClick={handleVote}>Votar</button>
+        <button className='button-voting-no-vote' onClick={handleNoVote}>Seguir sin votar</button>
       </section>
       </div>
     </>
