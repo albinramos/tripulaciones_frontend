@@ -45,55 +45,38 @@ body{
   color: #100F11;
 }
 
-.h4-landing-entrada{
-position: absolute;
-width: 25%;
-height: 40px;
-left: 16px;
-top: 250px;
-font-family: 'Avenir';
-font-style: normal;
-font-weight: 500;
-font-size: 25px;
-line-height: 27px;
-color: #000000;
-border: 2px solid #000000;
-border-radius: 20px;
-padding-left: 5px;
-padding-right: 5px;
-padding-top: 7px;
-padding-bottom: 7px;
-background-color: #ff3b7684;
-text-align: center;
-}
-
-.h4-landing-entrada.voted {
+.type-button {
+  display: block;
+  width: 25%;
+  height: 40px;
+  left: 16px;
+  top: 250px;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 27px;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 7px;
+  padding-bottom: 7px;
   background-color: transparent;
+  text-align: center;
+  margin-right: 20px;
+  float: left;
 }
 
-.h4-landing-salida.voted {
+.type-button.active {
   background-color: #ff3b7684;
 }
 
-.h4-landing-salida{
-position: absolute;
-width: 25%;
-height: 40px;
-left: 34%;
-top: 250px;
-font-family: 'Avenir';
-font-style: normal;
-font-weight: 500;
-font-size: 25px;
-line-height: 27px;
-color: #000000;
-border: 2px solid #000000;
-border-radius: 20px;
-padding-left: 5px;
-padding-right: 5px;
-padding-top: 7px;
-padding-bottom: 7px;
-text-align: center;
+.main-third-div::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 .main-fourth-div {
@@ -129,11 +112,7 @@ position: absolute;
 
 }
 
-.imagen-enfado,
-.imagen-triste,
-.imagen-neutral,
-.imagen-feliz,
-.imagen-muy-feliz{
+.mood {
   position: relative;
   top: -10px;
   height: 70px;
@@ -144,29 +123,10 @@ position: absolute;
   cursor: pointer;
 }
 
-.imagen-enfado:hover{
+.mood.active,
+.mood:hover {
   scale: 1.2;
-  box-shadow: 0px 20px 0px -8px #FF145A;
-}
-
-.imagen-triste:hover{
-  scale: 1.2;
-  box-shadow: 0px 16px 0px -6px #FF145A;
-}
-
-.imagen-neutral:hover{
-  scale: 1.2;
-  box-shadow: 0px 16px 0px -6px #FF145A;
-}
-
-.imagen-feliz:hover{
-  scale: 1.2;
-  box-shadow: 0px 16px 0px -6px #FF145A;
-}
-
-.imagen-muy-feliz:hover{
-  scale: 1.2;
-  box-shadow: 0px 16px 0px -6px #FF145A;
+  box-shadow: 0px 20px 0px -6px #FF145A;
 }
 
 .main-fifth-div{
@@ -228,11 +188,25 @@ position: absolute;
   margin-left: 20px;
 }
 
-.button-voting-personal,
-.button-voting-conciliacion,
-.button-voting-horario{
+.tag-button:nth-child(0),
+.tag-button:nth-child(1),
+.tag-button:nth-child(2)
+{
   width: 25%;
   margin-right: 20px;
+}
+
+.tag-button:nth-child(3),
+.tag-button:nth-child(4){
+  width: 40%;
+}
+
+.tag-button:nth-child(5),
+.tag-button:nth-child(6){
+  margin-right: 40px;
+}
+
+.tag-button{
   height: 40px;
   justify-content: center;
   border-radius: 10px;
@@ -243,16 +217,8 @@ position: absolute;
   cursor: pointer;
 }
 
-.button-voting-ambiente,
-.button-voting-motivacion{
-  width: 40%;
-  height: 40px;
-  border-radius: 10px;
-  background: transparent;
-  font-family: 'Avenir';
-  font-style: normal;
-  border: 2.5px solid #000000;
-  cursor: pointer;
+.tag-button.active{
+  background-color: #ff3b7684;
 }
 
 .main-seventh-div-dos{
@@ -264,11 +230,6 @@ position: absolute;
   position: relative;
   flex-direction: row;
   justify-content: space-around;
-}
-
-.button-voting-ambiente,
-.button-voting-motivacion{
-  margin-right: 40px;
 }
 
 .main-eighth-div-dos{
@@ -284,7 +245,7 @@ position: absolute;
 
 .button-voting-relacion,
 .button-voting-otro{
-  width: 42%;
+  width: 46%;
   height: 40px;
   border-radius: 10px;
   background: transparent;
@@ -293,4 +254,8 @@ position: absolute;
   border: 2.5px solid #000000;
   margin-right: 35px;
   cursor: pointer;
+}
+
+.button-voting-relacion{
+  margin-right: 10px;
 }
