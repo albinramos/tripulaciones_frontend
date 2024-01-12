@@ -5,6 +5,7 @@ import Landing from './components/landing/Landing.jsx';
 import Login from './components/login/Login.jsx';
 import Contacta from './components/contacta/Contacta.jsx';
 import Recuperar from './components/recuperar/Recuperar.jsx';
+import Admin from './components/admin/Admin.jsx';
 import './App.css'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path='/' element={<Landing />} />
             <Route path='/contacta' element={<Contacta />} />
             <Route path='/recuperar' element={<Recuperar />} />
+            <Route path='/admin' element={<Admin />} />
           </Routes>
         </div>
       </Router>

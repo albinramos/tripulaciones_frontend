@@ -119,3 +119,7 @@ color: #100F11;
   cursor: pointer;
 }
 
+.novote{
+  cursor: not-allowed;
+}
+

@@ -19,8 +19,6 @@ const Landing = () => {
     fetchApi();
   }, []);
 
-  
-
   const fetchApi = async () => {
     const response = await fetch('http://localhost:3006/', {
       credentials: 'include',
@@ -35,7 +33,7 @@ const Landing = () => {
     }
   }
 
-  console.log(fetchData);
+  console.log("fetch",fetchData);
   const handleContactaClick = () => {
     navigate('/contacta');
   };
@@ -43,6 +41,23 @@ const Landing = () => {
   const handleVoting = () => {
     navigate('/voting');
   }
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('http://localhost:3006/logout', {
+        method: 'POST',
+        credentials: 'include',
+      });
+
+      if (response.ok) {
+        window.location.href = 'http://localhost:5173/login';
+      } else {
+        console.error('Error al cerrar sesión');
+      }
+    } catch (error) {
+      console.error('Error al cerrar sesión:', error.message);
+    }
+  };
 
   return (
     <>
@@ -66,7 +81,7 @@ const Landing = () => {
         </div>
         <div className="landing-fourth-div">
           <button className="landing-button-felicita">FELICITA A TU COMPAÑERO/A</button>
-          <button className="landing-button-cierre">CERRAR SESIÓN</button>
+          <button className="landing-button-cierre" onClick={handleLogout}>CERRAR SESIÓN</button>
         </div>
       </section>
     </>

@@ -12,11 +12,11 @@ const Voting = () => {
   const [mood, setMood] = useState(null);
   const [tag, setTag] = useState(null);
 
-
   useEffect(() => {
     fetchStatus();
     fetchRandomImage();
   }, []);
+  
 
   const fetchStatus =  async () => {
       const response = await fetch(
@@ -195,7 +195,7 @@ const Voting = () => {
           />
         </div>
         <div className='main-second-div'>
-          <h2 className='h2-landing'><strong>¡</strong>Hola <strong>AGER!</strong></h2>
+          <h2 className='h2-landing'><strong>¡</strong>Hola <strong> </strong></h2>
         </div>
         <div className='main-third-div'>
           <h4 className={typeClassName("entrada")}>Entrada</h4>

@@ -1,17 +1,45 @@
-import React, { useState, useRef} from "react";
+import React, { useState, useRef, useEffect} from "react";
 import { Navigate, useNavigate } from 'react-router-dom';
 import "./contacta.css"
 
 const Contacta = () => {
+
+    const [fetchData, setFetchData] = useState({
+      userData: {
+        firstname: '',
+        lastname: ''
+      },
+      score: '',
+      canUserVote: '',
+    });
+    const navigate = useNavigate();
+  
+    useEffect(() => {
+      fetchApi();
+    }, []);
+  
+    const fetchApi = async () => {
+      const response = await fetch('http://localhost:3006/', {
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+      }});
+      if (response.status === 404) {
+        navigate('/voting');
+      } else {
+        const responseJSON = await response.json();
+        setFetchData(responseJSON);
+      }
+    }
 
   return(
     <>
       <section className='main-container-contacta'>
       <div className="contacta-first-div">
         <div className="contacta-first-div-text">
-          <p className="contacta-p-name">AGER<br></br>
+          <p className="contacta-p-name">{fetchData.userData.firstname}<br></br>
           </p>
-          <p className="contacta-p-lastname">BARRAGAN</p>
+          <p className="contacta-p-lastname">{fetchData.userData.lastname}</p>
         </div>
           <img src="../src/assets/logo-company.png" alt="logo empresa" className="contacta-company-logo"/>
         </div>
