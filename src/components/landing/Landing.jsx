@@ -33,6 +33,10 @@ const Landing = () => {
     navigate('/contacta');
   };
 
+  const handleVoting = () => {
+    navigate('/voting');
+  }
+
   return (
     <>
       <section className="landing-main-container">
@@ -50,7 +54,7 @@ const Landing = () => {
           </div>
         </div>
         <div className="landing-third-div">
-          <button className="landing-button-votar">VOTAR</button>
+          <button className="landing-button-votar" onClick={handleVoting}>VOTAR</button>
           <button className="landing-button-contacta" onClick={handleContactaClick}>CONTACTA</button>
         </div>
         <div className="landing-fourth-div">

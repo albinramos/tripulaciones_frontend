@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect} from "react";
 import "./voting.css"
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import moment from "moment";
 
 const Voting = () => {
@@ -27,6 +27,7 @@ const Voting = () => {
         }
       )
       const data = await response.json();
+      //console.log(data);
       const newType = assignType(data)
       setType(newType);
   }
@@ -76,9 +77,11 @@ const Voting = () => {
     setMood(mood);
   };
 
-  const handleNoVote = async () => {
-    navigate('/');
-  }
+  const handleNoVote = () => {
+    if (window.location.pathname !== '/') {
+      navigate('/', { replace: true });
+    }
+  };
 
   const handleVote = async (e) => {
     e.preventDefault();
