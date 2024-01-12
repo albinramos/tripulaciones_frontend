@@ -1,0 +1,261 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div#root {
+  width: 100dvw;
+}
+
+body{
+  background: rgb(242,42,102);
+  background: radial-gradient(circle, rgba(242,42,102,0.26516544117647056) 0%, rgba(255,206,183,1) 62%, rgba(239,249,242,1) 100%);
+}
+
+.imagen-circular-mini{
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  right: 10px;
+  top: 110px;
+  background: white;
+  border-radius: 50%;
+}
+
+.imagen-logo{
+  height: 120px;
+  top: 75px;
+  left: 15px;
+  position: absolute;
+}
+
+
+.h2-landing{
+  position: absolute;
+  width: 100%;
+  height: 33px;
+  left: 16px;
+  top: 200px;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 24px;
+  line-height: 33px;
+  color: #100F11;
+}
+
+.type-button {
+  display: block;
+  width: 25%;
+  height: 40px;
+  left: 16px;
+  top: 250px;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 27px;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background-color: transparent;
+  text-align: center;
+  margin-right: 20px;
+  float: left;
+}
+
+.type-button.active {
+  background-color: #ff3b7684;
+}
+
+.main-third-div::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.main-fourth-div {
+  text-align: center;
+  justify-content: center;
+  top: 400px;
+}
+
+.p-landing {
+width: 100%;
+height: 33px;
+font-family: 'Avenir';
+font-style: normal;
+font-weight: 900;
+font-size: 24px;
+top: 350px;
+text-align: center;
+position: absolute;
+}
+
+.main-faces-div{
+  height: 50px;
+  background-color: white;
+  width:100%;
+  top: 450px;
+  margin-block-start: none !important;
+  display: flex;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  box-shadow: 0px 8px 0px 0px #FF145A;
+
+}
+
+.mood {
+  position: relative;
+  top: -10px;
+  height: 70px;
+  border: 5px solid white;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 18px 0px -10px #FF145A;
+  cursor: pointer;
+}
+
+.mood.active,
+.mood:hover {
+  scale: 1.2;
+  box-shadow: 0px 20px 0px -6px #FF145A;
+}
+
+.main-fifth-div{
+  height: 50px;
+  width:100%;
+  top: 600px;
+  margin-block-start: none !important;
+  display: flex;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.p-voting-cuentanos{
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.p-voting-cuentanos-mini{
+  margin-top: 15px;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+.main-sixth-div{
+  height: 50px;
+  width:100%;
+  top: 680px;
+  margin-block-start: none !important;
+  display: flex;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.p-voting-razones{
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.main-sixth-div-tres{
+  height: 25px;
+  width:100%;
+  top: 30px;
+  margin-block-start: none !important;
+  display: flex;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+
+.tag-button:nth-child(0),
+.tag-button:nth-child(1),
+.tag-button:nth-child(2)
+{
+  width: 25%;
+  margin-right: 20px;
+}
+
+.tag-button:nth-child(3),
+.tag-button:nth-child(4){
+  width: 40%;
+}
+
+.tag-button:nth-child(5),
+.tag-button:nth-child(6){
+  margin-right: 40px;
+}
+
+.tag-button{
+  height: 40px;
+  justify-content: center;
+  border-radius: 10px;
+  background: transparent;
+  font-family: 'Avenir';
+  font-style: normal;
+  border: 2.5px solid #000000;
+  cursor: pointer;
+}
+
+.tag-button.active{
+  background-color: #ff3b7684;
+}
+
+.main-seventh-div-dos{
+  height: 25px;
+  width:100%;
+  top: 60px;
+  margin-block-start: none !important;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.main-eighth-div-dos{
+  height: 25px;
+  width:100%;
+  top: 90px;
+  margin-block-start: none !important;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.button-voting-relacion,
+.button-voting-otro{
+  width: 46%;
+  height: 40px;
+  border-radius: 10px;
+  background: transparent;
+  font-family: 'Avenir';
+  font-style: normal;
+  border: 2.5px solid #000000;
+  margin-right: 35px;
+  cursor: pointer;
+}
+
+.button-voting-relacion{
+  margin-right: 10px;
+}

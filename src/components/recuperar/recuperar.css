@@ -1,0 +1,133 @@
+
+.imagen-circular{
+  width: 500px;
+  height: 450px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: -8%;
+}
+
+.circulo-login{
+  display: flex;
+  justify-content: center;
+  top: 0%;
+  left: 2%;
+  position: absolute;
+}
+
+div#root {
+  width: 100dvw;
+}
+
+
+.login-second-div{
+  display: flex;
+  flex-direction: column;
+}
+
+.p-login{
+position: absolute;
+left: 9.23%;
+right: 74.62%;
+top: 40.17%;
+bottom: 52.01%;
+font-family: 'Avenir';
+font-style: normal;
+font-weight: 900;
+font-size: 30px;
+line-height: 33px;
+color: #000000;
+width: 100%;
+}
+
+.form-email{
+  position: absolute;
+  right: 10%;
+  top: 45%;
+  width: 80%;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: 'Avenir';
+}
+
+.form-password{
+  position: absolute;
+  right: 10%;
+  top: 56%;
+  width: 80%;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: 'Avenir';
+}
+
+.p-login-forgot-passsword{
+position: absolute;
+left: 34%;
+top: 63%;
+bottom: 37.09%;
+font-family: 'Bai Jamjuree';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 20px;
+color: #000000;
+cursor: pointer;
+}
+
+.button-recuperar{
+  position: absolute;
+  right: 10%;
+  top: 55%;
+  width: 80%;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: white;
+  background-color: black;
+  font-family: 'Bai Jamjuree';
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.arrow-back{
+  display: flex;
+  position: relative;
+  font-size: 40px;
+  left: 30%;
+  margin: 20px;
+  margin-top: 650px;
+  margin-left: 20px;
+}
+
+.recuperar-third-div{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  font-size: 40px;
+  left: 20%;
+  margin: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.p-recuperar-2{
+  display: flex;
+  position: relative;
+  font-size: 40px;
+  left: 20%;
+  margin: 20px;
+  margin-top: 650px;
+  margin-left: 20px;
+  font-family: 'Avenir';
+  font-weight: 900;
+}
+
+
+
