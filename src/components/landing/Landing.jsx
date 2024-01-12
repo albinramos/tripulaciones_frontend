@@ -5,7 +5,14 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const Landing = () => {
-  const [fetchData, setFetchData] = useState([]);
+  const [fetchData, setFetchData] = useState({
+    userData: {
+      firstname: '',
+      lastname: ''
+    },
+    score: '',
+    canUserVote: '',
+  });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,7 +35,7 @@ const Landing = () => {
     }
   }
 
-
+  console.log(fetchData);
   const handleContactaClick = () => {
     navigate('/contacta');
   };
@@ -41,20 +48,20 @@ const Landing = () => {
     <>
       <section className="landing-main-container">
         <div className="landing-first-div">
-          <p className="landing-p-name">AGER<br></br>
+          <p className="landing-p-name">{fetchData.userData.firstname}<br></br>
           </p>
-          <p className="landing-p-lastname">BARRAGAN</p>
+          <p className="landing-p-lastname">{fetchData.userData.lastname}</p>
         </div>
         <img src="../src/assets/logo-company.png" alt="imagen retrato" className="landing-company-logo" />
         <div className="landing-second-div">
           <AiOutlineTrophy className="landing-trophy" />
           <div className="landing-second-div-text">
-            <p className="landing-p-puntos-numero">220</p>
+            <p className="landing-p-puntos-numero">{fetchData.score}</p>
             <p className="landing-p-puntos-letras">puntos</p>
           </div>
         </div>
         <div className="landing-third-div">
-          <button className="landing-button-votar" onClick={handleVoting}>VOTAR</button>
+          <button className={`landing-button-votar ${fetchData.canUserVote ? '' : 'novote'}`}>VOTAR</button>
           <button className="landing-button-contacta" onClick={handleContactaClick}>CONTACTA</button>
         </div>
         <div className="landing-fourth-div">
