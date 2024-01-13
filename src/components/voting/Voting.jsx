@@ -16,7 +16,7 @@ const Voting = () => {
     fetchStatus();
     fetchRandomImage();
   }, []);
-  
+
 
   const fetchStatus =  async () => {
       const response = await fetch(

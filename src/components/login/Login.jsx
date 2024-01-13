@@ -11,6 +11,40 @@ const Login = () => {
     e.preventDefault();
     setErrorMessage("");
     loginhandler(e);
+    loginAdminHandler(e);
+  }
+
+  const loginAdminHandler = async (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const role = 'admin';
+    const body = {
+      email,
+      password,
+      role
+    }
+    try{
+      const result = await fetch("http://localhost:3006/login", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
+      });
+      if(result.status === 200){
+        const data = await result.json();
+        navigate('/admin');
+      }
+      else{
+        const data = await result.json();
+        setErrorMessage(data.error || 'Invalid email or password');
+      }
+    }
+    catch(e){
+      setErrorMessage("Error al iniciar sesión admin")
+    }
   }
 
   const loginhandler = async (e) => {
