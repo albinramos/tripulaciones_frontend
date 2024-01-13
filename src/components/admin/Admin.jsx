@@ -10,6 +10,23 @@ import { ImExit } from "react-icons/im";
 
 const Admin = () => {
 
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('http://localhost:3006/logout', {
+        method: 'POST',
+        credentials: 'include',
+      });
+
+      if (response.ok) {
+        window.location.href = 'http://localhost:5173/login';
+      } else {
+        console.error('Error al cerrar sesión');
+      }
+    } catch (error) {
+      console.error('Error al cerrar sesión:', error.message);
+    }
+  };
+
   return(
     <>
       <section className="admin-container">
@@ -27,7 +44,7 @@ const Admin = () => {
           <div className="bottom-icons">
             <ul className="ul-bottom-icons">
               <li className="li-bottom-icons"><BsFillQuestionCircleFill></BsFillQuestionCircleFill>Ayuda</li>
-              <li className="li-bottom-icons"><ImExit></ImExit>Salir</li>
+              <li className="li-bottom-icons" onClick={handleLogout}><ImExit></ImExit>Salir</li>
             </ul>
           </div>
           <div className="footer-admin">

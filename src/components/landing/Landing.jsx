@@ -76,7 +76,7 @@ const Landing = () => {
           </div>
         </div>
         <div className="landing-third-div">
-          <button className={`landing-button-votar ${fetchData.canUserVote ? '' : 'novote'}`}>VOTAR</button>
+          <button className={`landing-button-votar ${fetchData.canUserVote ? '' : 'novote'}`} onClick={handleVoting}>VOTAR</button>
           <button className="landing-button-contacta" onClick={handleContactaClick}>CONTACTA</button>
         </div>
         <div className="landing-fourth-div">
