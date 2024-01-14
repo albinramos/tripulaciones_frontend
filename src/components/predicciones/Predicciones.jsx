@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect} from "react";
-import "./admin.css"
+import React, { useState, useRef} from "react";
+import './predicciones.css'
 import { FaHome, FaEnvelope } from "react-icons/fa";
 import { IoSettingsSharp, IoFileTrayOutline } from "react-icons/io5";
 import { MdOutlineAlarm } from "react-icons/md";
@@ -7,18 +7,16 @@ import { BsFillQuestionCircleFill, BsClockHistory } from "react-icons/bs";
 import { ImExit } from "react-icons/im";
 import { Navigate, useNavigate } from 'react-router-dom';
 
-
-
-const Admin = () => {
+const Predicciones = () => {
 
   const navigate = useNavigate();
+  
+  const handleHome = () => {
+    navigate('/admin');
+  };
 
   const handleEntradasalida = () => {
     navigate('/entradasalida');
-  }
-
-  const handleAnalisis = () => { 
-    navigate('/analisis');
   }
 
   const handleAjustes = () => {
@@ -29,8 +27,8 @@ const Admin = () => {
     navigate('/sugerencias');
   }
 
-  const handlePredicciones = () => {
-    navigate('/predicciones');
+  const handleAnalisis = () => {
+    navigate('/analisis');
   }
 
   const handleLogout = async () => {
@@ -50,7 +48,6 @@ const Admin = () => {
     }
   };
 
-
   return(
     <>
       <section className="admin-container">
@@ -58,10 +55,10 @@ const Admin = () => {
         <img src='../src/assets/moodup-logo.png' alt='imagen-logo' className="imagen-logo-admin"/>
           <div className="ul-header-div">
             <ul>
-              <li className="li-header" onClick={() => navigate('/')}><FaHome></FaHome> Home</li>
-              <li className="li-header" onClick={handleEntradasalida} ><MdOutlineAlarm></MdOutlineAlarm> Entrada/Salida</li>
-              <li className="li-header" onClick={handleAnalisis}><FaEnvelope></FaEnvelope> Análisis detallado</li>
-              <li className="li-header" onClick={handlePredicciones}><BsClockHistory></BsClockHistory> Predicciones</li>
+              <li className="li-header" onClick={handleHome}><FaHome></FaHome> Home</li>
+              <li className="li-header" onClick={handleEntradasalida}><MdOutlineAlarm></MdOutlineAlarm> Entrada/Salida</li>
+              <li className="li-header"onClick={handleAnalisis} ><FaEnvelope></FaEnvelope> Análisis detallado</li>
+              <li className="li-header"><BsClockHistory></BsClockHistory> Predicciones</li>
               <li className="li-header" onClick={handleSugerencias}><IoFileTrayOutline></IoFileTrayOutline> Sugerencias</li>
               <li className="li-header" onClick={handleAjustes}><IoSettingsSharp></IoSettingsSharp> Ajustes</li>
             </ul>
@@ -77,10 +74,10 @@ const Admin = () => {
             <p className="footer-admin-p">Jhon Doe</p>
           </div>
         </div>
-        <div className="main-admin">
-          <div className="admin-selectors">
-          <p className="admin-username"><strong>¡</strong>Hola<strong><br></br>ADMIN!</strong></p>
-            <div className="admin-selectors-div">
+        <div className="main-predicciones">
+          <div className="analisis-selectors">
+            <p className="admin-username"><strong>¡</strong>Hola<strong><br></br>ADMIN!</strong></p> 
+            <div className="predicciones-selectors-div">
               <p className="p-departamentos">Departamentos</p>
                 <select className="select-departamentos">
                   <option value="todos">Todos</option>
@@ -93,41 +90,29 @@ const Admin = () => {
                   <option value="ventas">Ventas</option>
                   <option value="atencion al cliente">Atención al cliente</option>
                 </select>
+            </div> 
+          </div>
+          <div className="predicciones-graphs-1">
+            <div className="predicciones-graph-1">
+              <img src="../src/assets/GAUGE CHART.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
+            <div className="predicciones-graph-2">
+            <img src="../src/assets/HORIZONTAL BAR CHART.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
-          <div className="admin-graphs-1">
-            <div className="admin-graph-1">
-              {/* <h2 className="h2-admin-graph-1">Índice de felicidad</h2>
-              <p className="date-admin-graph-1">Del 21 Sep. 2023 al 22 Oct. 2023</p> */}
-              <img src="../src/assets/Group 2086.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+          <div className="predicciones-graphs-2">
+            <div className="predicciones-graph-3">
+              <img src="../src/assets/GAUGE CHART-2.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
-            <div className="admin-graph-2">
-              {/* <h2 className="p-admin-graph-2">Evolución diaria del índice de satisfacción</h2> */}
-              <img src="../src/assets/evolucion-diaria-all.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
-            </div>
-          </div>
-          <div className="admin-graphs-2">
-            <div className="admin-graph-3">
-              {/* <h2 className="h2-admin-graph-3">VOTOS TOTALES</h2> */}
-              <img src="../src/assets/Group 2089.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
-            </div>
-            <div className="admin-graph-4">
-              {/* <h2 className="p-admin-graph-4">EVOLUCIÓN DE LOS VOTOS TOTALES</h2> */}
-              <img src="../src/assets/Group 2090.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            <div className="predicciones-graph-4">
+            <img src="../src/assets/HORIZONTAL BAR CHART-2.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
         </div>
-      </section>
+    </section>
     </>
   )
 
-}
+  }
 
-
-
-
-
-
-
-
-export default Admin
+export default Predicciones

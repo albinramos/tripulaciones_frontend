@@ -11,6 +11,7 @@ import EntradaSalida from './components/entradasalida/EntradaSalida.jsx';
 import Analisis from './components/analisis/Analisis.jsx';
 import Ajustes from './components/ajustes/Ajustes.jsx';
 import Sugerencias from './components/sugerencias/Sugerencias.jsx';
+import Predicciones from './components/predicciones/Predicciones.jsx';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
             <Route path='/analisis' element={<Analisis />} />
             <Route path='/ajustes' element={<Ajustes />} />
             <Route path='/sugerencias' element={<Sugerencias />} />
+            <Route path='/predicciones' element={<Predicciones />} />
           </Routes>
         </div>
       </Router>

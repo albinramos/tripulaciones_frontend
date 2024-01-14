@@ -1,30 +1,30 @@
-.main-analisis{
+.main-predicciones{
   background-color: #EEF2F5;
   margin-left: 350px;
   height: 100vh;
   padding-top: 60px;
 }
 
-.analisis-selectors{
+.predicciones-selectors{
   display: flex;
   flex-direction: row;
 }
 
-.analisis-selectors-div{
+.predicciones-selectors-div{
   position: relative;
   left: 40%;
   display: flex;
   flex-direction: row;
 }
 
-.analisis-graphs-1,
-.analisis-graphs-2{
+.predicciones-graphs-1,
+.predicciones-graphs-2{
   display: flex;
   flex-direction: row;
 }
 
-.analisis-graph-1,
-.analisis-graph-3{
+.predicciones-graph-1,
+.predicciones-graph-3{
   width: 25%;
   background-color: white;
   height: 100%;
@@ -35,14 +35,14 @@
   flex-direction: column;
 }
 
-.analisis-graph-3,
-.analisis-graph-4{
+.predicciones-graph-3,
+.predicciones-graph-4{
   margin-top: 30px;
 }
 
 
 
-.analisis-graph-2{
+.predicciones-graph-2{
   width: 35.5%;
   background-color: white;
   height: 100%;
@@ -53,7 +53,7 @@
   flex-direction: column;
 }
 
-.analisis-graph-4{
+.predicciones-graph-4{
   width: 39.5%;
   background-color: white;
   height: 100%;

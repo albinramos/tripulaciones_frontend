@@ -3,7 +3,7 @@ import './analisis.css'
 import { FaHome, FaEnvelope } from "react-icons/fa";
 import { IoSettingsSharp, IoFileTrayOutline } from "react-icons/io5";
 import { MdOutlineAlarm } from "react-icons/md";
-import { BsFillQuestionCircleFill } from "react-icons/bs";
+import { BsFillQuestionCircleFill, BsClockHistory } from "react-icons/bs";
 import { ImExit } from "react-icons/im";
 import { Navigate, useNavigate } from 'react-router-dom';
 
@@ -27,6 +27,9 @@ const Analisis = () => {
     navigate('/sugerencias');
   }
 
+  const handlePredicciones = () => {
+    navigate('/predicciones');
+  }
 
   const handleLogout = async () => {
     try {
@@ -55,6 +58,7 @@ const Analisis = () => {
               <li className="li-header" onClick={handleHome}><FaHome></FaHome> Home</li>
               <li className="li-header" onClick={handleEntradasalida}><MdOutlineAlarm></MdOutlineAlarm> Entrada/Salida</li>
               <li className="li-header"><FaEnvelope></FaEnvelope> Análisis detallado</li>
+              <li className="li-header" onClick={handlePredicciones}><BsClockHistory></BsClockHistory> Predicciones</li>
               <li className="li-header" onClick={handleSugerencias}><IoFileTrayOutline></IoFileTrayOutline> Sugerencias</li>
               <li className="li-header" onClick={handleAjustes}><IoSettingsSharp></IoSettingsSharp> Ajustes</li>
             </ul>
@@ -70,9 +74,39 @@ const Analisis = () => {
             <p className="footer-admin-p">Jhon Doe</p>
           </div>
         </div>
-        <div className="main-entadasalida">
-          <div className="entradasalida-selectors">
-            <p className="admin-username"><strong>¡</strong>Hola<strong><br></br>GUILLERMO!</strong></p>  
+        <div className="main-analisis">
+          <div className="analisis-selectors">
+            <p className="admin-username"><strong>¡</strong>Hola<strong><br></br>ADMIN!</strong></p> 
+            <div className="analisis-selectors-div">
+              <p className="p-departamentos">Departamentos</p>
+                <select className="select-departamentos">
+                  <option value="todos">Todos</option>
+                  <option value="rrhh">RRHH</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="desarrollo">Desarrollo</option>
+                  <option value="contabilidad">Contabilidad</option>
+                  <option value="analitica">Analítica</option>
+                  <option value="it">IT</option>
+                  <option value="ventas">Ventas</option>
+                  <option value="atencion al cliente">Atención al cliente</option>
+                </select>
+            </div> 
+          </div>
+          <div className="analisis-graphs-1">
+            <div className="analisis-graph-1">
+              <img src="../src/assets/GAUGE CHART.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
+            <div className="analisis-graph-2">
+            <img src="../src/assets/HORIZONTAL BAR CHART.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
+          </div>
+          <div className="analisis-graphs-2">
+            <div className="analisis-graph-3">
+              <img src="../src/assets/GAUGE CHART-2.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
+            <div className="analisis-graph-4">
+            <img src="../src/assets/HORIZONTAL BAR CHART-2.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
           </div>
         </div>
     </section>

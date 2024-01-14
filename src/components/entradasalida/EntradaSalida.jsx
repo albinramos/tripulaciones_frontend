@@ -3,7 +3,7 @@ import './entradasalida.css'
 import { FaHome, FaEnvelope } from "react-icons/fa";
 import { IoSettingsSharp, IoFileTrayOutline } from "react-icons/io5";
 import { MdOutlineAlarm } from "react-icons/md";
-import { BsFillQuestionCircleFill } from "react-icons/bs";
+import { BsFillQuestionCircleFill, BsClockHistory } from "react-icons/bs";
 import { ImExit } from "react-icons/im";
 import { Navigate, useNavigate } from 'react-router-dom';
 
@@ -25,6 +25,10 @@ const EntradaSalida = () => {
 
   const handleSugerencias = () => {
     navigate('/sugerencias');
+  }
+
+  const handlePredicciones = () => {
+    navigate('/predicciones');
   }
 
 
@@ -55,6 +59,7 @@ const EntradaSalida = () => {
               <li className="li-header" onClick={handleHome}><FaHome></FaHome> Home</li>
               <li className="li-header"><MdOutlineAlarm></MdOutlineAlarm> Entrada/Salida</li>
               <li className="li-header" onClick={handleAnalisis}><FaEnvelope></FaEnvelope> Análisis detallado</li>
+              <li className="li-header" onClick={handlePredicciones}><BsClockHistory></BsClockHistory> Predicciones</li>
               <li className="li-header" onClick={handleSugerencias}><IoFileTrayOutline></IoFileTrayOutline> Sugerencias</li>
               <li className="li-header" onClick={handleAjustes}><IoSettingsSharp></IoSettingsSharp> Ajustes</li>
             </ul>
@@ -72,7 +77,7 @@ const EntradaSalida = () => {
         </div>
         <div className="main-entradasalida">
           <div className="entradasalida-selectors">
-            <p className="entradasalida-username"><strong>¡</strong>Hola<strong><br></br>GUILLERMO!</strong></p>
+            <p className="entradasalida-username"><strong>¡</strong>Hola<strong><br></br>ADMIN!</strong></p>
             <div className="entradasalida-selectors-div">
               <p className="p-departamentos">Departamentos</p>
                 <select className="select-departamentos">
