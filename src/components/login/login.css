@@ -1,20 +1,27 @@
 
+.login-main-container{
+  display: flex;
+  flex-direction: column;
+}
+
 .imagen-circular{
   width: 500px;
   height: 450px;
-  align-items: center;
   display: flex;
+  text-align: center;
+  overflow-clip-margin: none !important;
   justify-content: center;
-  position: relative;
-  left: -8%;
+  align-items: center;
+  margin-left: -35px;
 }
+
 
 .circulo-login{
   display: flex;
   justify-content: center;
-  top: 0%;
-  left: 2%;
-  position: absolute;
+  top: 0;
+  left: 0;
+  position: relative;
 }
 
 div#root {
@@ -92,8 +99,35 @@ cursor: pointer;
   background-color: black;
   font-family: 'Bai Jamjuree';
   font-weight: 900;
-  cursor: pointer;
 }
 
+@media screen and (min-width: 768px){
+  .imagen-circular{
+    width: 500px;
+    height: 450px;
+    display: flex;
+    text-align: center;
+    overflow-clip-margin: none !important;
+    justify-content: center;
+    align-items: center;
+    margin-left: 130px;
+  }
+  
+}
+
+@media screen and (min-width: 1800px){
+  .imagen-circular{
+    margin-left: 650px;
+  }
+
+  .form-email,
+  .form-password{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
 
 

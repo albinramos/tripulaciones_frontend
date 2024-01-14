@@ -5,10 +5,29 @@ import { IoSettingsSharp, IoFileTrayOutline } from "react-icons/io5";
 import { MdOutlineAlarm } from "react-icons/md";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import { ImExit } from "react-icons/im";
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 
 const Admin = () => {
+
+  const navigate = useNavigate();
+
+  const handleEntradasalida = () => {
+    navigate('/entradasalida');
+  }
+
+  const handleAnalisis = () => { 
+    navigate('/analisis');
+  }
+
+  const handleAjustes = () => {
+    navigate('/ajustes');
+  }
+
+  const handleSugerencias = () => {
+    navigate('/sugerencias');
+  }
 
   const handleLogout = async () => {
     try {
@@ -27,6 +46,7 @@ const Admin = () => {
     }
   };
 
+
   return(
     <>
       <section className="admin-container">
@@ -34,11 +54,11 @@ const Admin = () => {
         <img src='../src/assets/moodup-logo.png' alt='imagen-logo' className="imagen-logo-admin"/>
           <div className="ul-header-div">
             <ul>
-              <li className="li-header"><FaHome></FaHome> Home</li>
-              <li className="li-header"><MdOutlineAlarm></MdOutlineAlarm> Entrada/Salida</li>
-              <li className="li-header"><FaEnvelope></FaEnvelope> Análisis detallado</li>
-              <li className="li-header"><IoFileTrayOutline></IoFileTrayOutline> Sugerencias</li>
-              <li className="li-header"><IoSettingsSharp></IoSettingsSharp> Ajustes</li>
+              <li className="li-header" onClick={() => navigate('/')}><FaHome></FaHome> Home</li>
+              <li className="li-header" onClick={handleEntradasalida} ><MdOutlineAlarm></MdOutlineAlarm> Entrada/Salida</li>
+              <li className="li-header" onClick={handleAnalisis}><FaEnvelope></FaEnvelope> Análisis detallado</li>
+              <li className="li-header" onClick={handleSugerencias}><IoFileTrayOutline></IoFileTrayOutline> Sugerencias</li>
+              <li className="li-header" onClick={handleAjustes}><IoSettingsSharp></IoSettingsSharp> Ajustes</li>
             </ul>
           </div>
           <div className="bottom-icons">
@@ -72,19 +92,21 @@ const Admin = () => {
           </div>
           <div className="admin-graphs-1">
             <div className="admin-graph-1">
-              <h2 className="h2-admin-graph-1">Índice de felicidad</h2>
-              <p className="date-admin-graph-1">Del 21 Sep. 2023 al 22 Oct. 2023</p>
+              {/* <h2 className="h2-admin-graph-1">Índice de felicidad</h2>
+              <p className="date-admin-graph-1">Del 21 Sep. 2023 al 22 Oct. 2023</p> */}
+              <img src="../src/assets/Group 2086.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
             <div className="admin-graph-2">
-              <h2 className="p-admin-graph-2">Evolución diaria del índice de satisfacción</h2>
+              {/* <h2 className="p-admin-graph-2">Evolución diaria del índice de satisfacción</h2> */}
+              <img src="../src/assets/evolucion-diaria-all.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
           <div className="admin-graphs-2">
             <div className="admin-graph-3">
-              <h2 className="h2-admin-graph-3">VOTOS TOTALES</h2>
+              {/* <h2 className="h2-admin-graph-3">VOTOS TOTALES</h2> */}
             </div>
             <div className="admin-graph-4">
-              <h2 className="p-admin-graph-4">EVOLUCIÓN DE LOS VOTOS TOTALES</h2>
+              {/* <h2 className="p-admin-graph-4">EVOLUCIÓN DE LOS VOTOS TOTALES</h2> */}
             </div>
           </div>
         </div>

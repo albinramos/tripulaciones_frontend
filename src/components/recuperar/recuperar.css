@@ -1,5 +1,5 @@
 
-.imagen-circular{
+.imagen-circular-2{
   width: 500px;
   height: 450px;
   align-items: center;
@@ -42,7 +42,7 @@ color: #000000;
 width: 100%;
 }
 
-.form-email{
+.form-email-recuperar{
   position: absolute;
   right: 10%;
   top: 45%;
@@ -54,7 +54,7 @@ width: 100%;
   font-family: 'Avenir';
 }
 
-.form-password{
+.form-password-recuperar{
   position: absolute;
   right: 10%;
   top: 56%;

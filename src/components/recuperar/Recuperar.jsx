@@ -17,12 +17,12 @@ const Recuperar = () => {
     <>
       <section className="login-main-container">
         <div className="circulo-login">
-          <img src="../src/assets/logo.png" alt="imagen retrato" className="imagen-circular"/>
+          <img src="../src/assets/logo.png" alt="imagen retrato" className="imagen-circular-2"/>
         </div>
         <div className="recuperar-second-div">
           <p className="p-login">Recupera tu contraseña</p>
           <form className="form-login">
-          <input type="email" placeholder="Introduce tu E-mail" className='form-email' name='email' />
+          <input type="email" placeholder="Introduce tu E-mail" className='form-email-recuperar' name='email' />
           <button className="button-recuperar">Recuperar</button>
           </form>
         </div>
