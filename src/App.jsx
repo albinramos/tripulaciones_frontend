@@ -20,9 +20,9 @@ function App() {
       <Router>
         <div className='App'>
           <Routes>
+            <Route path='/' element={<Landing />} />
             <Route path='/login' element={<Login />} />
             <Route path='/voting' element={<Voting />} />
-            <Route path='/' element={<Landing />} />
             <Route path='/contacta' element={<Contacta />} />
             <Route path='/recuperar' element={<Recuperar />} />
             <Route path='/admin' element={<Admin />} />

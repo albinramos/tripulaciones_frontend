@@ -92,20 +92,19 @@ const Analisis = () => {
                 </select>
             </div> 
           </div>
-          <div className="analisis-graphs-1">
-            <div className="analisis-graph-1">
-              <img src="../src/assets/GAUGE CHART.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+          <div className="analisis-title">
+              <h2 className="analisis-h2-title">RAZONES DEL VOTO</h2>
             </div>
-            <div className="analisis-graph-2">
-            <img src="../src/assets/HORIZONTAL BAR CHART.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+          <div className="analisis-graphs-1">
+            <div className="title-vertical">ENTRADA</div>
+            <div className="analisis-graph-1">
+              <img src="../src/assets/razones-voto-entrada.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
           <div className="analisis-graphs-2">
+            <div className="title-vertical">SALIDA</div>
             <div className="analisis-graph-3">
-              <img src="../src/assets/GAUGE CHART-2.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
-            </div>
-            <div className="analisis-graph-4">
-            <img src="../src/assets/HORIZONTAL BAR CHART-2.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+              <img src="../src/assets/razones-voto-salida.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
         </div>

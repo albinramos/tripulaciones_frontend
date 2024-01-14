@@ -1,8 +1,28 @@
 .main-analisis{
   background-color: #EEF2F5;
   margin-left: 350px;
-  height: 100vh;
+  height: 200vh;
   padding-top: 60px;
+}
+
+.analisis-h2-title{
+  font-family: 'Avenir';
+  font-size: 35px;
+  font-weight: 900;
+  margin-left: 38px;
+  margin-bottom: 30px;
+}
+
+.title-vertical{
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  font-family: 'Avenir';
+  font-size: 35px;
+  font-weight: 900;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 270px;
+  width: 50px;
 }
 
 .analisis-selectors{
@@ -25,7 +45,7 @@
 
 .analisis-graph-1,
 .analisis-graph-3{
-  width: 25%;
+  width: 70%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
@@ -35,32 +55,8 @@
   flex-direction: column;
 }
 
-.analisis-graph-3,
-.analisis-graph-4{
+.analisis-graph-3{
   margin-top: 30px;
 }
 
-
-
-.analisis-graph-2{
-  width: 35.5%;
-  background-color: white;
-  height: 100%;
-  border-radius: 30px;
-  margin-left: 50px;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-}
-
-.analisis-graph-4{
-  width: 39.5%;
-  background-color: white;
-  height: 100%;
-  border-radius: 30px;
-  margin-left: 50px;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-}
 
