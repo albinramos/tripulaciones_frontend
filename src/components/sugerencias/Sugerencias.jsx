@@ -75,9 +75,14 @@ const Sugerencias = () => {
             <p className="footer-admin-p">Jhon Doe</p>
           </div>
         </div>
-        <div className="main-entadasalida">
-          <div className="entradasalida-selectors">
-            <p className="admin-username"><strong>¡</strong>Hola<strong><br></br>ADMIN!</strong></p>  
+        <div className="main-sugerencias">
+          <div className="sugerencias-selectors">
+            <p className="admin-username"><strong>¡</strong>Hola<strong> ADMIN!</strong></p>  
+          </div>
+          <div className="sugerencias-graphs-1">
+            <div className="sugerencias-graph-1">
+              <img src="../src/assets/Group 2091.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
           </div>
         </div>
     </section>
