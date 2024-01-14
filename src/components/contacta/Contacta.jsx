@@ -12,6 +12,8 @@ const Contacta = () => {
       score: '',
       canUserVote: '',
     });
+    console.log("contacta",fetchData);
+
     const navigate = useNavigate();
   
     useEffect(() => {
@@ -51,7 +53,7 @@ const Contacta = () => {
           <form className="form-login">
             <textarea className="contacta-textarea" placeholder="Escriba su comentario, sugerencia y/o reclamaciones aqui"></textarea>
             <p className="contacta-p-contacta-3">Recuerda que todos los mensajes son anónimos. En caso de que quieras personalizar tu mensaje, añade tu nombre, apellido y departamento. </p>
-            <button className="button-contacta">Enviar</button>
+            <button className="button-contacta" >Enviar</button>
           </form>
         </div>
       </section>

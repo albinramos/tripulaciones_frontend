@@ -58,8 +58,8 @@ const Admin = () => {
         <img src='../src/assets/moodup-logo.png' alt='imagen-logo' className="imagen-logo-admin"/>
           <div className="ul-header-div">
             <ul>
-              <li className="li-header" onClick={() => navigate('/')}><FaHome></FaHome> Home</li>
-              <li className="li-header" onClick={handleEntradasalida} ><MdOutlineAlarm></MdOutlineAlarm> Entrada/Salida</li>
+            <li className="li-header active" onClick={() => handleNavigation("home")}><FaHome></FaHome> Home</li>
+            <li className="li-header" onClick={handleEntradasalida}><MdOutlineAlarm></MdOutlineAlarm> Entrada/Salida</li>
               <li className="li-header" onClick={handleAnalisis}><FaEnvelope></FaEnvelope> Análisis detallado</li>
               <li className="li-header" onClick={handlePredicciones}><BsClockHistory></BsClockHistory> Predicciones</li>
               <li className="li-header" onClick={handleSugerencias}><IoFileTrayOutline></IoFileTrayOutline> Sugerencias</li>

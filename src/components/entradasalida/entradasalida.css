@@ -5,6 +5,14 @@
   padding-top: 60px;
 }
 
+.li-header.active,
+.li-header:hover{
+  color: #FF145A;
+  background-color: #b000354e;
+  width: 90%;
+  border-radius: 10px;
+}
+
 .entradasalida-selectors{
   display: flex;
   flex-direction: row;

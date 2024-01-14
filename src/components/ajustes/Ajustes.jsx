@@ -61,7 +61,7 @@ const Ajustes = () => {
               <li className="li-header" onClick={handleAnalisis}><FaEnvelope></FaEnvelope> Análisis detallado</li>
               <li className="li-header" onClick={handlePredicciones}><BsClockHistory></BsClockHistory> Predicciones</li>
               <li className="li-header" onClick={handleSugerencias}><IoFileTrayOutline></IoFileTrayOutline> Sugerencias</li>
-              <li className="li-header"><IoSettingsSharp></IoSettingsSharp> Ajustes</li>
+              <li className="li-header active"><IoSettingsSharp></IoSettingsSharp> Ajustes</li>
             </ul>
           </div>
           <div className="bottom-icons">

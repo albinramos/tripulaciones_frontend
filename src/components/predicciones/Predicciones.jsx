@@ -58,7 +58,7 @@ const Predicciones = () => {
               <li className="li-header" onClick={handleHome}><FaHome></FaHome> Home</li>
               <li className="li-header" onClick={handleEntradasalida}><MdOutlineAlarm></MdOutlineAlarm> Entrada/Salida</li>
               <li className="li-header"onClick={handleAnalisis} ><FaEnvelope></FaEnvelope> Análisis detallado</li>
-              <li className="li-header"><BsClockHistory></BsClockHistory> Predicciones</li>
+              <li className="li-header active" ><BsClockHistory></BsClockHistory> Predicciones</li>
               <li className="li-header" onClick={handleSugerencias}><IoFileTrayOutline></IoFileTrayOutline> Sugerencias</li>
               <li className="li-header" onClick={handleAjustes}><IoSettingsSharp></IoSettingsSharp> Ajustes</li>
             </ul>

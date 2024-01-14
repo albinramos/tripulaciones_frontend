@@ -57,7 +57,7 @@ const EntradaSalida = () => {
           <div className="ul-header-div">
             <ul>
               <li className="li-header" onClick={handleHome}><FaHome></FaHome> Home</li>
-              <li className="li-header"><MdOutlineAlarm></MdOutlineAlarm> Entrada/Salida</li>
+              <li className="li-header active"><MdOutlineAlarm></MdOutlineAlarm> Entrada/Salida</li>
               <li className="li-header" onClick={handleAnalisis}><FaEnvelope></FaEnvelope> Análisis detallado</li>
               <li className="li-header" onClick={handlePredicciones}><BsClockHistory></BsClockHistory> Predicciones</li>
               <li className="li-header" onClick={handleSugerencias}><IoFileTrayOutline></IoFileTrayOutline> Sugerencias</li>

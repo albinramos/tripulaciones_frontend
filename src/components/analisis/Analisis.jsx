@@ -57,7 +57,7 @@ const Analisis = () => {
             <ul>
               <li className="li-header" onClick={handleHome}><FaHome></FaHome> Home</li>
               <li className="li-header" onClick={handleEntradasalida}><MdOutlineAlarm></MdOutlineAlarm> Entrada/Salida</li>
-              <li className="li-header"><FaEnvelope></FaEnvelope> Análisis detallado</li>
+              <li className="li-header active"><FaEnvelope></FaEnvelope> Análisis detallado</li>
               <li className="li-header" onClick={handlePredicciones}><BsClockHistory></BsClockHistory> Predicciones</li>
               <li className="li-header" onClick={handleSugerencias}><IoFileTrayOutline></IoFileTrayOutline> Sugerencias</li>
               <li className="li-header" onClick={handleAjustes}><IoSettingsSharp></IoSettingsSharp> Ajustes</li>
