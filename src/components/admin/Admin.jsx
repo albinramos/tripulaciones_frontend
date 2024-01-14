@@ -104,9 +104,11 @@ const Admin = () => {
           <div className="admin-graphs-2">
             <div className="admin-graph-3">
               {/* <h2 className="h2-admin-graph-3">VOTOS TOTALES</h2> */}
+              <img src="../src/assets/Group 2089.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
             <div className="admin-graph-4">
               {/* <h2 className="p-admin-graph-4">EVOLUCIÓN DE LOS VOTOS TOTALES</h2> */}
+              <img src="../src/assets/Group 2090.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
         </div>
