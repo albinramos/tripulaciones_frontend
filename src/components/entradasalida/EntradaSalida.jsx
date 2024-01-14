@@ -70,9 +70,58 @@ const EntradaSalida = () => {
             <p className="footer-admin-p">Jhon Doe</p>
           </div>
         </div>
-        <div className="main-entadasalida">
+        <div className="main-entradasalida">
           <div className="entradasalida-selectors">
-            <p className="admin-username"><strong>¡</strong>Hola<strong><br></br>GUILLERMO!</strong></p>  
+            <p className="entradasalida-username"><strong>¡</strong>Hola<strong><br></br>GUILLERMO!</strong></p>
+            <div className="entradasalida-selectors-div">
+              <p className="p-departamentos">Departamentos</p>
+                <select className="select-departamentos">
+                  <option value="todos">Todos</option>
+                  <option value="rrhh">RRHH</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="desarrollo">Desarrollo</option>
+                  <option value="contabilidad">Contabilidad</option>
+                  <option value="analitica">Analítica</option>
+                  <option value="it">IT</option>
+                  <option value="ventas">Ventas</option>
+                  <option value="atencion al cliente">Atención al cliente</option>
+                </select>
+            </div>
+          </div>
+          <div className="entradasalida-graphs-1">
+            <div className="entradasalida-graph-1">
+              <img src="../src/assets/indice-felicidad-general.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
+            <div className="entradasalida-graph-2">
+            <img src="../src/assets/evolucion-diaria-all.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
+          </div>
+          <div className="entradasalida-graphs-2">
+            <div className="entradasalida-graph-3">
+            <img src="../src/assets/felicidad-entrada.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
+            <div className="entradasalida-graph-4">
+              <img src="../src/assets/evolucion-diaria-entrada.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
+          </div>
+          <div className="entradasalida-graphs-3">
+            <div className="entradasalida-graph-5">
+            <img src="../src/assets/felicidad-salida.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
+            <div className="entradasalida-graph-6">
+              <img src="../src/assets/evolucion-diaria-salida.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
+          </div>
+          <div className="entradasalida-graphs-4">
+            <div className="entradasalida-graph-7">
+            <img src="../src/assets/votos-totales-entrada.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
+            <div className="entradasalida-graph-8">
+              <img src="../src/assets/votos-totales-salida.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
+            <div className="entradasalida-graph-9">
+              <img src="../src/assets/votos-totales-todos.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            </div>
           </div>
         </div>
     </section>
