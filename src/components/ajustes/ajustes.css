@@ -1,0 +1,71 @@
+.main-ajustes{
+  background-color: #EEF2F5;
+  margin-left: 350px;
+  height: 200vh;
+  padding-top: 60px;
+}
+
+.ajustes-graphs-1{
+  display: flex;
+  flex-wrap: wrap;
+  top: 10px;
+  background-color: white;
+  padding-top: 40px;
+  margin: auto;
+  border-radius: 30px;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #FF145A;
+}
+
+.form-user{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.ajustes-form-departamento{
+  color: #FF145A;
+}
+
+.ajustes-form-nombre,
+.ajustes-form-apellidos,
+.ajustes-form-email,
+.ajustes-form-departamento,
+.ajustes-form-password,
+.ajustes-form-confirm-password{
+  width: 40%;
+  display: flex;
+  font-size: 20px;
+  margin-right: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 10px;
+  font-family: 'Avenir';
+  border: 2px solid black;
+  font-weight: 900;
+}
+
+input::placeholder{
+  color: #FF145A;
+}
+
+option{
+  color: #FF145A;
+}
+
+.button-ajustes{
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  font-family: 'Avenir';
+  background-color: #FF145A;
+  color: white;
+  font-weight: 500;
+}

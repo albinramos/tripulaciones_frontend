@@ -14,23 +14,23 @@ const Admin = () => {
   const navigate = useNavigate();
 
   const handleEntradasalida = () => {
-    navigate('/entradasalida');
+    navigate('/admin/entradasalida');
   }
 
   const handleAnalisis = () => { 
-    navigate('/analisis');
+    navigate('/admin/analisis');
   }
 
   const handleAjustes = () => {
-    navigate('/ajustes');
+    navigate('/admin/ajustes');
   }
 
   const handleSugerencias = () => {
-    navigate('/sugerencias');
+    navigate('/admin/sugerencias');
   }
 
   const handlePredicciones = () => {
-    navigate('/predicciones');
+    navigate('/admin/predicciones');
   }
 
   const handleLogout = async () => {
@@ -41,7 +41,7 @@ const Admin = () => {
       });
 
       if (response.ok) {
-        window.location.href = 'http://localhost:5173/login';
+        window.location.href = 'http://localhost:5173/admin/login';
       } else {
         console.error('Error al cerrar sesión');
       }

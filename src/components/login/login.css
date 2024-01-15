@@ -2,26 +2,18 @@
 .login-main-container{
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100vh;
 }
 
 .imagen-circular{
-  width: 500px;
-  height: 450px;
-  display: flex;
-  text-align: center;
-  overflow-clip-margin: none !important;
-  justify-content: center;
-  align-items: center;
-  margin-left: -35px;
+  width: 100%; /* Hace que la imagen sea responsive y no sobrepase su contenedor */
+  height: auto;
 }
 
 
 .circulo-login{
-  display: flex;
-  justify-content: center;
-  top: 0;
-  left: 0;
-  position: relative;
+  text-align: center;
 }
 
 div#root {
@@ -32,6 +24,7 @@ div#root {
 .login-second-div{
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .p-login{
@@ -101,7 +94,7 @@ cursor: pointer;
   font-weight: 900;
 }
 
-@media screen and (min-width: 768px){
+/* @media screen and (min-width: 768px){
   .imagen-circular{
     width: 500px;
     height: 450px;
@@ -113,21 +106,56 @@ cursor: pointer;
     margin-left: 130px;
   }
   
+} */
+
+@media screen and (min-width: 1500px){
+  .circulo-login {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */ /* Ajusta la altura del contenedor al 100% de la altura de la ventana */
+  }
+  
+.imagen-circular {
+  max-width: 40%; /* Ajusta el tamaño máximo de la imagen */
+  max-height: 40%; /* Ajusta la altura máxima de la imagen */
+  width: auto;
+  height: auto;
+  display: flex;
 }
 
-@media screen and (min-width: 1800px){
-  .imagen-circular{
-    margin-left: 650px;
+  .form-email{
+    width: 40%;
+    top: 470px;
+    left: 450px;
   }
-
-  .form-email,
   .form-password{
     width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    top: 550px;
+    left: 450px;
   }
+
+  .button-login{  
+    right: 10%;
+    top: 68%;
+    left: 450px;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    font-family: 'Bai Jamjuree';
+    font-weight: 900;
+  }
+
+  .p-login{
+    display: flex;
+    text-align: center;
+    margin-left: 300px;
+    }
 }
 
 

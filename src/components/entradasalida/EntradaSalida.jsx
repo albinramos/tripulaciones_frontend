@@ -16,19 +16,19 @@ const EntradaSalida = () => {
   };
 
   const handleAnalisis = () => { 
-    navigate('/analisis');
+    navigate('/admin/analisis');
   }
 
   const handleAjustes = () => {
-    navigate('/ajustes');
+    navigate('/admin/ajustes');
   }
 
   const handleSugerencias = () => {
-    navigate('/sugerencias');
+    navigate('/admin/sugerencias');
   }
 
   const handlePredicciones = () => {
-    navigate('/predicciones');
+    navigate('/admin/predicciones');
   }
 
 

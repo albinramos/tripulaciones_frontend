@@ -16,19 +16,19 @@ const Analisis = () => {
   };
 
   const handleEntradasalida = () => {
-    navigate('/entradasalida');
+    navigate('/admin/entradasalida');
   }
 
   const handleAjustes = () => {
-    navigate('/ajustes');
+    navigate('/admin/ajustes');
   }
 
   const handleSugerencias = () => {
-    navigate('/sugerencias');
+    navigate('/admin/sugerencias');
   }
 
   const handlePredicciones = () => {
-    navigate('/predicciones');
+    navigate('/admin/predicciones');
   }
 
   const handleLogout = async () => {

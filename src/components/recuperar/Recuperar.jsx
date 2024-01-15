@@ -20,15 +20,15 @@ const Recuperar = () => {
           <img src="../src/assets/logo.png" alt="imagen retrato" className="imagen-circular-2"/>
         </div>
         <div className="recuperar-second-div">
-          <p className="p-login">Recupera tu contraseña</p>
+          <p className="p-login-recuperar">Recupera tu contraseña</p>
           <form className="form-login">
           <input type="email" placeholder="Introduce tu E-mail" className='form-email-recuperar' name='email' />
           <button className="button-recuperar">Recuperar</button>
           </form>
         </div>
         <div className="recuperar-third-div" onClick={handleBackLoginClick}>
-        <IoArrowBack className="arrow-back" />
-        <p className="p-recuperar-2">Login</p>
+        {/* <IoArrowBack className="arrow-back" /> */}
+        <p className="p-recuperar-2">Back to Login</p>
         </div>
       </section>
     </>

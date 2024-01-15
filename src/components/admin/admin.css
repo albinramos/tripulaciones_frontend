@@ -29,6 +29,7 @@
   font-weight: 900;
   cursor: pointer;
   padding: 5px;
+  margin-bottom: 5px;
 }
 
 .li-header.active,

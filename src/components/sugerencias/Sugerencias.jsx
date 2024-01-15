@@ -1,4 +1,4 @@
-import React, { useState, useRef} from "react";
+import React, { useState, useRef, useEffect} from "react";
 import './sugerencias.css'
 import { FaHome, FaEnvelope } from "react-icons/fa";
 import { IoSettingsSharp, IoFileTrayOutline } from "react-icons/io5";
@@ -8,27 +8,54 @@ import { ImExit } from "react-icons/im";
 import { Navigate, useNavigate } from 'react-router-dom';
 
 const Sugerencias = () => {
-
+  const [sugerencias, setSugerencias] = useState([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    getSugerencias();
+  }, []);
+
+  const reversedSugerencias = () => {
+    const array = sugerencias.slice(Math.max(sugerencias.length -10,0))
+    return array.reverse()
+  }
+
+  const getSugerencias = async () => {
+    try {
+      const response = await fetch('http://localhost:3006/message', {
+        method: 'GET',
+        credentials: 'include',
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setSugerencias(data);
+      } else {
+        console.error('Error al obtener sugerencias');
+      }
+    } catch (error) {
+      console.error('Error al obtener sugerencias:', error.message);
+    }
+  };
   
   const handleHome = () => {
     navigate('/admin');
   };
 
   const handleEntradasalida = () => {
-    navigate('/entradasalida');
+    navigate('/admin/entradasalida');
   }
 
   const handleAjustes = () => {
-    navigate('/ajustes');
+    navigate('/admin/ajustes');
   }
 
   const handleAnalisis = () => {
-    navigate('/analisis');
+    navigate('/admin/analisis');
   }
 
   const handlePredicciones = () => {
-    navigate('/predicciones');
+    navigate('/admin/predicciones');
   }
 
 
@@ -81,7 +108,15 @@ const Sugerencias = () => {
           </div>
           <div className="sugerencias-graphs-1">
             <div className="sugerencias-graph-1">
-              <img src="../src/assets/Group 2091.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+              <ul>
+                {reversedSugerencias().map((sugerencia, index) => (
+                  <li className="sugerencias-li" key={`sugerencia_${index}`}>
+                    <div className="sugerencias-li-div">
+                      <p className="sugerencias-li-p">{sugerencia.message}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

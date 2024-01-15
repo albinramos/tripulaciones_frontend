@@ -12,6 +12,7 @@ import Analisis from './components/analisis/Analisis.jsx';
 import Ajustes from './components/ajustes/Ajustes.jsx';
 import Sugerencias from './components/sugerencias/Sugerencias.jsx';
 import Predicciones from './components/predicciones/Predicciones.jsx';
+import AdminLogin from '../src/components/admin/adminLogin/AdminLogin.jsx';
 
 function App() {
 
@@ -26,11 +27,12 @@ function App() {
             <Route path='/contacta' element={<Contacta />} />
             <Route path='/recuperar' element={<Recuperar />} />
             <Route path='/admin' element={<Admin />} />
-            <Route path='/entradasalida' element={<EntradaSalida />} />
-            <Route path='/analisis' element={<Analisis />} />
-            <Route path='/ajustes' element={<Ajustes />} />
-            <Route path='/sugerencias' element={<Sugerencias />} />
-            <Route path='/predicciones' element={<Predicciones />} />
+            <Route path='/admin/login' element={<AdminLogin />} />
+            <Route path='/admin/entradasalida' element={<EntradaSalida />} />
+            <Route path='/admin/analisis' element={<Analisis />} />
+            <Route path='/admin/ajustes' element={<Ajustes />} />
+            <Route path='/admin/sugerencias' element={<Sugerencias />} />
+            <Route path='/admin/predicciones' element={<Predicciones />} />
           </Routes>
         </div>
       </Router>

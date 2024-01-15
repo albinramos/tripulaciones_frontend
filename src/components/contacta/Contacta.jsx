@@ -16,21 +16,28 @@ const Contacta = () => {
 
     const navigate = useNavigate();
   
-    useEffect(() => {
-      fetchApi();
-    }, []);
-  
-    const fetchApi = async () => {
-      const response = await fetch('http://localhost:3006/', {
-        credentials: 'include',
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      
+    try{
+      const response = await fetch("http://localhost:3006/message/create", {
+        method: "POST",
+        credentials: "include",
         headers: {
-          'Content-Type': 'application/json'
-      }});
-      if (response.status === 404) {
-        navigate('/voting');
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({name:null, dept:null, message: e.target.message.value})
+      })
+      if (response.ok) {
+        console.log("mensaje enviado con exito");
+        navigate('/');
       } else {
-        const responseJSON = await response.json();
-        setFetchData(responseJSON);
+        console.error("Error en envío de mensaje");
+      }
+    }
+       catch (error) {
+      console.error("Error de red:", error);
       }
     }
 
@@ -41,7 +48,7 @@ const Contacta = () => {
         <div className="contacta-first-div-text">
           <p className="contacta-p-name">{fetchData.userData.firstname}<br></br>
           </p>
-          <p className="contacta-p-lastname">{fetchData.userData.lastname}</p>
+          <p className="contacta-p-lastname">{fetchData.userData.lastname}hola</p>
         </div>
           <img src="../src/assets/logo-company.png" alt="logo empresa" className="contacta-company-logo"/>
         </div>
@@ -50,8 +57,8 @@ const Contacta = () => {
           <p className="contacta-p-contacta-2">Escribe cualquier duda, sugerencia, reclamación o<br></br>queja que tengas.</p>
         </div>
         <div className="contacta-third-div">
-          <form className="form-login">
-            <textarea className="contacta-textarea" placeholder="Escriba su comentario, sugerencia y/o reclamaciones aqui"></textarea>
+          <form className="form-login" onSubmit={handleSubmit}>
+            <textarea className="contacta-textarea" placeholder="Escriba su comentario, sugerencia y/o reclamaciones aqui" name="message"></textarea>
             <p className="contacta-p-contacta-3">Recuerda que todos los mensajes son anónimos. En caso de que quieras personalizar tu mensaje, añade tu nombre, apellido y departamento. </p>
             <button className="button-contacta" >Enviar</button>
           </form>
