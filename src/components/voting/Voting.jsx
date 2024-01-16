@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect} from "react";
 import "./voting.css"
 import { useNavigate } from 'react-router-dom';
+import Popup from '../popup/Popup';
 import moment from "moment";
 
 const Voting = () => {
@@ -11,6 +12,12 @@ const Voting = () => {
   const [type, setType] = useState(null);
   const [mood, setMood] = useState(null);
   const [tag, setTag] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handlePopupClose = () => {
+    setShowPopup(false);
+    navigate('/');
+  };
 
   useEffect(() => {
     fetchUserInfo();
@@ -111,7 +118,7 @@ const Voting = () => {
       })
       if (response.ok) {
         console.log("Votación de entrada exitosa");
-        navigate('/');
+        setShowPopup(true);
       } else {
         console.error("Error en la votación de entrada");
       }
@@ -128,7 +135,7 @@ const Voting = () => {
       })
       if (response.ok) {
         console.log("Votación de salida exitosa");
-        navigate('/');
+        setShowPopup(true);
       } else {
         console.error("Error en la votación de salida");
       }
@@ -144,7 +151,7 @@ const Voting = () => {
       });
       if (response.ok) {
         console.log("Votación de salida exitosa");
-        navigate('/');
+        setShowPopup(true);
       } else {
         console.error("Error en la votación de salida");
       }
@@ -271,6 +278,7 @@ console.log(userData)
         </div>
         <div className='buttons-voting-div'>
           <button className='button-voting' onClick={handleVote}>Votar</button>
+          {showPopup && <Popup onClose={handlePopupClose} />}
           <button className='button-voting-no-vote' onClick={handleNoVote}>Seguir sin votar</button>
         </div>
       </section>

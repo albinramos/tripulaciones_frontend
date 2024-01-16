@@ -1,0 +1,67 @@
+.popup-voting-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-voting {
+  background: white;
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+  width: 80%;
+  height: 350px;
+}
+
+.p-popup-voting{
+  font-size: 24px;
+  margin-top: -25px;
+}
+
+.popup-company-logo{
+  width: 200px;
+}
+
+.popup-voting-button{
+  border-radius: 30px;
+  background-color: #FF145A;
+  border: none;
+  font-family: 'Avenir';
+  color: white;
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  height: 40px;
+}
+
+.popup-voting-div{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.popup-plus{
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.popup-trophy{
+  font-size: 40px;
+}
+
+.puntos-popup-voting{
+  font-size: 35px;
+  margin-left: 20px;
+  font-weight: 900;
+}
+
+.popup-voting-company-logo{
+  width: 150px;
+}
