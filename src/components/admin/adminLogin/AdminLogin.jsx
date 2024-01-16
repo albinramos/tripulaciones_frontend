@@ -51,13 +51,13 @@ const AdminLogin = () => {
   return(
     <>
       <div >
-        <section className="login-main-container">
-          <div className="login-second-div">
-            <p className="p-login">Login</p>
-            <form className="form-login" onSubmit={submitHandler}>
-            <input type="email" placeholder="E-mail" className='form-email' name='email' />
-            <input type="password" placeholder="Password" className='form-password' name='password' />
-            <button className="button-login">Login Admin</button>
+        <section className="adminlogin-main-container">
+          <div className="adminlogin-div">
+            <p className="p-adminlogin">Login</p>
+            <form className="form-adminlogin" onSubmit={submitHandler}>
+            <input type="email" placeholder="E-mail" className='form-email-adminlogin' name='email' />
+            <input type="password" placeholder="Password" className='form-password-adminlogin' name='password' />
+            <button className="button-adminlogin">Login Admin</button>
             </form>
           </div>
         </section>

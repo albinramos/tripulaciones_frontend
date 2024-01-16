@@ -1,0 +1,39 @@
+.adminlogin-div{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.form-adminlogin{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.p-adminlogin{
+  font-size: 50px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 50px;
+
+}
+
+.form-email-adminlogin,
+.form-password-adminlogin{
+  width: 30%;
+  margin-bottom: 20px;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+.button-adminlogin{
+  background-color: black;
+  color: white;
+  width: 30%;
+  margin-bottom: 20px;
+  height: 40px;
+  border-radius: 10px;
+}

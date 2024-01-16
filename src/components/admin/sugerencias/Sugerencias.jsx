@@ -68,7 +68,7 @@ const Sugerencias = () => {
       });
 
       if (response.ok) {
-        window.location.href = 'http://localhost:5173/login';
+        window.location.href = 'http://localhost:5173/admin/login';
       } else {
         console.error('Error al cerrar sesión');
       }
@@ -100,13 +100,11 @@ const Sugerencias = () => {
           </div>
           <div className="bottom-icons">
             <ul className="ul-bottom-icons">
-              <li className="li-bottom-icons"><BsFillQuestionCircleFill></BsFillQuestionCircleFill>Ayuda</li>
-              <li className="li-bottom-icons" onClick={handleLogout}><ImExit></ImExit>Salir</li>
+              <img src="../src/assets/exit.png" className="li-bottom-icons" onClick={handleLogout}></img>
             </ul>
           </div>
           <div className="footer-admin">
             <img src="../src/assets/logo-company.png" alt="company logo" className="footer-admin-logo-header"></img>
-            <p className="footer-admin-p">Jhon Doe</p>
           </div>
         </div>
         <div className="main-sugerencias">

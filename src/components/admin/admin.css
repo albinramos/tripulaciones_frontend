@@ -90,12 +90,7 @@
 }
 
 .li-bottom-icons{
-  text-decoration: none;
-  list-style: none;
-  font-family: 'Avenir';
-  color: #979797;
-  top:50px;
-  margin-top: 15px;
+  width: 50px;
   cursor: pointer;
 }
 
@@ -103,6 +98,7 @@
   margin-bottom: 20px;
   display: flex;
   flex-direction: row;
+  margin-left: 33px;
 }
 
 .footer-admin-logo-header{
@@ -111,6 +107,7 @@
   font-size: 30px;
   border: 1px solid #979797;
   border-radius: 50%;
+
 }
 
 .footer-admin-p{

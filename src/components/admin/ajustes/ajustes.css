@@ -69,3 +69,54 @@ option{
   color: white;
   font-weight: 500;
 }
+
+.ajustes-users{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.ajustes-h2{
+  margin-left: 50px;
+  background-color: #b000354e;
+  width: 15%;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding-top: 5px;
+  margin-bottom: 20px;
+}
+
+.ajustes-li-div{
+  display: flex;  
+  flex-direction: row;
+  top: 10px;
+  background-color: white;
+  padding: 7px;
+  margin: auto;
+  border-radius: 30px;
+  width: 70%;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid #FF145A;
+  margin-bottom: 5px;
+}
+
+.ajustes-li-p{
+  margin-right: 20px;
+  color: #FF145A;
+  font-weight: 900;
+}
+
+
+.span-users{
+  color: black;
+}
+
+.ajustes-li-icon{
+  font-size: 35px;
+  margin-right: 10px;
+  margin-left: 5px;
+  margin-top: 7px;
+}

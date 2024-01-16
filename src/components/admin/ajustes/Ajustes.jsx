@@ -5,7 +5,9 @@ import { IoSettingsSharp, IoFileTrayOutline } from "react-icons/io5";
 import { MdOutlineAlarm } from "react-icons/md";
 import { BsFillQuestionCircleFill, BsClockHistory } from "react-icons/bs";
 import { ImExit } from "react-icons/im";
+import { PiCornersOut } from "react-icons/pi";
 import { RiUserAddLine } from "react-icons/ri";
+import { AiOutlineUser } from "react-icons/ai";
 import { Navigate, useNavigate } from 'react-router-dom';
 
 const Ajustes = () => {
@@ -61,6 +63,17 @@ const Ajustes = () => {
   const handlePredicciones = () => {
     navigate('/admin/predicciones');
   }
+
+  const departmentNames = {
+    1: 'RRHH',
+    2: 'Marketing',
+    3: 'Desarrollo',
+    4: 'Contabilidad',
+    5: 'Analítica',
+    6: 'IT',
+    7: 'Ventas',
+    8: 'Atención al Cliente',
+  };
 
 
   const handleLogout = async () => {
@@ -148,13 +161,11 @@ const Ajustes = () => {
           </div>
           <div className="bottom-icons">
             <ul className="ul-bottom-icons">
-              <li className="li-bottom-icons"><BsFillQuestionCircleFill></BsFillQuestionCircleFill>Ayuda</li>
-              <li className="li-bottom-icons" onClick={handleLogout}><ImExit></ImExit>Salir</li>
+              <img src="../src/assets/exit.png" className="li-bottom-icons" onClick={handleLogout}></img>
             </ul>
           </div>
           <div className="footer-admin">
             <img src="../src/assets/logo-company.png" alt="company logo" className="footer-admin-logo-header"></img>
-            <p className="footer-admin-p">Jhon Doe</p>
           </div>
         </div>
         <div className="main-ajustes">
@@ -184,13 +195,16 @@ const Ajustes = () => {
               </form>
           </div>
           <div className="ajustes-users">
+            <h2 className="ajustes-h2"><AiOutlineUser></AiOutlineUser> Usuarios</h2>
             <ul>
               {reversedUsers().map((user, index) => (
                 <li className="ajustes-li" key={`user_${index}`}>
                   <div className="ajustes-li-div">
-                    <p className="ajustes-li-p">{user.firstname} {user.lastname}</p>
-                    <p className="ajustes-li-p">{user.email}</p>
-                    <p className="ajustes-li-p">{user.dept_deptid}</p>
+                    <span className="ajustes-li-icon"><PiCornersOut></PiCornersOut></span>
+                    <p className="ajustes-li-p">Nombre: <span className="span-users">{user.firstname} </span></p>
+                    <p className="ajustes-li-p">Lastname: <span className="span-users">{user.lastname} </span></p>
+                    <p className="ajustes-li-p">Email: <span className="span-users">{user.email} </span></p>
+                    <p className="ajustes-li-p">Departamento: <span className="span-users">{departmentNames[user.dept_deptid]}</span> </p>
                   </div>
                 </li>
               ))}

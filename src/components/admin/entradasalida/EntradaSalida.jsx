@@ -66,13 +66,11 @@ const EntradaSalida = () => {
           </div>
           <div className="bottom-icons">
             <ul className="ul-bottom-icons">
-              <li className="li-bottom-icons"><BsFillQuestionCircleFill></BsFillQuestionCircleFill>Ayuda</li>
-              <li className="li-bottom-icons" onClick={handleLogout}><ImExit></ImExit>Salir</li>
+              <img src="../src/assets/exit.png" className="li-bottom-icons" onClick={handleLogout}></img>
             </ul>
           </div>
           <div className="footer-admin">
             <img src="../src/assets/logo-company.png" alt="company logo" className="footer-admin-logo-header"></img>
-            <p className="footer-admin-p">Jhon Doe</p>
           </div>
         </div>
         <div className="main-entradasalida">
