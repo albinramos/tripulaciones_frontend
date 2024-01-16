@@ -5,6 +5,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const Landing = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [fetchData, setFetchData] = useState({
     userData: {
       firstname: '',
@@ -20,17 +21,24 @@ const Landing = () => {
   }, []);
 
   const fetchApi = async () => {
+    setIsLoading(true);
     const response = await fetch('http://localhost:3006/', {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json'
     }});
+
+    if(response.status === 401) {
+      navigate('/login');
+    }
+
     if (response.status === 404) {
       navigate('/voting');
     } else {
       const responseJSON = await response.json();
       setFetchData(responseJSON);
     }
+    setIsLoading(false);
   }
 
   console.log("fetch",fetchData);
@@ -59,13 +67,17 @@ const Landing = () => {
     }
   };
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <section className="landing-main-container">
         <div className="landing-first-div">
-          <p className="landing-p-name">{fetchData.userData.firstname}<br></br>
+          <p className="landing-p-name">{fetchData.userData?.firstname || ''}<br></br>
           </p>
-          <p className="landing-p-lastname">{fetchData.userData.lastname}</p>
+          <p className="landing-p-lastname">{fetchData.userData?.lastname || ''}</p>
         </div>
         <img src="../src/assets/logo-company.png" alt="imagen retrato" className="landing-company-logo" />
         <div className="landing-second-div">
