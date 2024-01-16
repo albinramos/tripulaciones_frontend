@@ -6,6 +6,7 @@ import moment from "moment";
 const Voting = () => {
 
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
   const [userData, setUserData] = useState({})
   const [randomImage, setRandomImage] = useState(null);
   const [type, setType] = useState(null);
@@ -13,9 +14,13 @@ const Voting = () => {
   const [tag, setTag] = useState(null);
 
   useEffect(() => {
-    fetchUserInfo();
-    fetchStatus();
-    fetchRandomImage();
+    const fetchData = async () => {
+      await fetchUserInfo();
+      await fetchStatus();
+      await fetchRandomImage();
+      setIsLoading(false);
+    }
+    fetchData();
   }, []);
 
   const fetchUserInfo = async () => {
@@ -195,6 +200,11 @@ const Voting = () => {
     )
   }
 console.log(userData)
+
+if (isLoading) {
+  return <div>Loading...</div>;
+}
+
   return (
     <>
     <div id="root">
