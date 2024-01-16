@@ -208,7 +208,7 @@ console.log(userData)
           />
         </div>
         <div className='main-second-div'>
-          <h2 className='h2-landing'><strong>¡</strong>Hola {userData.firstname}!<strong> </strong></h2>
+          <h2 className='h2-landing'><strong>¡</strong>Hola {userData.firstname || ''}!<strong> </strong></h2>
         </div>
         <div className='main-third-div'>
           <h4 className={typeClassName("entrada")}>Entrada</h4>
