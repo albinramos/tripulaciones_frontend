@@ -47,7 +47,8 @@ body{
 
 .type-button {
   display: block;
-  width: 25%;
+  position: relative;
+  width: 28%;
   height: 40px;
   left: 16px;
   top: 250px;
@@ -174,40 +175,43 @@ position: absolute;
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .main-sixth-div-tres{
   height: 25px;
-  width:100%;
-  top: 30px;
+  width:90%;
+  top: 15px;
   margin-block-start: none !important;
   display: flex;
   position: relative;
   display: flex;
   flex-direction: row;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .tag-button:nth-child(0),
 .tag-button:nth-child(1),
 .tag-button:nth-child(2)
 {
-  width: 25%;
-  margin-right: 20px;
+  width: 35%;
+  margin-right: 20px;;
 }
 
 .tag-button:nth-child(3),
 .tag-button:nth-child(4){
-  width: 40%;
+  width: 30%;
 }
 
 .tag-button:nth-child(5),
 .tag-button:nth-child(6){
-  margin-right: 40px;
+  margin-right: 20px;
+  width: 50%;
 }
 
 .tag-button{
-  height: 40px;
+  height: 45px;
   justify-content: center;
   border-radius: 10px;
   background: transparent;
@@ -224,7 +228,7 @@ position: absolute;
 .main-seventh-div-dos{
   height: 25px;
   width:100%;
-  top: 60px;
+  top: 45px;
   margin-block-start: none !important;
   display: flex;
   position: relative;
@@ -235,7 +239,7 @@ position: absolute;
 .main-eighth-div-dos{
   height: 25px;
   width:100%;
-  top: 90px;
+  top: 75px;
   margin-block-start: none !important;
   display: flex;
   position: relative;
@@ -243,19 +247,38 @@ position: absolute;
   justify-content: space-around;
 }
 
-.button-voting-relacion,
-.button-voting-otro{
-  width: 46%;
-  height: 40px;
+.button-voting{
+  position: absolute;
+  right: 10%;
+  top: 87%;
+  width: 80%;
+  height: 35px;
+  justify-content: center;
   border-radius: 10px;
-  background: transparent;
-  font-family: 'Avenir';
-  font-style: normal;
-  border: 2.5px solid #000000;
-  margin-right: 35px;
+  font-size: 18px;
+  color: white;
+  background-color: #FF145A;
+  font-family: 'Bai Jamjuree';
+  font-weight: 300;
   cursor: pointer;
+  text-align: center;
+  border: none;
 }
 
-.button-voting-relacion{
-  margin-right: 10px;
+.button-voting-no-vote{
+  position: absolute;
+  right: 10%;
+  top: 92%;
+  width: 80%;
+  height: 35px;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 18px;
+  color: white;
+  background-color: #FF145A;
+  font-family: 'Bai Jamjuree';
+  font-weight: 300;
+  cursor: pointer;
+  text-align: center;
+  border: none;
 }

@@ -17,9 +17,11 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const role = 'user';
     const body = {
       email,
-      password
+      password,
+      role
     }
     try{
       const result = await fetch("http://localhost:3006/login", {
@@ -53,7 +55,7 @@ const Login = () => {
       <div >
       <section className="login-main-container">
         <div className="circulo-login">
-          <img src="../src/assets/logo.png" alt="imagen retrato" className="imagen-circular"/>
+          <img src="../src/assets/logo.png" alt="logo" className="imagen-circular"/>
         </div>
         <div className="login-second-div">
           <p className="p-login">Login</p>

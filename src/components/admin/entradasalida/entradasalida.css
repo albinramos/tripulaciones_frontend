@@ -1,0 +1,152 @@
+.main-entradasalida{
+  background-color: #EEF2F5;
+  margin-left: 350px;
+  height: 200vh;
+  padding-top: 60px;
+}
+
+.li-header.active,
+.li-header:hover{
+  color: #FF145A;
+  background-color: #b000354e;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.entradasalida-selectors{
+  display: flex;
+  flex-direction: row;
+}
+
+.entradasalida-selectors-div{
+  position: relative;
+  left: 40%;
+  display: flex;
+  flex-direction: row;
+}
+
+.entradasalida-departamentos{
+  height: 30px;
+  font-family: 'Avenir';
+  font-weight: 300;
+  margin-left: 30px;
+  border: none;
+  border-radius: 10px;
+}
+
+.p-departamentos{
+  font-family: 'Avenir';
+  font-weight: 300;
+  margin-left: 30px;
+  font-size: 20px;
+  margin-top: 3px;
+}
+
+.entradasalida-username{
+  color:#100F11;
+  font-family: 'Avenir';
+  font-size: 20px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+
+}
+
+.entradasalida-graphs-1{
+  display: flex;
+  flex-direction: row;
+}
+
+.entradasalida-graph-1{
+  width: 45%;
+  background-color: white;
+  height: 100%;
+  border-radius: 30px;
+  margin-left: 50px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.entradasalida-graph-2{
+  width: 45%;
+  background-color: white;
+  height: 100%;
+  border-radius: 30px;
+  margin-left: 50px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.entradasalida-username{
+  color:#100F11;
+  font-family: 'Avenir';
+  font-size: 20px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+
+}
+
+.entradasalida-graphs-2,
+.entradasalida-graphs-3,
+.entradasalida-graphs-4{
+  display: flex;
+  flex-direction: row;
+}
+
+.entradasalida-graph-3{
+  margin-top: 30px;
+  width: 45%;
+  background-color: white;
+  height: 100%;
+  border-radius: 30px;
+  margin-left: 50px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.entradasalida-graph-4{
+  margin-top: 30px;
+  width: 45%;
+  background-color: white;
+  height: 100%;
+  border-radius: 30px;
+  margin-left: 50px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.grafico-indice-felicidad{
+  overflow: hidden;
+}
+
+.entradasalida-graph-5,
+.entradasalida-graph-6{
+  margin-top: 30px;
+  width: 45%;
+  background-color: white;
+  height: 100%;
+  border-radius: 30px;
+  margin-left: 50px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.entradasalida-graph-7,
+.entradasalida-graph-8,
+.entradasalida-graph-9{
+  margin-top: 30px;
+  width: 29%;
+  background-color: white;
+  height: 100%;
+  border-radius: 30px;
+  margin-left: 50px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}

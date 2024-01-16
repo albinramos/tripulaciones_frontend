@@ -1,5 +1,5 @@
 
-.imagen-circular{
+.imagen-circular-2{
   width: 500px;
   height: 450px;
   align-items: center;
@@ -22,12 +22,12 @@ div#root {
 }
 
 
-.login-second-div{
+.recuperar-second-div{
   display: flex;
   flex-direction: column;
 }
 
-.p-login{
+.p-login-recuperar{
 position: absolute;
 left: 9.23%;
 right: 74.62%;
@@ -42,7 +42,7 @@ color: #000000;
 width: 100%;
 }
 
-.form-email{
+.form-email-recuperar{
   position: absolute;
   right: 10%;
   top: 45%;
@@ -54,7 +54,7 @@ width: 100%;
   font-family: 'Avenir';
 }
 
-.form-password{
+.form-password-recuperar{
   position: absolute;
   right: 10%;
   top: 56%;
@@ -129,5 +129,57 @@ cursor: pointer;
   font-weight: 900;
 }
 
+
+@media screen and (min-width: 1500px){
+  .circulo-login {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */ /* Ajusta la altura del contenedor al 100% de la altura de la ventana */
+  }
+  
+.imagen-circular-2 {
+  max-width: 40%; /* Ajusta el tamaño máximo de la imagen */
+  max-height: 40%; /* Ajusta la altura máxima de la imagen */
+  width: auto;
+  height: auto;
+  display: flex;
+}
+
+  .form-email-recuperar{
+    width: 40%;
+    top: 550px;
+    left: 450px;
+  }
+
+  .button-recuperar{  
+    right: 10%;
+    top: 64%;
+    left: 450px;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    font-family: 'Bai Jamjuree';
+    font-weight: 900;
+  }
+
+  .p-login-recuperar{
+    display: flex;
+    text-align: center;
+    margin-left: 300px;
+    margin-top: 75px;
+    left: 150px;
+    }
+
+    .p-recuperar-2{
+      margin-top: 720px;
+      margin-left: 180px;
+    }
+}
 
 

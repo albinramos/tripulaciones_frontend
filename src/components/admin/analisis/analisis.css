@@ -1,0 +1,62 @@
+.main-analisis{
+  background-color: #EEF2F5;
+  margin-left: 350px;
+  height: 200vh;
+  padding-top: 60px;
+}
+
+.analisis-h2-title{
+  font-family: 'Avenir';
+  font-size: 35px;
+  font-weight: 900;
+  margin-left: 38px;
+  margin-bottom: 30px;
+}
+
+.title-vertical{
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  font-family: 'Avenir';
+  font-size: 35px;
+  font-weight: 900;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 270px;
+  width: 50px;
+}
+
+.analisis-selectors{
+  display: flex;
+  flex-direction: row;
+}
+
+.analisis-selectors-div{
+  position: relative;
+  left: 40%;
+  display: flex;
+  flex-direction: row;
+}
+
+.analisis-graphs-1,
+.analisis-graphs-2{
+  display: flex;
+  flex-direction: row;
+}
+
+.analisis-graph-1,
+.analisis-graph-3{
+  width: 70%;
+  background-color: white;
+  height: 100%;
+  border-radius: 30px;
+  margin-left: 50px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.analisis-graph-3{
+  margin-top: 30px;
+}
+
+

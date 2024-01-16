@@ -5,6 +5,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const Landing = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [fetchData, setFetchData] = useState({
     userData: {
       firstname: '',
@@ -19,34 +20,64 @@ const Landing = () => {
     fetchApi();
   }, []);
 
-  
-
   const fetchApi = async () => {
+    setIsLoading(true);
     const response = await fetch('http://localhost:3006/', {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json'
     }});
+
+    if(response.status === 401) {
+      navigate('/login');
+    }
+
     if (response.status === 404) {
       navigate('/voting');
     } else {
       const responseJSON = await response.json();
       setFetchData(responseJSON);
     }
+    setIsLoading(false);
   }
 
-  console.log(fetchData);
+  console.log("fetch",fetchData);
   const handleContactaClick = () => {
     navigate('/contacta');
   };
+
+  const handleVoting = () => {
+    navigate('/voting');
+  }
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('http://localhost:3006/logout', {
+        method: 'POST',
+        credentials: 'include',
+      });
+
+      if (response.ok) {
+        window.location.href = 'http://localhost:5173/login';
+      } else {
+        console.error('Error al cerrar sesión');
+      }
+    } catch (error) {
+      console.error('Error al cerrar sesión:', error.message);
+    }
+  };
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
       <section className="landing-main-container">
         <div className="landing-first-div">
-          <p className="landing-p-name">{fetchData.userData.firstname}<br></br>
+          <p className="landing-p-name">{fetchData.userData?.firstname || ''}<br></br>
           </p>
-          <p className="landing-p-lastname">{fetchData.userData.lastname}</p>
+          <p className="landing-p-lastname">{fetchData.userData?.lastname || ''}</p>
         </div>
         <img src="../src/assets/logo-company.png" alt="imagen retrato" className="landing-company-logo" />
         <div className="landing-second-div">
@@ -57,12 +88,12 @@ const Landing = () => {
           </div>
         </div>
         <div className="landing-third-div">
-          <button className={`landing-button-votar ${fetchData.canUserVote ? '' : 'novote'}`}>VOTAR</button>
+          <button className={`landing-button-votar ${fetchData.canUserVote ? '' : 'novote'}`} onClick={handleVoting}>VOTAR</button>
           <button className="landing-button-contacta" onClick={handleContactaClick}>CONTACTA</button>
         </div>
         <div className="landing-fourth-div">
           <button className="landing-button-felicita">FELICITA A TU COMPAÑERO/A</button>
-          <button className="landing-button-cierre">CERRAR SESIÓN</button>
+          <button className="landing-button-cierre" onClick={handleLogout}>CERRAR SESIÓN</button>
         </div>
       </section>
     </>

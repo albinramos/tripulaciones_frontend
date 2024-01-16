@@ -1,0 +1,30 @@
+.main-sugerencias{
+  background-color: #EEF2F5;
+  margin-left: 350px;
+  height: 200vh;
+  padding-top: 60px;
+}
+
+.sugerencias-li-div{
+  display:flex;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.sugerencias-li-message {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.namewrapper {
+  width: 8%;
+}
+
+.deptwrapper {
+  width: 5%;
+}
+
+.messagewrapper {
+  width:86%;
+}
