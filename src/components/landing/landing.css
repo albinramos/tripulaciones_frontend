@@ -73,6 +73,9 @@ color: #100F11;
   font-weight: 900;
   margin-top: 10px;
   height: 60px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 35px;
 }
 
 .landing-p-puntos-letras{

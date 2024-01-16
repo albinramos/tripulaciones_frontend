@@ -33,8 +33,6 @@ const Contacta = () => {
     });
     console.log("contacta",fetchData);
 
-    const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-
     const navigate = useNavigate();
   
 
@@ -81,9 +79,6 @@ const Contacta = () => {
           <form className="form-contacta" onSubmit={handleSubmit}>
             <textarea className="contacta-textarea" placeholder="Escriba su comentario, sugerencia y/o reclamaciones aqui" name="message"></textarea>
             <p className="contacta-p-contacta-3">Recuerda que todos los mensajes son anónimos. En caso de que quieras personalizar tu mensaje, añade tu nombre, apellido y departamento. </p>
-            {isFormSubmitted && (
-            <p className="success-message">¡Mensaje enviado con éxito!</p>
-          )}
             <button className="button-contacta" >Enviar</button>
           </form>
         </div>
