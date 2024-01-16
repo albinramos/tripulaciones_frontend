@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import './sugerencias.css'
 import { FaHome, FaEnvelope } from "react-icons/fa";
 import { IoSettingsSharp, IoFileTrayOutline } from "react-icons/io5";
@@ -9,6 +9,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 const Sugerencias = () => {
   const [sugerencias, setSugerencias] = useState([]);
+  const [selectedMessageId, setSelectedMessageId] = useState(null); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,7 +17,7 @@ const Sugerencias = () => {
   }, []);
 
   const reversedSugerencias = () => {
-    const array = sugerencias.slice(Math.max(sugerencias.length -10,0))
+    const array = sugerencias.slice(Math.max(sugerencias.length - 10, 0))
     return array.reverse()
   }
 
@@ -37,7 +38,7 @@ const Sugerencias = () => {
       console.error('Error al obtener sugerencias:', error.message);
     }
   };
-  
+
   const handleHome = () => {
     navigate('/admin');
   };
@@ -75,12 +76,18 @@ const Sugerencias = () => {
       console.error('Error al cerrar sesión:', error.message);
     }
   };
+  console.log(sugerencias)
 
-  return(
+  const handleSelectMessage = (id) => {
+    setSelectedMessageId(id);
+  };
+
+
+  return (
     <>
       <section className="admin-container">
         <div className="header-admin">
-        <img src='../src/assets/moodup-logo.png' alt='imagen-logo' className="imagen-logo-admin"/>
+          <img src='../src/assets/moodup-logo.png' alt='imagen-logo' className="imagen-logo-admin" />
           <div className="ul-header-div">
             <ul>
               <li className="li-header" onClick={handleHome}><FaHome></FaHome> Home</li>
@@ -104,26 +111,42 @@ const Sugerencias = () => {
         </div>
         <div className="main-sugerencias">
           <div className="sugerencias-selectors">
-            <p className="admin-username"><strong>¡</strong>Hola<strong> ADMIN!</strong></p>  
+            <p className="admin-username"><strong>¡</strong>Hola<strong> ADMIN!</strong></p>
           </div>
           <div className="sugerencias-graphs-1">
             <div className="sugerencias-graph-1">
               <ul>
                 {reversedSugerencias().map((sugerencia, index) => (
-                  <li className="sugerencias-li" key={`sugerencia_${index}`}>
+                  <li className="sugerencias-li" key={`sugerencia_${index}`} onClick={() => handleSelectMessage(sugerencia.messageid)}>
                     <div className="sugerencias-li-div">
-                      <p className="sugerencias-li-p">{sugerencia.message}</p>
+                      <div className="namewrapper">
+                        <p className="sugerencias-li-p sugerencias-li-from">{sugerencia.name}</p>
+                      </div>
+                      <div className="deptwrapper">
+                        <p className="sugerencias-li-p sugerencias-li-dept">{sugerencia.dept}</p>
+                      </div>
+                      <div className="messagewrapper">
+                        <p className="sugerencias-li-p sugerencias-li-message" >{sugerencia.message}</p>
+                      </div>
                     </div>
+                    {selectedMessageId === sugerencia.messageid && (
+                  <div className="selected-message">
+                    <h2>{sugerencia.name}</h2>
+                    <h3>{sugerencia.dept}</h3>
+                    <p>{sugerencia.message}</p>
+                  </div>
+                )}
                   </li>
                 ))}
               </ul>
             </div>
+            
           </div>
         </div>
-    </section>
+      </section>
     </>
   )
 
-  }
+}
 
 export default Sugerencias
