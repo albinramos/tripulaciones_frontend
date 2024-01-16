@@ -198,7 +198,7 @@ console.log(userData)
   return (
     <>
     <div id="root">
-      <section className='main-container'>
+      <section className='main-container-voting'>
         <div className='main-first-div'>
           <img src='../src/assets/moodup-logo.png' alt='imagen-logo' className="imagen-logo"/>
           <img
@@ -262,15 +262,17 @@ console.log(userData)
           </div>
           <div className="main-seventh-div-dos">
             <button className={tagClassName('ambiente laboral')} onClick={() =>handleTag('ambiente laboral')}>Ambiente laboral</button>
-            <button className={tagClassName()} onClick={() =>handleTag()}>Motivación</button>
+            <button className={tagClassName('motivacion')} onClick={() =>handleTag('motivacion')}>Motivación</button>
           </div>
           <div className="main-eighth-div-dos">
             <button className={tagClassName('relacion con la empresa')} onClick={() =>handleTag('relacion con la empresa')}>Relación con la empresa</button>
             <button className={tagClassName('otro motivo')} onClick={() =>handleTag('otro motivo')}>Otro motivo</button>
           </div>
         </div>
-        <button className='button-voting' onClick={handleVote}>Votar</button>
-        <button className='button-voting-no-vote' onClick={handleNoVote}>Seguir sin votar</button>
+        <div className='buttons-voting-div'>
+          <button className='button-voting' onClick={handleVote}>Votar</button>
+          <button className='button-voting-no-vote' onClick={handleNoVote}>Seguir sin votar</button>
+        </div>
       </section>
       </div>
     </>

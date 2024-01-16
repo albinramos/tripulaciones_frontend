@@ -1,185 +1,89 @@
-
-.imagen-circular-2{
-  width: 500px;
-  height: 450px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  left: -8%;
+/* Estilos Generales */
+body {
+  font-family: 'Avenir', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.circulo-login{
-  display: flex;
-  justify-content: center;
-  top: 0%;
-  left: 2%;
-  position: absolute;
-}
-
-div#root {
-  width: 100dvw;
-}
-
-
-.recuperar-second-div{
+/* Contenedor Principal de Recuperación */
+.login-main-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
 
-.p-login-recuperar{
-position: absolute;
-left: 9.23%;
-right: 74.62%;
-top: 40.17%;
-bottom: 52.01%;
-font-family: 'Avenir';
-font-style: normal;
-font-weight: 900;
-font-size: 30px;
-line-height: 33px;
-color: #000000;
-width: 100%;
+/* Imagen Circular */
+.circulo-login {
+  text-align: center;
+  margin-top: 1vh;
 }
 
-.form-email-recuperar{
-  position: absolute;
-  right: 10%;
-  top: 45%;
-  width: 80%;
-  justify-content: center;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 20px;
+.imagen-circular-2 {
+  width: 100vw; /* Ajusta según sea necesario */
+  height: auto;
+  border-radius: 50%;
+}
+
+/* Segundo Div de Recuperación */
+.recuperar-second-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw; /* Ajusta según sea necesario */
+  max-width: 400px; /* Ajusta según sea necesario */
+  margin: 5vh 0;
+}
+
+/* Texto "Recupera tu contraseña" */
+.p-login-recuperar {
   font-family: 'Avenir';
+  font-weight: 900;
+  font-size: 5vw; /* Ajusta según sea necesario */
+  margin-bottom: 2vh;
 }
 
-.form-password-recuperar{
-  position: absolute;
-  right: 10%;
-  top: 56%;
-  width: 80%;
-  justify-content: center;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 20px;
-  font-family: 'Avenir';
+/* Formulario de Recuperación de Login */
+.form-login {
+  display: flex;
+  flex-direction: column;
+  width: 90vw; /* Ajusta según sea necesario */
 }
 
-.p-login-forgot-passsword{
-position: absolute;
-left: 34%;
-top: 63%;
-bottom: 37.09%;
-font-family: 'Bai Jamjuree';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 20px;
-color: #000000;
-cursor: pointer;
+.form-email-recuperar {
+  width: 100%;
+  margin-bottom: 2vh;
+  padding: 3vw;
+  border-radius: 5px;
+  font-size: 3vw; /* Ajusta según sea necesario */
 }
 
-.button-recuperar{
-  position: absolute;
-  right: 10%;
-  top: 55%;
-  width: 80%;
-  justify-content: center;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 20px;
+/* Botón de Recuperación */
+.button-recuperar {
+  width: 90vw;
+  padding: 3vw;
+  border-radius: 5px;
+  font-size: 4vw;
   color: white;
   background-color: black;
   font-family: 'Bai Jamjuree';
   font-weight: 900;
   cursor: pointer;
+  margin-top: 3vh;
 }
 
-.arrow-back{
+/* Tercer Div de Recuperación (Volver a Login) */
+.recuperar-third-div {
   display: flex;
-  position: relative;
-  font-size: 40px;
-  left: 30%;
-  margin: 20px;
-  margin-top: 650px;
-  margin-left: 20px;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 2vh;
 }
 
-.recuperar-third-div{
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  font-size: 40px;
-  left: 20%;
-  margin: 20px;
-  margin-top: 10px;
+.p-recuperar-2 {
+  font-family: 'Bai Jamjuree';
+  font-weight: 400;
+  font-size: 3vw;
   cursor: pointer;
 }
-
-.p-recuperar-2{
-  display: flex;
-  position: relative;
-  font-size: 40px;
-  left: 20%;
-  margin: 20px;
-  margin-top: 650px;
-  margin-left: 20px;
-  font-family: 'Avenir';
-  font-weight: 900;
-}
-
-
-@media screen and (min-width: 1500px){
-  .circulo-login {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */ /* Ajusta la altura del contenedor al 100% de la altura de la ventana */
-  }
-  
-.imagen-circular-2 {
-  max-width: 40%; /* Ajusta el tamaño máximo de la imagen */
-  max-height: 40%; /* Ajusta la altura máxima de la imagen */
-  width: auto;
-  height: auto;
-  display: flex;
-}
-
-  .form-email-recuperar{
-    width: 40%;
-    top: 550px;
-    left: 450px;
-  }
-
-  .button-recuperar{  
-    right: 10%;
-    top: 64%;
-    left: 450px;
-    width: 40%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 20px;
-    color: white;
-    background-color: black;
-    font-family: 'Bai Jamjuree';
-    font-weight: 900;
-  }
-
-  .p-login-recuperar{
-    display: flex;
-    text-align: center;
-    margin-left: 300px;
-    margin-top: 75px;
-    left: 150px;
-    }
-
-    .p-recuperar-2{
-      margin-top: 720px;
-      margin-left: 180px;
-    }
-}
-
-
