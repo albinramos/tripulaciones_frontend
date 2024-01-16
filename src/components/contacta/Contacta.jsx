@@ -4,6 +4,25 @@ import "./contacta.css"
 
 const Contacta = () => {
 
+    useEffect (() => {
+      fetchApi();
+    }, []);
+
+    const fetchApi = async () => {
+      const response = await fetch('http://localhost:3006/', {
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+      }});
+      if (response.status === 404) {
+        navigate('/voting');
+      } else {
+        const responseJSON = await response.json();
+        setFetchData(responseJSON);
+      }
+    }
+  
+
     const [fetchData, setFetchData] = useState({
       userData: {
         firstname: '',
@@ -13,6 +32,8 @@ const Contacta = () => {
       canUserVote: '',
     });
     console.log("contacta",fetchData);
+
+    const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
     const navigate = useNavigate();
   
@@ -31,7 +52,7 @@ const Contacta = () => {
       })
       if (response.ok) {
         console.log("mensaje enviado con exito");
-        navigate('/');
+        setIsFormSubmitted(true);
       } else {
         console.error("Error en envío de mensaje");
       }
@@ -48,7 +69,7 @@ const Contacta = () => {
         <div className="contacta-first-div-text">
           <p className="contacta-p-name">{fetchData.userData.firstname}<br></br>
           </p>
-          <p className="contacta-p-lastname">{fetchData.userData.lastname}hola</p>
+          <p className="contacta-p-lastname">{fetchData.userData.lastname}</p>
         </div>
           <img src="../src/assets/logo-company.png" alt="logo empresa" className="contacta-company-logo"/>
         </div>
@@ -57,9 +78,12 @@ const Contacta = () => {
           <p className="contacta-p-contacta-2">Escribe cualquier duda, sugerencia, reclamación o<br></br>queja que tengas.</p>
         </div>
         <div className="contacta-third-div">
-          <form className="form-login" onSubmit={handleSubmit}>
+          <form className="form-contacta" onSubmit={handleSubmit}>
             <textarea className="contacta-textarea" placeholder="Escriba su comentario, sugerencia y/o reclamaciones aqui" name="message"></textarea>
             <p className="contacta-p-contacta-3">Recuerda que todos los mensajes son anónimos. En caso de que quieras personalizar tu mensaje, añade tu nombre, apellido y departamento. </p>
+            {isFormSubmitted && (
+            <p className="success-message">¡Mensaje enviado con éxito!</p>
+          )}
             <button className="button-contacta" >Enviar</button>
           </form>
         </div>

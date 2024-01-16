@@ -10,7 +10,7 @@
   width: 139px;
   height: 74px;
   left: 17px;
-  top: 113px;
+  top: 15px;
   font-family: 'Avenir';
   font-style: normal;
   font-weight: 900;
@@ -24,7 +24,7 @@
   width: 139px;
   height: 74px;
   left: 17px;
-  top: 150px;
+  top: 50px;
   font-family: 'Avenir';
   font-style: normal;
   font-weight: 300;
@@ -49,6 +49,7 @@
     margin-top: 100px;
     left: 120%;
     position: relative;
+    top: -45%;
   }
 
   .contacta-second-div{
@@ -56,10 +57,20 @@
     flex-direction: column;
   }
 
-  .contacta-p-contacta,
+  .contacta-p-contacta{
+    text-align: center;
+    font-family: 'Avenir';
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: -110px;
+  }
+
   .contacta-p-contacta-2{
     text-align: center;
     font-family: 'Avenir';
+    margin-left: 4px;
+    margin-right: 4px;
+    font-size: 16px;
   }
 
   .contacta-p-contacta{
@@ -68,21 +79,33 @@
     margin-bottom: 18px;
   }
 
-  .contacta-p-contacta-2{
-    font-size: 18px;
+  .contacta-third-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+  }
+
+  .form-contacta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .contacta-textarea{
-    margin-top: 40px;
-    width: 400px;
-    height: 400px;
+    margin-top: 5px;
+    width: 350px;
+    height: 250px;
     font-family: 'Avenir';
     padding: 20px;
     border-radius: 10px;
     resize: none;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     margin-left: 15px;
+    justify-content: center;
+    align-items: center;
   }
 
   .contacta-p-contacta-3{
@@ -90,7 +113,7 @@
     margin: 10px;
     margin: 15px;
     font-size: 12px;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
   }
 
   .button-contacta{
@@ -107,4 +130,20 @@
     font-family: 'Avenir';
     color: white;
     font-size: 24px;
+    position: relative;
+  }
+
+  .success-message {
+    font-family: 'Avenir';
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    position: absolute; /* Añadido: posición absoluta */
+    top: calc(94% + 10px); /* Añadido: distancia desde la parte inferior del .button-contacta */
+    left: 50%; /* Añadido: centrar horizontalmente */
+    transform: translateX(-50%); /* Añadido: centrar horizontalmente */
+    height: 10px; /* Añadido: altura fija */
+    display: flex; /* Añadido: usar flexbox para centrar verticalmente */
+    align-items: center; /* Añadido: usar flexbox para centrar verticalmente */
   }

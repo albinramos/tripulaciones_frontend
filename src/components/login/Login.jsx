@@ -63,7 +63,7 @@ const Login = () => {
           <input type="email" placeholder="E-mail" className='form-email' name='email' />
           <input type="password" placeholder="Password" className='form-password' name='password' />
           <p className="p-login-forgot-passsword" onClick={handleForgotPasswordClick}>¿Olvidaste la contraseña?</p>
-          <button className="button-login">Login</button>
+          <button className="button-login-user">Login</button>
           </form>
         </div>
       </section>
