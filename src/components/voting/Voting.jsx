@@ -6,17 +6,30 @@ import moment from "moment";
 const Voting = () => {
 
   const navigate = useNavigate();
-
+  const [userData, setUserData] = useState({})
   const [randomImage, setRandomImage] = useState(null);
   const [type, setType] = useState(null);
   const [mood, setMood] = useState(null);
   const [tag, setTag] = useState(null);
 
   useEffect(() => {
+    fetchUserInfo();
     fetchStatus();
     fetchRandomImage();
   }, []);
 
+  const fetchUserInfo = async () => {
+    try {
+      const response = await fetch("http://localhost:3006/vote/userinfo", {
+        credentials: "include",
+        headers: { "Content-Type": "application/json" }
+      });
+      const data = await response.json();
+      setUserData(data);
+    } catch (error) {
+      console.error("Error de red:", error);
+    }
+  }
 
   const fetchStatus =  async () => {
       const response = await fetch(
@@ -181,7 +194,7 @@ const Voting = () => {
       navigate('/')
     )
   }
-
+console.log(userData)
   return (
     <>
     <div id="root">
@@ -195,7 +208,7 @@ const Voting = () => {
           />
         </div>
         <div className='main-second-div'>
-          <h2 className='h2-landing'><strong>¡</strong>Hola <strong> </strong></h2>
+          <h2 className='h2-landing'><strong>¡</strong>Hola {userData.firstname || ''}!<strong> </strong></h2>
         </div>
         <div className='main-third-div'>
           <h4 className={typeClassName("entrada")}>Entrada</h4>
