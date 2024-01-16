@@ -7,11 +7,11 @@ import Contacta from './components/contacta/Contacta.jsx';
 import Recuperar from './components/recuperar/Recuperar.jsx';
 import Admin from './components/admin/Admin.jsx';
 import './App.css'
-import EntradaSalida from './components/entradasalida/EntradaSalida.jsx';
-import Analisis from './components/analisis/Analisis.jsx';
-import Ajustes from './components/ajustes/Ajustes.jsx';
-import Sugerencias from './components/sugerencias/Sugerencias.jsx';
-import Predicciones from './components/predicciones/Predicciones.jsx';
+import EntradaSalida from './components/admin/entradasalida/EntradaSalida.jsx';
+import Analisis from './components/admin/analisis/Analisis.jsx';
+import Ajustes from './components/admin/ajustes/Ajustes.jsx';
+import Sugerencias from './components/admin/sugerencias/Sugerencias.jsx';
+import Predicciones from './components/admin/predicciones/Predicciones.jsx';
 import AdminLogin from '../src/components/admin/adminLogin/AdminLogin.jsx';
 
 function App() {

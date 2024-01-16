@@ -9,8 +9,8 @@ import { RiUserAddLine } from "react-icons/ri";
 import { Navigate, useNavigate } from 'react-router-dom';
 
 const Ajustes = () => {
-
   const [users, setUsers] = useState([]);
+  const [errorMessage, setErrorMessage] = useState(null)
 
   useEffect(() => {
     getUsers();
@@ -71,7 +71,7 @@ const Ajustes = () => {
       });
 
       if (response.ok) {
-        window.location.href = 'http://localhost:5173/login';
+        window.location.href = 'http://localhost:5173/admin/login';
       } else {
         console.error('Error al cerrar sesión');
       }
@@ -130,6 +130,7 @@ const Ajustes = () => {
     }
   }
 
+
   return(
     <>
       <section className="admin-container">
@@ -160,6 +161,7 @@ const Ajustes = () => {
           <div className="ajustes-selectors">
             <p className="admin-username"><strong>¡</strong>Hola<strong><br></br>ADMIN!</strong></p>  
           </div>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
           <div className="ajustes-graphs-1">
               <form className="form-user" onSubmit={handleCrearUsuario}>
                 <input type="text" placeholder="Nombre" className='ajustes-form-nombre' name='firstname' />

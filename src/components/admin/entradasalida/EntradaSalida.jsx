@@ -40,7 +40,7 @@ const EntradaSalida = () => {
       });
 
       if (response.ok) {
-        window.location.href = 'http://localhost:5173/login';
+        window.location.href = 'http://localhost:5173/admin/login';
       } else {
         console.error('Error al cerrar sesión');
       }

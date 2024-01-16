@@ -9,6 +9,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 const Sugerencias = () => {
   const [sugerencias, setSugerencias] = useState([]);
+  const [errorMessage, setErrorMessage] = useState(null)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,9 +33,11 @@ const Sugerencias = () => {
         setSugerencias(data);
       } else {
         console.error('Error al obtener sugerencias');
+        setErrorMessage('Error al obtener sugerencias')
       }
     } catch (error) {
       console.error('Error al obtener sugerencias:', error.message);
+      setErrorMessage(error.message)
     }
   };
   
@@ -67,7 +70,7 @@ const Sugerencias = () => {
       });
 
       if (response.ok) {
-        window.location.href = 'http://localhost:5173/login';
+        window.location.href = 'http://localhost:5173/admin/login';
       } else {
         console.error('Error al cerrar sesión');
       }
@@ -75,6 +78,8 @@ const Sugerencias = () => {
       console.error('Error al cerrar sesión:', error.message);
     }
   };
+
+  console.log(sugerencias)
 
   return(
     <>
@@ -106,6 +111,7 @@ const Sugerencias = () => {
           <div className="sugerencias-selectors">
             <p className="admin-username"><strong>¡</strong>Hola<strong> ADMIN!</strong></p>  
           </div>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
           <div className="sugerencias-graphs-1">
             <div className="sugerencias-graph-1">
               <ul>
