@@ -27,6 +27,7 @@ body {
   width: 100vw; /* Ajusta según sea necesario */
   height: auto;
   border-radius: 50%;
+  margin-top: -50px;
 }
 
 /* Segundo Div */
@@ -36,7 +37,7 @@ body {
   align-items: center;
   width: 90vw; /* Ajusta según sea necesario */
   max-width: 400px; /* Ajusta según sea necesario */
-  margin: 1vh 0;
+  margin: -10vh 0;
 }
 
 /* Texto "Login" */
