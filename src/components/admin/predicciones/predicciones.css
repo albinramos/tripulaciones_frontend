@@ -21,15 +21,16 @@
 .predicciones-graphs-2{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .predicciones-graph-1,
 .predicciones-graph-3{
-  width: 25%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -43,22 +44,20 @@
 
 
 .predicciones-graph-2{
-  width: 35.5%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;
 }
 
 .predicciones-graph-4{
-  width: 39.5%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;

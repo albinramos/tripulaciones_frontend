@@ -58,7 +58,7 @@
 }
 
 .entradasalida-graph-1{
-  width: 45%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
@@ -69,7 +69,7 @@
 }
 
 .entradasalida-graph-2{
-  width: 45%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
@@ -88,17 +88,18 @@
   line-height: 1.5;
 
 }
-
+.entradasalida-graphs-1,
 .entradasalida-graphs-2,
 .entradasalida-graphs-3,
 .entradasalida-graphs-4{
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .entradasalida-graph-3{
   margin-top: 30px;
-  width: 45%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
@@ -110,7 +111,7 @@
 
 .entradasalida-graph-4{
   margin-top: 30px;
-  width: 45%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
@@ -127,7 +128,7 @@
 .entradasalida-graph-5,
 .entradasalida-graph-6{
   margin-top: 30px;
-  width: 45%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;

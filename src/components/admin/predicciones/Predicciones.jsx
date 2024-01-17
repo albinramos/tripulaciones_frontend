@@ -92,18 +92,18 @@ const Predicciones = () => {
           </div>
           <div className="predicciones-graphs-1">
             <div className="predicciones-graph-1">
-              <img src="../src/assets/GAUGE CHART.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+              <img src="http://localhost:3006/images/grafico_16.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
             <div className="predicciones-graph-2">
-            <img src="../src/assets/HORIZONTAL BAR CHART.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            <img src="http://localhost:3006/images/grafico_17.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
           <div className="predicciones-graphs-2">
             <div className="predicciones-graph-3">
-              <img src="../src/assets/GAUGE CHART-2.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+              <img src="http://localhost:3006/images/grafico_14.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
             <div className="predicciones-graph-4">
-            <img src="../src/assets/HORIZONTAL BAR CHART-2.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+            <img src="http://localhost:3006/images/grafico_15.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
         </div>
