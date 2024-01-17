@@ -1,4 +1,7 @@
-
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/avenir-regular.woff') format('woff');
+}
 
 body {
   margin: 0;
