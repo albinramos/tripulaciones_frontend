@@ -18,6 +18,10 @@ export default function Recomendar() {
         fetchUserInfo();
     }, [])
 
+    useEffect(() => {
+        fetchFeedData();
+    }, [isPopupVisible])
+
     const fetchFeedData = async () => {
         try {
             const response = await fetch("http://localhost:3006/feed", {
