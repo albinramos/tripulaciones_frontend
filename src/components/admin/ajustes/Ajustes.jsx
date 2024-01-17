@@ -4,7 +4,6 @@ import { FaHome, FaEnvelope } from "react-icons/fa";
 import { IoSettingsSharp, IoFileTrayOutline } from "react-icons/io5";
 import { MdOutlineAlarm } from "react-icons/md";
 import { BsFillQuestionCircleFill, BsClockHistory } from "react-icons/bs";
-import { ImExit } from "react-icons/im";
 import { PiCornersOut } from "react-icons/pi";
 import { RiUserAddLine } from "react-icons/ri";
 import { AiOutlineUser } from "react-icons/ai";
@@ -94,7 +93,6 @@ const Ajustes = () => {
   };
 
   const handleCrearUsuario = async (e) => {
-    console.log(e.target)
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -131,7 +129,6 @@ const Ajustes = () => {
         },
         body: JSON.stringify(body)
       });
-      //console.log("user creado con exito")
       if (!result.ok) {
         const errorData = await result.json();
         setErrorMessage(`Error en el servidor: ${errorData.message}`);

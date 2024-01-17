@@ -47,7 +47,6 @@ const Voting = () => {
         }
       )
       const data = await response.json();
-      //console.log(data);
       const newType = assignType(data)
       setType(newType);
   }
@@ -117,7 +116,6 @@ const Voting = () => {
         body: JSON.stringify({clockinvote: mood, tag: tag})
       })
       if (response.ok) {
-        console.log("Votación de entrada exitosa");
         setShowPopup(true);
       } else {
         console.error("Error en la votación de entrada");
@@ -134,7 +132,6 @@ const Voting = () => {
         body: JSON.stringify({clockoutvote: mood, tag: tag})
       })
       if (response.ok) {
-        console.log("Votación de salida exitosa");
         setShowPopup(true);
       } else {
         console.error("Error en la votación de salida");
@@ -150,7 +147,6 @@ const Voting = () => {
         body: JSON.stringify({clockoutvote: mood, tag: tag})
       });
       if (response.ok) {
-        console.log("Votación de salida exitosa");
         setShowPopup(true);
       } else {
         console.error("Error en la votación de salida");
@@ -201,7 +197,7 @@ const Voting = () => {
       navigate('/')
     )
   }
-console.log(userData)
+
   return (
     <>
     <div id="root">

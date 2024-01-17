@@ -27,7 +27,6 @@ const Recuperar = () => {
           </form>
         </div>
         <div className="recuperar-third-div" onClick={handleBackLoginClick}>
-        {/* <IoArrowBack className="arrow-back" /> */}
         <p className="p-recuperar-2">Back to Login</p>
         </div>
       </section>
