@@ -51,8 +51,13 @@ p.emoji {
     flex-direction: row;
     justify-content: center;
     box-shadow: 0px 8px 0px 0px #FF145A;
-  
-  }
+}
+
+.emoji-select.active,
+.emoji-select:hover {
+  scale: 1.2;
+  box-shadow: 0px 20px 0px -6px #FF145A;
+}
 
   .emoji-select {
     position: relative;
@@ -111,10 +116,10 @@ p.emoji {
 
 .plus-sign {
     font-size: 2.5rem;
-    border: 5px solid;
     padding: 0 0.5rem;
     border-radius: 35%;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 900;
 }
 
 
@@ -132,6 +137,38 @@ p.emoji {
     padding: 0 2rem;
 }
 
-.top {
+.welcome-message {
     display: flex;
+    font-size: 22px;
+    font-weight: 900;
+    margin-top: 4px;
 }
+
+.welcome-message-icon{
+    display: flex;
+    font-size: 30px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+}
+
+.user-name-feed{
+    font-size: 30px;
+}
+
+.logo-container-feed{
+    margin-top: 15px;
+}
+
+.publicacion-feed{
+    font-size: 20px;
+}
+
+.emoji-feed-chat{
+    width: 30px;
+}
+

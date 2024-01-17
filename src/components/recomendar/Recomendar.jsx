@@ -1,6 +1,8 @@
 import './recomendar.css'
 import { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { IoMdArrowRoundBack } from "react-icons/io";
+import { CiSquarePlus } from "react-icons/ci";
 
 
 export default function Recomendar() {
@@ -12,6 +14,7 @@ export default function Recomendar() {
     const [isPopupVisible, setIsPopupVisible] = useState(false);
     const [activeComponent, setActiveComponent] = useState('feed');
     const navigate = useNavigate();
+    const [activeEmoji, setActiveEmoji] = useState(null);
 
     useEffect(() => {
         fetchFeedData();
@@ -54,7 +57,8 @@ export default function Recomendar() {
     }
 
     const handleMood = async (emoji) => {
-        setMood(emoji)
+        setMood(emoji);
+        setActiveEmoji(emoji);
     }
 
     const handleFormSubmit = async (event) => {
@@ -93,12 +97,12 @@ export default function Recomendar() {
                 <div className="header-div">
                     <div className="contacta-first-div-text">
                         <div className='top'>
-                        <p onClick={() => handleBackClick()}>⬅️</p>
+                        <p className="welcome-message-icon" onClick={() => handleBackClick()}><IoMdArrowRoundBack /></p>
                         <p className="welcome-message">My Mood Feed</p>
                         </div>
-                        <p className="user-name">¡Hola {userData?.firstname}!</p>
+                        <p className="user-name-feed">¡Hola <strong>{userData?.firstname}</strong>!</p>
                     </div>
-                    <div className='logo-container'>
+                    <div className='logo-container-feed'>
                         <img src="../src/assets/logo-company.png" alt="logo empresa" className="logo" />
                     </div>
                 </div>
@@ -106,17 +110,21 @@ export default function Recomendar() {
                     <>
                         <div className="contacta-second-div" onClick={handlePublicacionClick}>
                             <div className='plus-sign-container'>
-                                <p className='plus-sign'>+</p>
-                                <p>Nueva publicación</p>
+                                <p className='plus-sign'><strong><CiSquarePlus /></strong></p>
+                                <p className='publicacion-feed'>Nueva publicación</p>
                             </div>
                         </div>
                         <div className='feed-container'>
                             {(feedData?.slice().reverse() || []).map((feed, index) => {
-                                const emoji = feed.emoji === 1 ? '🤒' : feed.emoji === 2 ? '🌹' : '❤️';
+                                const emojiImages = {
+                                    1: '../src/assets/enfermo.png',
+                                    2: '../src/assets/rosa.png',
+                                    3: '../src/assets/corazon.png',
+                                  };
                                 return (
                                     <div className='feed-card' key={index}>
                                         <div className='feed-card-header'>
-                                            <p className='emoji'>{emoji}</p>
+                                            <img src={emojiImages[feed.emoji]} alt={`Emoji ${feed.emoji}`} className='emoji-feed-chat' />
                                             <div className='feed-card-header-text'>
                                                 <p className='feed-card-name'>{feed?.towho}</p>
                                                 <p className='feed-card-date'>{feed?.date}</p>
@@ -135,21 +143,21 @@ export default function Recomendar() {
                         <div className="emojis-container">
                             <div className='main-emojis-div'>
                                 <img
-                                    src="../src/assets/enfado.png"
-                                    alt="enfado"
-                                    className="emoji-select"
+                                    src="../src/assets/enfermo.png"
+                                    alt="enfermo"
+                                    className={`emoji-select ${activeEmoji === 1 ? 'active' : ''}`}
                                     onClick={() => handleMood(1)}
                                 />
                                 <img
-                                    src="../src/assets/triste.png"
-                                    alt="triste"
-                                    className="emoji-select"
+                                    src="../src/assets/rosa.png"
+                                    alt="felicitar"
+                                    className={`emoji-select ${activeEmoji === 2 ? 'active' : ''}`}
                                     onClick={() => handleMood(2)}
                                 />
                                 <img
-                                    src="../src/assets/neutral.png"
-                                    alt="neutral"
-                                    className="emoji-select"
+                                    src="../src/assets/corazon.png"
+                                    alt="gracias"
+                                    className={`emoji-select ${activeEmoji === 3 ? 'active' : ''}`}
                                     onClick={() => handleMood(3)}
                                 />
                             </div>
