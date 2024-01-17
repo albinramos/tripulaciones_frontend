@@ -1,8 +1,8 @@
 .main-analisis{
   background-color: #EEF2F5;
   margin-left: 350px;
-  height: 200vh;
   padding-top: 60px;
+  padding-bottom: 70px;
 }
 
 .analisis-h2-title{
@@ -41,6 +41,7 @@
 .analisis-graphs-2{
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .analisis-graph-1,
@@ -53,6 +54,8 @@
   display: flex;
   text-align: center;
   flex-direction: column;
+  margin: 2rem 0; 
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
 }
 
 .analisis-graph-3{
