@@ -137,3 +137,14 @@ color: #100F11;
   cursor: not-allowed;
 }
 
+.buzon {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  font-size: 2rem;
+}
+
+a.landing-p-contacta {
+  text-decoration: none;
+  color: black;
+}

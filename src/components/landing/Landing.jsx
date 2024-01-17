@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./landing.css"
 import { AiOutlineTrophy } from "react-icons/ai";
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate, Link } from 'react-router-dom';
+import { FaEnvelope } from "react-icons/fa6";
 
 
 const Landing = () => {
-  const [loading , setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [fetchData, setFetchData] = useState({
     userData: {
       firstname: '',
@@ -25,7 +26,8 @@ const Landing = () => {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json'
-    }});
+      }
+    });
     if (response.status === 401) {
       navigate('/login')
     }
@@ -38,7 +40,7 @@ const Landing = () => {
     }
   }
 
-  console.log("fetch",fetchData);
+  console.log("fetch", fetchData);
   const handleContactaClick = () => {
     navigate('/contacta');
   };
@@ -68,15 +70,19 @@ const Landing = () => {
     navigate('/feed');
   }
 
-  if(loading) return (<div>Loading...</div>)
+  if (loading) return (<div>Loading...</div>)
 
   return (
     <>
       <section className="landing-main-container">
         <div className="landing-first-div">
-          <p className="landing-p-name">{fetchData.userData?.firstname}<br></br>
-          </p>
-          <p className="landing-p-lastname">{fetchData.userData?.lastname}</p>
+          <div className="left">
+            <p className="landing-p-name">{fetchData.userData?.firstname}</p>
+            <p className="landing-p-lastname">{fetchData.userData?.lastname}</p>
+          </div>
+          <Link to="/buzon" className="landing-p-contacta">
+            <div className="buzon"><FaEnvelope /></div>
+          </Link>
         </div>
         <img src="../src/assets/logo-company.png" alt="imagen retrato" className="landing-company-logo" />
         <div className="landing-second-div">

@@ -55,7 +55,7 @@ const Sugerencias = () => {
   return (
     <>
       <section className="admin-container">
-        <div className="main-sugerencias">
+        <div className="main-user-sugerencias">
           <div className="sugerencias-selectors">
             <p className="admin-username"><strong>¡</strong>Hola<strong> ADMIN!</strong></p>
           </div>
