@@ -1,8 +1,8 @@
 .main-predicciones{
   background-color: #EEF2F5;
   margin-left: 350px;
-  height: 100vh;
   padding-top: 60px;
+  padding-bottom: 70px;
 }
 
 .predicciones-selectors{
@@ -21,46 +21,50 @@
 .predicciones-graphs-2{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .predicciones-graph-1,
 .predicciones-graph-3{
-  width: 25%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
 }
 
 .predicciones-graph-3,
 .predicciones-graph-4{
   margin-top: 30px;
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
 }
 
 
 
 .predicciones-graph-2{
-  width: 35.5%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
+
 }
 
 .predicciones-graph-4{
-  width: 39.5%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
 }
 

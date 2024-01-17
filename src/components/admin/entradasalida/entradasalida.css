@@ -1,8 +1,8 @@
 .main-entradasalida{
   background-color: #EEF2F5;
   margin-left: 350px;
-  height: 200vh;
   padding-top: 60px;
+  padding-bottom: 70px;
 }
 
 .li-header.active,
@@ -58,25 +58,25 @@
 }
 
 .entradasalida-graph-1{
-  width: 45%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
 }
 
 .entradasalida-graph-2{
-  width: 45%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
 }
 
 .entradasalida-username{
@@ -88,36 +88,37 @@
   line-height: 1.5;
 
 }
-
+.entradasalida-graphs-1,
 .entradasalida-graphs-2,
 .entradasalida-graphs-3,
 .entradasalida-graphs-4{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .entradasalida-graph-3{
   margin-top: 30px;
-  width: 45%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
 }
 
 .entradasalida-graph-4{
   margin-top: 30px;
-  width: 45%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
 }
 
 .grafico-indice-felicidad{
@@ -127,14 +128,14 @@
 .entradasalida-graph-5,
 .entradasalida-graph-6{
   margin-top: 30px;
-  width: 45%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
 }
 
 .entradasalida-graph-7,
@@ -145,8 +146,8 @@
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
 }

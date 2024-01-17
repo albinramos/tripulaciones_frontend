@@ -1,4 +1,4 @@
-import React, { useState, useRef} from "react";
+import React, { useState, useRef } from "react";
 import './analisis.css'
 import { FaHome, FaEnvelope } from "react-icons/fa";
 import { IoSettingsSharp, IoFileTrayOutline } from "react-icons/io5";
@@ -10,7 +10,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 const Analisis = () => {
 
   const navigate = useNavigate();
-  
+
   const handleHome = () => {
     navigate('/admin');
   };
@@ -48,11 +48,11 @@ const Analisis = () => {
     }
   };
 
-  return(
+  return (
     <>
       <section className="admin-container">
         <div className="header-admin">
-        <img src='../src/assets/moodup-logo.png' alt='imagen-logo' className="imagen-logo-admin"/>
+          <img src='../src/assets/moodup-logo.png' alt='imagen-logo' className="imagen-logo-admin" />
           <div className="ul-header-div">
             <ul>
               <li className="li-header" onClick={handleHome}><FaHome></FaHome> Home</li>
@@ -74,42 +74,48 @@ const Analisis = () => {
         </div>
         <div className="main-analisis">
           <div className="analisis-selectors">
-            <p className="admin-username"><strong>¡</strong>Hola<strong><br></br>ADMIN!</strong></p> 
+            <p className="admin-username"><strong>¡</strong>Hola<strong><br></br>ADMIN!</strong></p>
             <div className="analisis-selectors-div">
               <p className="p-departamentos">Departamentos</p>
-                <select className="select-departamentos">
-                  <option value="todos">Todos</option>
-                  <option value="rrhh">RRHH</option>
-                  <option value="marketing">Marketing</option>
-                  <option value="desarrollo">Desarrollo</option>
-                  <option value="contabilidad">Contabilidad</option>
-                  <option value="analitica">Analítica</option>
-                  <option value="it">IT</option>
-                  <option value="ventas">Ventas</option>
-                  <option value="atencion al cliente">Atención al cliente</option>
-                </select>
-            </div> 
+              <select className="select-departamentos">
+                <option value="todos">Todos</option>
+                <option value="rrhh">RRHH</option>
+                <option value="marketing">Marketing</option>
+                <option value="desarrollo">Desarrollo</option>
+                <option value="contabilidad">Contabilidad</option>
+                <option value="analitica">Analítica</option>
+                <option value="it">IT</option>
+                <option value="ventas">Ventas</option>
+                <option value="atencion al cliente">Atención al cliente</option>
+              </select>
+            </div>
           </div>
           <div className="analisis-title">
-              <h2 className="analisis-h2-title">RAZONES DEL VOTO</h2>
+            <h2 className="analisis-h2-title">RAZONES DEL VOTO</h2>
+          </div>
+          <div className="analisis-graphs-1">
+            <div className="title-vertical">GENERAL</div>
+            <div className="analisis-graph-1">
+              <img src="http://localhost:3006/images/grafico_10.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
+          </div>
           <div className="analisis-graphs-1">
             <div className="title-vertical">ENTRADA</div>
             <div className="analisis-graph-1">
-              <img src="../src/assets/razones-voto-entrada.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+              <img src="http://localhost:3006/images/grafico_11.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
           <div className="analisis-graphs-2">
             <div className="title-vertical">SALIDA</div>
             <div className="analisis-graph-3">
-              <img src="../src/assets/razones-voto-salida.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+              <img src="http://localhost:3006/images/grafico_12.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
         </div>
-    </section>
+      </section>
     </>
   )
 
-  }
+}
 
 export default Analisis

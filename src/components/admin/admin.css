@@ -1,6 +1,6 @@
 .admin-container{
   background: white;
-  height: 200vh;
+  min-height: 100dvh;
 }
 
 .header-admin{
@@ -51,8 +51,8 @@
 .main-admin{
   background-color: #EEF2F5;
   margin-left: 350px;
-  height: 100vh;
   padding-top: 60px;
+  padding-bottom: 70px;
 }
 
 .admin-selectors{
@@ -121,28 +121,31 @@
 .admin-graphs-1{
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .admin-graph-1{
-  width: 22.3%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
 }
 
 .admin-graph-2{
-  width: 60%;
+  width: 690px;
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
 }
 
 .admin-username{
@@ -181,18 +184,19 @@
 .admin-graphs-2{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .admin-graph-3{
   margin-top: 30px;
-  width: 27.8%;
+  width: 35%;
   background-color: white;
   height: 100%;
   border-radius: 30px;
-  margin-left: 50px;
   display: flex;
   text-align: center;
   flex-direction: column;
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
 }
 
 .h2-admin-graph-3{
@@ -202,7 +206,6 @@
   font-weight: 900;
   margin-top: 30px;
   text-align: left;
-  margin-left: 30px;
 }
 
 .admin-graph-4{
@@ -210,10 +213,10 @@
   width: 46%;
   background-color: white;
   border-radius: 30px;
-  margin-left: 120px;
   display: flex;
   text-align: center;
   flex-direction: column;
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.25);
 }
 
 .p-admin-graph-4{
@@ -223,9 +226,9 @@
   font-weight: 900;
   margin-top: 30px;
   text-align: left;
-  margin-left: 30px;
 }
 
 .grafico-indice-felicidad{
   overflow: hidden;
+  padding: 5%;
 }
