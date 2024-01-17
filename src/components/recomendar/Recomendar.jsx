@@ -62,6 +62,7 @@ export default function Recomendar() {
 
         const response = await fetch("http://localhost:3006/feed/create", {
             method: 'POST',
+            credentials: "include",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 emoji: mood,

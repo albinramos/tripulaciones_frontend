@@ -10,6 +10,32 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const Admin = () => {
+  const [userData, setUserData] = useState(null);
+
+
+  useEffect(() => {
+    checkIsAdmin();
+  }, []);
+
+  const checkIsAdmin = async () => {
+    try {
+      const response = await fetch('http://localhost:3006/isadmin', {
+        method: 'GET',
+        credentials: 'include',
+      });
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data)
+        if (data.isAdmin === false) {
+          navigate('/');
+        }
+      } else {
+        console.error('Error al obtener sugerencias');
+      }
+    } catch (error) {
+      console.error('Error al obtener sugerencias:', error.message);
+    }
+  }
 
   const navigate = useNavigate();
 
