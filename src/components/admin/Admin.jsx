@@ -23,6 +23,9 @@ const Admin = () => {
         method: 'GET',
         credentials: 'include',
       });
+      if (response.status === 401) {
+        navigate('/admin/login');
+      }
       if (response.ok) {
         const data = await response.json();
         console.log(data)
