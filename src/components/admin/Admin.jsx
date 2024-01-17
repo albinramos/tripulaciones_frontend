@@ -95,22 +95,17 @@ const Admin = () => {
           </div>
           <div className="admin-graphs-1">
             <div className="admin-graph-1">
-              {/* <h2 className="h2-admin-graph-1">Índice de felicidad</h2>
-              <p className="date-admin-graph-1">Del 21 Sep. 2023 al 22 Oct. 2023</p> */}
               <img src="http://localhost:3006/images/grafico_1.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
             <div className="admin-graph-2">
-              {/* <h2 className="p-admin-graph-2">Evolución diaria del índice de satisfacción</h2> */}
               <img src="http://localhost:3006/images/grafico_7.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
           <div className="admin-graphs-2">
             <div className="admin-graph-3">
-              {/* <h2 className="h2-admin-graph-3">VOTOS TOTALES</h2> */}
               <img src="http://localhost:3006/images/grafico_4.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
             <div className="admin-graph-4">
-              {/* <h2 className="p-admin-graph-4">EVOLUCIÓN DE LOS VOTOS TOTALES</h2> */}
               <img src="../src/assets/Group 2090.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>

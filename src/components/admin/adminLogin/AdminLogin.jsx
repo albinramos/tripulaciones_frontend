@@ -14,7 +14,6 @@ const AdminLogin = () => {
   }
 
   const loginAdminHandler = async (e) => {
-    console.log(e.target)
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -35,7 +34,6 @@ const AdminLogin = () => {
       });
       if(result.status === 200){
         const data = await result.json();
-        console.log(data)
         navigate('/admin');
       }
       else{

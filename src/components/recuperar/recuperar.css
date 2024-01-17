@@ -1,11 +1,10 @@
-/* Estilos Generales */
+
 body {
   font-family: 'Avenir', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* Contenedor Principal de Recuperación */
 .login-main-container {
   display: flex;
   flex-direction: column;
@@ -13,41 +12,37 @@ body {
   height: 100vh;
 }
 
-/* Imagen Circular */
 .circulo-login {
   text-align: center;
   margin-top: 1vh;
 }
 
 .imagen-circular-2 {
-  width: 100vw; /* Ajusta según sea necesario */
+  width: 100vw;
   height: auto;
   border-radius: 50%;
 }
 
-/* Segundo Div de Recuperación */
 .recuperar-second-div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90vw; /* Ajusta según sea necesario */
-  max-width: 400px; /* Ajusta según sea necesario */
+  width: 90vw;
+  max-width: 400px;
   margin: 5vh 0;
 }
 
-/* Texto "Recupera tu contraseña" */
 .p-login-recuperar {
   font-family: 'Avenir';
   font-weight: 900;
-  font-size: 5vw; /* Ajusta según sea necesario */
+  font-size: 5vw;
   margin-bottom: 2vh;
 }
 
-/* Formulario de Recuperación de Login */
 .form-login {
   display: flex;
   flex-direction: column;
-  width: 90vw; /* Ajusta según sea necesario */
+  width: 90vw;
 }
 
 .form-email-recuperar {
@@ -55,10 +50,9 @@ body {
   margin-bottom: 2vh;
   padding: 3vw;
   border-radius: 5px;
-  font-size: 3vw; /* Ajusta según sea necesario */
+  font-size: 3vw;
 }
 
-/* Botón de Recuperación */
 .button-recuperar {
   width: 90vw;
   padding: 3vw;
@@ -72,7 +66,6 @@ body {
   margin-top: 3vh;
 }
 
-/* Tercer Div de Recuperación (Volver a Login) */
 .recuperar-third-div {
   display: flex;
   flex-direction: column;

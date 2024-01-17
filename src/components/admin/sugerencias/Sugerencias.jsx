@@ -82,7 +82,6 @@ const Sugerencias = () => {
       console.error('Error al cerrar sesión:', error.message);
     }
   };
-  console.log(sugerencias)
 
   const handleSelectMessage = (id) => {
     if (selectedMessageId === id) {
@@ -92,7 +91,6 @@ const Sugerencias = () => {
       setSelectedMessageId(id);
       setReplyingToMessageId(null);
 
-      // Actualiza la altura del mensaje seleccionado
       const messageContainer = document.getElementById(`message-container-${id}`);
       if (messageContainer) {
         const messageHeight = messageContainer.scrollHeight;

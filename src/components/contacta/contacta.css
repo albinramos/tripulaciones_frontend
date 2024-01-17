@@ -139,13 +139,13 @@
     font-weight: 900;
     margin-top: 5px;
     margin-bottom: 10px;
-    position: absolute; /* Añadido: posición absoluta */
-    top: calc(94% + 10px); /* Añadido: distancia desde la parte inferior del .button-contacta */
-    left: 50%; /* Añadido: centrar horizontalmente */
-    transform: translateX(-50%); /* Añadido: centrar horizontalmente */
-    height: 10px; /* Añadido: altura fija */
-    display: flex; /* Añadido: usar flexbox para centrar verticalmente */
-    align-items: center; /* Añadido: usar flexbox para centrar verticalmente */
+    position: absolute; 
+    top: calc(94% + 10px); 
+    left: 50%;
+    transform: translateX(-50%); 
+    height: 10px;
+    display: flex;
+    align-items: center;
   }
 
   .popup-container {

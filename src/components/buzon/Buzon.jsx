@@ -44,10 +44,10 @@ const Sugerencias = () => {
   const handleSelectMessage = (id) => {
     if (selectedMessageId === id) {
       setSelectedMessageId(null);
-      setReplyingToMessageId(null); // Add this line
+      setReplyingToMessageId(null);
     } else {
       setSelectedMessageId(id);
-      setReplyingToMessageId(null); // Add this line
+      setReplyingToMessageId(null);
     }
   };
 

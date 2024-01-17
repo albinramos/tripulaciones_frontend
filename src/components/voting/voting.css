@@ -250,7 +250,7 @@ body{
 .buttons-voting-div {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrar horizontalmente */
+  align-items: center;
   margin-top: 640px;
 }
 
@@ -258,7 +258,7 @@ body{
 .button-voting-no-vote {
   width: 80%;
   height: 35px;
-  margin: 10px 0; /* Agregado: espacio entre los botones */
+  margin: 10px 0; 
   justify-content: center;
   border-radius: 10px;
   font-size: 18px;

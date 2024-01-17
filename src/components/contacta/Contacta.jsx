@@ -36,7 +36,6 @@ const Contacta = () => {
       score: '',
       canUserVote: '',
     });
-    console.log("contacta",fetchData);
 
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -51,8 +50,6 @@ const Contacta = () => {
         body: JSON.stringify({name:null, dept:null, message: e.target.message.value})
       })
       if (response.ok) {
-        console.log("mensaje enviado con exito");
-        //setIsFormSubmitted(true);
         setIsPopupVisible(true);
       } else {
         console.error("Error en envío de mensaje");
@@ -72,7 +69,6 @@ const Contacta = () => {
     <>
       <section className='main-container-contacta'>
       <div className="contacta-first-div">
-        {/* <span className="contacta-icon-span"><IoMdArrowRoundBack></IoMdArrowRoundBack></span> */}
         <div className="contacta-first-div-text">
           <p className="contacta-p-name">{fetchData.userData.firstname}<br></br>
           </p>

@@ -32,7 +32,7 @@ p.emoji {
 
 .feed-card-body {
     margin-top: 0.5rem;
-    padding-left: calc(1.5rem + 0.2rem + 1.2rem); /* Align with .feed-card-header-text */
+    padding-left: calc(1.5rem + 0.2rem + 1.2rem);
 }
 
 .emojis-container {

@@ -38,7 +38,6 @@ const Landing = () => {
     }
   }
 
-  console.log("fetch",fetchData);
   const handleContactaClick = () => {
     navigate('/contacta');
   };
