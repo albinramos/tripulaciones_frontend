@@ -64,6 +64,10 @@ const Landing = () => {
     }
   };
 
+  const handleFelicita = () => {
+    navigate('/feed');
+  }
+
   if(loading) return (<div>Loading...</div>)
 
   return (
@@ -87,7 +91,7 @@ const Landing = () => {
           <button className="landing-button-contacta" onClick={handleContactaClick}>CONTACTA</button>
         </div>
         <div className="landing-fourth-div">
-          <button className="landing-button-felicita">FELICITA A TU COMPAÑERO/A</button>
+          <button className="landing-button-felicita" onClick={handleFelicita}>FELICITA A TU COMPAÑERO/A</button>
           <button className="landing-button-cierre" onClick={handleLogout}>CERRAR SESIÓN</button>
         </div>
       </section>
