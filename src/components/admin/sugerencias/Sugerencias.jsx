@@ -6,6 +6,8 @@ import { MdOutlineAlarm } from "react-icons/md";
 import { BsFillQuestionCircleFill, BsClockHistory } from "react-icons/bs";
 import { ImExit } from "react-icons/im";
 import { FaReply } from "react-icons/fa";
+import { RiDeleteBinLine, RiSendPlaneFill } from "react-icons/ri";
+import { PiCornersOut } from "react-icons/pi";
 import { Navigate, useNavigate } from 'react-router-dom';
 
 const Sugerencias = () => {
@@ -13,6 +15,7 @@ const Sugerencias = () => {
   const [selectedMessageId, setSelectedMessageId] = useState(null);
   const [replyingToMessageId, setReplyingToMessageId] = useState(null);
   const [reply, setReply] = useState({});
+  const [messageHeights, setMessageHeights] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -84,10 +87,17 @@ const Sugerencias = () => {
   const handleSelectMessage = (id) => {
     if (selectedMessageId === id) {
       setSelectedMessageId(null);
-      setReplyingToMessageId(null); // Add this line
+      setReplyingToMessageId(null);
     } else {
       setSelectedMessageId(id);
-      setReplyingToMessageId(null); // Add this line
+      setReplyingToMessageId(null);
+
+      // Actualiza la altura del mensaje seleccionado
+      const messageContainer = document.getElementById(`message-container-${id}`);
+      if (messageContainer) {
+        const messageHeight = messageContainer.scrollHeight;
+        setMessageHeights({ ...messageHeights, [id]: messageHeight });
+      }
     }
   };
 
@@ -181,9 +191,10 @@ const Sugerencias = () => {
               <ul>
                 {reversedSugerencias().filter(sugerencia => sugerencia.active === 1).map((sugerencia, index) => (
                   <li className="sugerencias-li" key={`sugerencia_${index}`}>
-                    <div className="sugerencias-li-div" onClick={() => handleSelectMessage(sugerencia.messageid)}>
+                  <div className="sugerencias-li-div" onClick={() => handleSelectMessage(sugerencia.messageid)} style={{ height: `${messageHeights[sugerencia.messageid] || 'auto'}` }}>
                       <div className="messagewrapper">
-                        <p className={`sugerencias-li-p ${selectedMessageId === sugerencia.messageid ? 'sugerencias-li-message-expanded' : 'sugerencias-li-message'}`}>
+                        <span className="sugerencias-li-icon"><PiCornersOut></PiCornersOut></span>
+                        <p className={`sugerencias-li-p ${selectedMessageId === sugerencia.messageid ? 'sugerencias-li-message-expanded' : 'sugerencias-li-message'}`}><span className="mensaje-sugerencias">Mensaje: </span>
                           {sugerencia.message}
                         </p>
                         {selectedMessageId === sugerencia.messageid && sugerencia.response && (
@@ -194,18 +205,18 @@ const Sugerencias = () => {
                         )}
                       </div>
                       <div className="deletewrapper">
-                        <button onClick={(e) => { e.stopPropagation(); handleDeleteMessage(sugerencia.messageid); }}>Delete</button>
-                        {!sugerencia.response && <button onClick={(e) => handleReplyButtonClick(sugerencia.messageid, e)}><FaReply /></button>}
+                        {!sugerencia.response && <button className="delete-reply" onClick={(e) => handleReplyButtonClick(sugerencia.messageid, e)}><FaReply /></button>}
+                        <button className="delete-bin" onClick={(e) => { e.stopPropagation(); handleDeleteMessage(sugerencia.messageid); }}><RiDeleteBinLine /></button>
                       </div>
                       {replyingToMessageId === sugerencia.messageid && (
                         <div className="replywrapper" onClick={(e) => e.stopPropagation()}>
-                          <textarea
+                          <textarea className="reply-sugerencias"
                             value={reply[sugerencia.messageid] || ''}
                             onChange={(e) => handleReplyChange(sugerencia.messageid, e)}
                             onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); handleReplyMessage(sugerencia.messageid); } }}
                             onClick={(e) => e.stopPropagation()}
                           />
-                          <button onClick={(e) => { e.stopPropagation(); handleReplyMessage(sugerencia.messageid); }}>Submit</button>
+                          <button className="button-sugerencias-footer"  onClick={(e) => { e.stopPropagation(); handleReplyMessage(sugerencia.messageid); }}><RiSendPlaneFill /> Enviar</button>
                         </div>
                       )}
                     </div>
