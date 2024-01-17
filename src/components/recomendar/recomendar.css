@@ -172,3 +172,9 @@ p.emoji {
     width: 30px;
 }
 
+.contacta-first-div-text{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+

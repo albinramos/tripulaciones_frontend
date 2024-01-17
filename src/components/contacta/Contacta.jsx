@@ -65,12 +65,16 @@ const Contacta = () => {
       navigate('/');
     }
 
+    const handleBackClick = () => {
+      navigate('/')
+    }
+
   return(
     <>
       <section className='main-container-contacta'>
       <div className="contacta-first-div">
         <div className="contacta-first-div-text">
-          <p className="contacta-p-name">{fetchData.userData.firstname}<br></br>
+          <p className="contacta-p-name" onClick={() => handleBackClick()}><span className="icon-contacta-back"><IoMdArrowRoundBack /></span>{fetchData.userData.firstname}<br></br>
           </p>
           <p className="contacta-p-lastname">{fetchData.userData.lastname}</p>
         </div>

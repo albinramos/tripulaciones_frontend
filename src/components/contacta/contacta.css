@@ -5,37 +5,9 @@
   height: 100vh;
 }
 
-.contacta-p-name{
-  position: absolute;
-  width: 139px;
-  height: 74px;
-  left: 17px;
-  top: 15px;
-  font-family: 'Avenir';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 30px;
-  line-height: 41px;
-  color: #100F11;
-  }
-  
-  .contacta-p-lastname{
-  position: absolute;
-  width: 139px;
-  height: 74px;
-  left: 17px;
-  top: 50px;
-  font-family: 'Avenir';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 30px;
-  line-height: 41px;
-  color: #100F11;
-  }
-
   .contacta-first-div-text{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
   }
 
@@ -47,7 +19,7 @@
   .contacta-company-logo{
     width: 120px;
     margin-top: 100px;
-    left: 120%;
+    left: 95%;
     position: relative;
     top: -45%;
   }
@@ -189,3 +161,43 @@
     margin-bottom: 30px;
     height: 40px;
   }
+
+  .contacta-message-icon{
+    font-size: 40px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .icon-contacta-back{
+    font-size: 30px;
+    margin-right: 20px;
+  }
+
+  .contacta-p-name{
+    position: absolute;
+    width: 139px;
+    height: 74px;
+    left: 17px;
+    top: 15px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 41px;
+    color: #100F11;
+    }
+    
+    .contacta-p-lastname{
+    position: absolute;
+    width: 139px;
+    height: 74px;
+    left: 17px;
+    top: 50px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 41px;
+    color: #100F11;
+    margin-left: 50px;
+    }
