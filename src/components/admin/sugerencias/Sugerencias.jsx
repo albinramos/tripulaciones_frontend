@@ -5,11 +5,13 @@ import { IoSettingsSharp, IoFileTrayOutline } from "react-icons/io5";
 import { MdOutlineAlarm } from "react-icons/md";
 import { BsFillQuestionCircleFill, BsClockHistory } from "react-icons/bs";
 import { ImExit } from "react-icons/im";
+import { FaReply } from "react-icons/fa";
 import { Navigate, useNavigate } from 'react-router-dom';
 
 const Sugerencias = () => {
   const [sugerencias, setSugerencias] = useState([]);
   const [selectedMessageId, setSelectedMessageId] = useState(null);
+  const [reply, setReply] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -108,6 +110,39 @@ const Sugerencias = () => {
     }
   };
 
+  const handleReplyChange = (id, event) => {
+    setReply({ ...reply, [id]: event.target.value });
+  };
+
+  const handleReplyMessage = async (id) => {
+    try {
+      const response = await fetch('http://localhost:3006/message/reply', {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: id, response: reply[id] }),
+        credentials: 'include',
+      });
+
+      if (response.ok) {
+        const updatedSugerencias = sugerencias.map(sugerencia => {
+          if (sugerencia.messageid === id) {
+            sugerencia.response = reply[id];
+          }
+          return sugerencia;
+        });
+        setSugerencias(updatedSugerencias);
+        setReply({ ...reply, [id]: '' });
+        setSelectedMessageId(null);
+      } else {
+        console.error('Error al responder a la sugerencia');
+      }
+    } catch (error) {
+      console.error('Error al responder a la sugerencia:', error.message);
+    }
+  };
+
 
   return (
     <>
@@ -140,50 +175,30 @@ const Sugerencias = () => {
           <div className="sugerencias-graphs-1">
             <div className="sugerencias-graph-1">
               <ul>
-                <li className="sugerencias-li">
-                  <div className="sugerencias-li-div">
-                    <div className="namewrapper">
-                      <p className="sugerencias-li-p sugerencias-li-from">Nombre</p>
-                    </div>
-                    <div className="deptwrapper">
-                      <p className="sugerencias-li-p sugerencias-li-dept">Departamento</p>
-                    </div>
-                    <div className="messagewrapper">
-                      <p className="sugerencias-li-p sugerencias-li-message" >Mensaje</p>
-                    </div>
-                    <div className="deletewrapper">
-                    </div>
-                  </div>
-
-                </li>
                 {reversedSugerencias().map((sugerencia, index) => (
                   <li className="sugerencias-li" key={`sugerencia_${index}`}>
                     <div className="sugerencias-li-div" onClick={() => handleSelectMessage(sugerencia.messageid)}>
-                      <div className="namewrapper">
-                        <p className="sugerencias-li-p sugerencias-li-from">{sugerencia.name}</p>
-                      </div>
-                      <div className="deptwrapper">
-                        <p className="sugerencias-li-p sugerencias-li-dept">{sugerencia.dept}</p>
-                      </div>
                       <div className="messagewrapper">
-                        <p className="sugerencias-li-p sugerencias-li-message" >{sugerencia.message}</p>
+                        <p className={`sugerencias-li-p ${selectedMessageId === sugerencia.messageid ? 'sugerencias-li-message-expanded' : 'sugerencias-li-message'}`}>
+                          {sugerencia.message}
+                        </p>
+                        {sugerencia.response && <p className="sugerencias-li-response">{sugerencia.response}</p>}
                       </div>
                       <div className="deletewrapper">
                         <button onClick={(e) => { e.stopPropagation(); handleDeleteMessage(sugerencia.messageid); }}>Delete</button>
+                        {!sugerencia.response && <button onClick={(e) => { e.stopPropagation(); handleSelectMessage(sugerencia.messageid); }}><FaReply /></button>}
                       </div>
+                      {selectedMessageId === sugerencia.messageid && !sugerencia.response && (
+                        <div className="replywrapper" onClick={(e) => e.stopPropagation()}>
+                          <textarea value={reply[sugerencia.messageid] || ''} onChange={(e) => handleReplyChange(sugerencia.messageid, e)} onClick={(e) => e.stopPropagation()} />
+                          <button onClick={(e) => { e.stopPropagation(); handleReplyMessage(sugerencia.messageid); }}>Submit</button>
+                        </div>
+                      )}
                     </div>
-                    {selectedMessageId === sugerencia.messageid && (
-                      <div className="selected-message">
-                        <h2>{sugerencia.name}</h2>
-                        <h3>{sugerencia.dept}</h3>
-                        <p>{sugerencia.message}</p>
-                      </div>
-                    )}
                   </li>
                 ))}
               </ul>
             </div>
-
           </div>
         </div>
       </section>
