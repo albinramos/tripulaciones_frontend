@@ -9,7 +9,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 const Sugerencias = () => {
   const [sugerencias, setSugerencias] = useState([]);
-  const [selectedMessageId, setSelectedMessageId] = useState(null); 
+  const [selectedMessageId, setSelectedMessageId] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -79,7 +79,33 @@ const Sugerencias = () => {
   console.log(sugerencias)
 
   const handleSelectMessage = (id) => {
-    setSelectedMessageId(id);
+    if (selectedMessageId === id) {
+      setSelectedMessageId(null); // Deselect the message if it's already selected
+    } else {
+      setSelectedMessageId(id); // Select the message
+    }
+  };
+
+
+  const handleDeleteMessage = async (id) => {
+    try {
+      const response = await fetch('http://localhost:3006/message/delete', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: id }),
+        credentials: 'include',
+      });
+
+      if (response.ok) {
+        setSugerencias(sugerencias.filter(sugerencia => sugerencia.messageid !== id));
+      } else {
+        console.error('Error al eliminar sugerencia');
+      }
+    } catch (error) {
+      console.error('Error al eliminar sugerencia:', error.message);
+    }
   };
 
 
@@ -114,9 +140,25 @@ const Sugerencias = () => {
           <div className="sugerencias-graphs-1">
             <div className="sugerencias-graph-1">
               <ul>
+                <li className="sugerencias-li">
+                  <div className="sugerencias-li-div">
+                    <div className="namewrapper">
+                      <p className="sugerencias-li-p sugerencias-li-from">Nombre</p>
+                    </div>
+                    <div className="deptwrapper">
+                      <p className="sugerencias-li-p sugerencias-li-dept">Departamento</p>
+                    </div>
+                    <div className="messagewrapper">
+                      <p className="sugerencias-li-p sugerencias-li-message" >Mensaje</p>
+                    </div>
+                    <div className="deletewrapper">
+                    </div>
+                  </div>
+
+                </li>
                 {reversedSugerencias().map((sugerencia, index) => (
-                  <li className="sugerencias-li" key={`sugerencia_${index}`} onClick={() => handleSelectMessage(sugerencia.messageid)}>
-                    <div className="sugerencias-li-div">
+                  <li className="sugerencias-li" key={`sugerencia_${index}`}>
+                    <div className="sugerencias-li-div" onClick={() => handleSelectMessage(sugerencia.messageid)}>
                       <div className="namewrapper">
                         <p className="sugerencias-li-p sugerencias-li-from">{sugerencia.name}</p>
                       </div>
@@ -126,19 +168,22 @@ const Sugerencias = () => {
                       <div className="messagewrapper">
                         <p className="sugerencias-li-p sugerencias-li-message" >{sugerencia.message}</p>
                       </div>
+                      <div className="deletewrapper">
+                        <button onClick={(e) => { e.stopPropagation(); handleDeleteMessage(sugerencia.messageid); }}>Delete</button>
+                      </div>
                     </div>
                     {selectedMessageId === sugerencia.messageid && (
-                  <div className="selected-message">
-                    <h2>{sugerencia.name}</h2>
-                    <h3>{sugerencia.dept}</h3>
-                    <p>{sugerencia.message}</p>
-                  </div>
-                )}
+                      <div className="selected-message">
+                        <h2>{sugerencia.name}</h2>
+                        <h3>{sugerencia.dept}</h3>
+                        <p>{sugerencia.message}</p>
+                      </div>
+                    )}
                   </li>
                 ))}
               </ul>
             </div>
-            
+
           </div>
         </div>
       </section>
