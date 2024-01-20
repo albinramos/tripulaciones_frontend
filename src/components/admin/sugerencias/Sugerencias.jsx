@@ -11,6 +11,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 const Sugerencias = () => {
   const [sugerencias, setSugerencias] = useState([]);
   const [selectedMessageId, setSelectedMessageId] = useState(null);
+  const [replyingToMessageId, setReplyingToMessageId] = useState(null);
   const [reply, setReply] = useState({});
   const navigate = useNavigate();
 
@@ -82,9 +83,11 @@ const Sugerencias = () => {
 
   const handleSelectMessage = (id) => {
     if (selectedMessageId === id) {
-      setSelectedMessageId(null); // Deselect the message if it's already selected
+      setSelectedMessageId(null);
+      setReplyingToMessageId(null); // Add this line
     } else {
-      setSelectedMessageId(id); // Select the message
+      setSelectedMessageId(id);
+      setReplyingToMessageId(null); // Add this line
     }
   };
 
@@ -143,6 +146,11 @@ const Sugerencias = () => {
     }
   };
 
+  const handleReplyButtonClick = (id, event) => {
+    event.stopPropagation();
+    setReplyingToMessageId(id);
+  };
+
 
   return (
     <>
@@ -182,13 +190,18 @@ const Sugerencias = () => {
                         <p className={`sugerencias-li-p ${selectedMessageId === sugerencia.messageid ? 'sugerencias-li-message-expanded' : 'sugerencias-li-message'}`}>
                           {sugerencia.message}
                         </p>
-                        {sugerencia.response && <p className="sugerencias-li-response">{sugerencia.response}</p>}
+                        {selectedMessageId === sugerencia.messageid && sugerencia.response && (
+                          <div className="response">
+                            <h2>Respuesta:</h2>
+                            <p className="sugerencias-li-response">{sugerencia.response}</p>
+                          </div>
+                        )}
                       </div>
                       <div className="deletewrapper">
                         <button onClick={(e) => { e.stopPropagation(); handleDeleteMessage(sugerencia.messageid); }}>Delete</button>
-                        {!sugerencia.response && <button onClick={(e) => { e.stopPropagation(); handleSelectMessage(sugerencia.messageid); }}><FaReply /></button>}
+                        {!sugerencia.response && <button onClick={(e) => handleReplyButtonClick(sugerencia.messageid, e)}><FaReply /></button>}
                       </div>
-                      {selectedMessageId === sugerencia.messageid && !sugerencia.response && (
+                      {replyingToMessageId === sugerencia.messageid && (
                         <div className="replywrapper" onClick={(e) => e.stopPropagation()}>
                           <textarea value={reply[sugerencia.messageid] || ''} onChange={(e) => handleReplyChange(sugerencia.messageid, e)} onClick={(e) => e.stopPropagation()} />
                           <button onClick={(e) => { e.stopPropagation(); handleReplyMessage(sugerencia.messageid); }}>Submit</button>
