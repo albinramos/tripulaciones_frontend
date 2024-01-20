@@ -95,7 +95,7 @@ const Sugerencias = () => {
   const handleDeleteMessage = async (id) => {
     try {
       const response = await fetch('http://localhost:3006/message/delete', {
-        method: 'DELETE',
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -129,15 +129,11 @@ const Sugerencias = () => {
       });
 
       if (response.ok) {
-        const updatedSugerencias = sugerencias.map(sugerencia => {
-          if (sugerencia.messageid === id) {
-            sugerencia.response = reply[id];
-          }
-          return sugerencia;
-        });
+        const updatedSugerencias = sugerencias.filter(sugerencia => sugerencia.messageid !== id);
         setSugerencias(updatedSugerencias);
         setReply({ ...reply, [id]: '' });
         setSelectedMessageId(null);
+        setReplyingToMessageId(null);
       } else {
         console.error('Error al responder a la sugerencia');
       }
@@ -183,7 +179,7 @@ const Sugerencias = () => {
           <div className="sugerencias-graphs-1">
             <div className="sugerencias-graph-1">
               <ul>
-                {reversedSugerencias().map((sugerencia, index) => (
+                {reversedSugerencias().filter(sugerencia => sugerencia.active === 1).map((sugerencia, index) => (
                   <li className="sugerencias-li" key={`sugerencia_${index}`}>
                     <div className="sugerencias-li-div" onClick={() => handleSelectMessage(sugerencia.messageid)}>
                       <div className="messagewrapper">
@@ -203,7 +199,12 @@ const Sugerencias = () => {
                       </div>
                       {replyingToMessageId === sugerencia.messageid && (
                         <div className="replywrapper" onClick={(e) => e.stopPropagation()}>
-                          <textarea value={reply[sugerencia.messageid] || ''} onChange={(e) => handleReplyChange(sugerencia.messageid, e)} onClick={(e) => e.stopPropagation()} />
+                          <textarea
+                            value={reply[sugerencia.messageid] || ''}
+                            onChange={(e) => handleReplyChange(sugerencia.messageid, e)}
+                            onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); handleReplyMessage(sugerencia.messageid); } }}
+                            onClick={(e) => e.stopPropagation()}
+                          />
                           <button onClick={(e) => { e.stopPropagation(); handleReplyMessage(sugerencia.messageid); }}>Submit</button>
                         </div>
                       )}

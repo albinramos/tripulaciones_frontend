@@ -13,6 +13,7 @@ import Ajustes from './components/admin/ajustes/Ajustes.jsx';
 import Sugerencias from './components/admin/sugerencias/Sugerencias.jsx';
 import Predicciones from './components/admin/predicciones/Predicciones.jsx';
 import AdminLogin from '../src/components/admin/adminLogin/AdminLogin.jsx';
+import Buzon from './components/buzon/Buzon.jsx';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/voting' element={<Voting />} />
             <Route path='/contacta' element={<Contacta />} />
+            <Route path='/buzon' element={<Buzon />} />
             <Route path='/recuperar' element={<Recuperar />} />
             <Route path='/admin' element={<Admin />} />
             <Route path='/admin/login' element={<AdminLogin />} />
