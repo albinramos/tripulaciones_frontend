@@ -3,6 +3,13 @@ import "./voting.css"
 import { useNavigate } from 'react-router-dom';
 import Popup from '../popup/Popup';
 import moment from "moment";
+import mooduplogo from '../../assets/moodup-logo.png'
+import enfado from "../../assets/enfado.png"
+import triste from "../../assets/triste.png"
+import feliz from "../../assets/feliz.png"
+import neutral from "../../assets/neutral.png"
+import muyfeliz from "../../assets/muy-feliz.png"
+import perfil from "../../assets/imagenes/perfil-1.png"
 
 const Voting = () => {
 
@@ -27,7 +34,7 @@ const Voting = () => {
 
   const fetchUserInfo = async () => {
     try {
-      const response = await fetch("http://localhost:3006/vote/userinfo", {
+      const response = await fetch("https://moodupapi.aramendi.dev/vote/userinfo", {
         credentials: "include",
         headers: { "Content-Type": "application/json" }
       });
@@ -40,7 +47,7 @@ const Voting = () => {
 
   const fetchStatus =  async () => {
       const response = await fetch(
-        "http://localhost:3006/vote/hasuservoted",
+        "https://moodupapi.aramendi.dev/vote/hasuservoted",
         {
           credentials: "include",
           headers: { "Content-Type": "application/json" }
@@ -107,7 +114,7 @@ const Voting = () => {
 
   try{
     if(type === 'entrada'){
-      const response = await fetch("http://localhost:3006/vote/clockin", {
+      const response = await fetch("https://moodupapi.aramendi.dev/vote/clockin", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -123,7 +130,7 @@ const Voting = () => {
 
     }
     else if(type === 'salida'){
-      const response = await fetch("http://localhost:3006/vote/clockout", {
+      const response = await fetch("https://moodupapi.aramendi.dev/vote/clockout", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -138,7 +145,7 @@ const Voting = () => {
       }
     }
     else if(type === 'update'){
-      const response  = await fetch("http://localhost:3006/vote/updateclockout", {
+      const response  = await fetch("https://moodupapi.aramendi.dev/vote/updateclockout", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -203,9 +210,9 @@ const Voting = () => {
     <div id="root">
       <section className='main-container-voting'>
         <div className='main-first-div'>
-          <img src='../src/assets/moodup-logo.png' alt='imagen-logo' className="imagen-logo"/>
+          <img src={mooduplogo} alt='imagen-logo' className="imagen-logo"/>
           <img
-              src={`../src/assets/imagenes/${randomImage}`}
+              src={perfil}
               alt="imagen retrato"
               className="imagen-circular-mini"
           />
@@ -222,31 +229,31 @@ const Voting = () => {
         </div>
         <div className='main-faces-div'>
         <img
-              src="../src/assets/enfado.png"
+              src={enfado}
               alt="enfado"
               className={moodClassName(0)}
               onClick={() => handleMood(0)}
             />
             <img
-              src="../src/assets/triste.png"
+              src={triste}
               alt="triste"
               className={moodClassName(1)}
               onClick={() => handleMood(1)}
             />
             <img
-              src="../src/assets/neutral.png"
+              src={neutral}
               alt="neutral"
               className={moodClassName(2)}
               onClick={() => handleMood(2)}
             />
             <img
-              src="../src/assets/feliz.png"
+              src={feliz}
               alt="feliz"
               className={moodClassName(3)}
               onClick={() => handleMood(3)}
             />
             <img
-              src="../src/assets/muy-feliz.png"
+              src={muyfeliz}
               alt="muy-feliz"
               className={moodClassName(4)}
               onClick={() => handleMood(4)}

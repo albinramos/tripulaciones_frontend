@@ -2,6 +2,7 @@ import React, { useState, useRef} from "react";
 import './recuperar.css'
 import { IoArrowBack } from "react-icons/io5";
 import { Navigate, useNavigate } from 'react-router-dom';
+import logo from "../../assets/logo.png"
 
 
 
@@ -17,7 +18,7 @@ const Recuperar = () => {
     <>
       <section className="login-main-container">
         <div className="circulo-login">
-          <img src="../src/assets/logo.png" alt="imagen retrato" className="imagen-circular-2"/>
+          <img src={logo} alt="imagen retrato" className="imagen-circular-2"/>
         </div>
         <div className="recuperar-second-div">
           <p className="p-login-recuperar">Recupera tu contraseña</p>

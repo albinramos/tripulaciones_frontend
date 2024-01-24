@@ -2,12 +2,13 @@ import React from 'react';
 import './Popup.css';
 import { AiOutlineTrophy } from "react-icons/ai";
 import { FaPlus } from "react-icons/fa6";
+import logocompany from "../../assets/logo-company.png"
 
 const Popup = ({ onClose }) => {
   return (
     <div className="popup-voting-container">
       <div className="popup-voting">
-        <img src="../../src/assets/logo-company.png" alt="logo empresa" className="popup-voting-company-logo" />
+        <img src={logocompany} alt="logo empresa" className="popup-voting-company-logo" />
         <p className="p-popup-voting">¡Mood registrado con éxito!</p>
         <div className="popup-voting-div">
           <FaPlus className="popup-plus" />

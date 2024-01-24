@@ -23,7 +23,7 @@ const Sugerencias = () => {
 
   const getSugerencias = async () => {
     try {
-      const response = await fetch('http://localhost:3006/message/usermessages', {
+      const response = await fetch('https://moodupapi.aramendi.dev/message/usermessages', {
         method: 'GET',
         credentials: 'include',
       });

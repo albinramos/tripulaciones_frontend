@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect} from "react";
 import { Navigate, useNavigate } from 'react-router-dom';
 import { IoMdArrowRoundBack } from "react-icons/io";
 import "./contacta.css"
+import logocompany from "../../assets/logo-company.png"
 
 const Contacta = () => {
 
@@ -14,7 +15,7 @@ const Contacta = () => {
     }, []);
 
     const fetchApi = async () => {
-      const response = await fetch('http://localhost:3006/', {
+      const response = await fetch('https://moodupapi.aramendi.dev/', {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json'
@@ -41,7 +42,7 @@ const Contacta = () => {
       e.preventDefault();
       
     try{
-      const response = await fetch("http://localhost:3006/message/create", {
+      const response = await fetch("https://moodupapi.aramendi.dev/message/create", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -78,7 +79,7 @@ const Contacta = () => {
           </p>
           <p className="contacta-p-lastname">{fetchData.userData.lastname}</p>
         </div>
-          <img src="../src/assets/logo-company.png" alt="logo empresa" className="contacta-company-logo"/>
+          <img src={logocompany} alt="logo empresa" className="contacta-company-logo"/>
         </div>
         <div className="contacta-second-div">
           <p className="contacta-p-contacta">Cuéntanos</p>
@@ -93,7 +94,7 @@ const Contacta = () => {
           {isPopupVisible && (
             <div className="popup-container">
               <div className="popup">
-                <img src="../../src/assets/logo-company.png" alt="logo empresa" className="popup-company-logo" />
+                <img src={logocompany} alt="logo empresa" className="popup-company-logo" />
                 <p className="p-popup">¡Tu mensaje se ha enviado con éxito!</p>
                 <button onClick={handlePopupClose} className="popup-button">Volver al perfil</button>
               </div>

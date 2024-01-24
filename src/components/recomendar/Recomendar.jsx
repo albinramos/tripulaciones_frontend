@@ -3,6 +3,10 @@ import { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { CiSquarePlus } from "react-icons/ci";
+import logocompany from "../../assets/logo-company.png"
+import enfermo from '../../assets/enfermo.png'
+import rosa from "../../assets/rosa.png"
+import corazon from '../../assets/corazon.png'
 
 
 export default function Recomendar() {
@@ -27,7 +31,7 @@ export default function Recomendar() {
 
     const fetchFeedData = async () => {
         try {
-            const response = await fetch("http://localhost:3006/feed", {
+            const response = await fetch("https://moodupapi.aramendi.dev/feed", {
                 credentials: "include",
                 headers: { "Content-Type": "application/json" }
             });
@@ -40,7 +44,7 @@ export default function Recomendar() {
 
     const fetchUserInfo = async () => {
         try {
-            const response = await fetch("http://localhost:3006/vote/userinfo", {
+            const response = await fetch("https://moodupapi.aramendi.dev/vote/userinfo", {
                 credentials: "include",
                 headers: { "Content-Type": "application/json" }
             });
@@ -64,7 +68,7 @@ export default function Recomendar() {
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
-        const response = await fetch("http://localhost:3006/feed/create", {
+        const response = await fetch("https://moodupapi.aramendi.dev/feed/create", {
             method: 'POST',
             credentials: "include",
             headers: { "Content-Type": "application/json" },
@@ -85,7 +89,7 @@ export default function Recomendar() {
     }
 
     const handleBackClick = () => {
-        if(activeComponent === 'feed') {
+        if (activeComponent === 'feed') {
             navigate('/')
         } else {
             setActiveComponent('feed');
@@ -98,13 +102,13 @@ export default function Recomendar() {
                 <div className="header-div">
                     <div className="contacta-first-div-text">
                         <div className='top'>
-                        <p className="welcome-message-icon" onClick={() => handleBackClick()}><IoMdArrowRoundBack /></p>
-                        <p className="welcome-message">My Mood Feed</p>
+                            <p className="welcome-message-icon" onClick={() => handleBackClick()}><IoMdArrowRoundBack /></p>
+                            <p className="welcome-message">My Mood Feed</p>
                         </div>
                         <p className="user-name-feed">¡Hola <strong>{userData?.firstname}</strong>!</p>
                     </div>
                     <div className='logo-container-feed'>
-                        <img src="../src/assets/logo-company.png" alt="logo empresa" className="logo" />
+                        <img src={logocompany} alt="logo empresa" className="logo" />
                     </div>
                 </div>
                 {activeComponent === 'feed' ? (
@@ -118,10 +122,10 @@ export default function Recomendar() {
                         <div className='feed-container'>
                             {(feedData?.slice().reverse() || []).map((feed, index) => {
                                 const emojiImages = {
-                                    1: '../src/assets/enfermo.png',
-                                    2: '../src/assets/rosa.png',
-                                    3: '../src/assets/corazon.png',
-                                  };
+                                    1: enfermo,
+                                    2: rosa,
+                                    3: corazon,
+                                };
                                 return (
                                     <div className='feed-card' key={index}>
                                         <div className='feed-card-header'>
@@ -144,19 +148,19 @@ export default function Recomendar() {
                         <div className="emojis-container">
                             <div className='main-emojis-div'>
                                 <img
-                                    src="../src/assets/enfermo.png"
+                                    src={enfermo}
                                     alt="enfermo"
                                     className={`emoji-select ${activeEmoji === 1 ? 'active' : ''}`}
                                     onClick={() => handleMood(1)}
                                 />
                                 <img
-                                    src="../src/assets/rosa.png"
+                                    src={rosa}
                                     alt="felicitar"
                                     className={`emoji-select ${activeEmoji === 2 ? 'active' : ''}`}
                                     onClick={() => handleMood(2)}
                                 />
                                 <img
-                                    src="../src/assets/corazon.png"
+                                    src={corazon}
                                     alt="gracias"
                                     className={`emoji-select ${activeEmoji === 3 ? 'active' : ''}`}
                                     onClick={() => handleMood(3)}
@@ -188,7 +192,7 @@ export default function Recomendar() {
                     {isPopupVisible && (
                         <div className="popup-container">
                             <div className="popup">
-                                <img src="../../src/assets/logo-company.png" alt="logo empresa" className="popup-company-logo" />
+                                <img src={logocompany} alt="logo empresa" className="popup-company-logo" />
                                 <p className="p-popup">¡Tu mensaje se ha enviado con éxito!</p>
                                 <button onClick={handlePopupClose} className="popup-button">{activeComponent === 'feed' ? 'Volver al perfil' : 'Volver al feed'}</button>
                             </div>

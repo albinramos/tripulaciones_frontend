@@ -6,6 +6,9 @@ import { MdOutlineAlarm } from "react-icons/md";
 import { BsFillQuestionCircleFill, BsClockHistory } from "react-icons/bs";
 import { ImExit } from "react-icons/im";
 import { Navigate, useNavigate } from 'react-router-dom';
+import mooduplogo from '../../../assets/moodup-logo.png'
+import exit from "../../../assets/exit.png"
+import logocompany from "../../../assets/logo-company.png"
 
 const Analisis = () => {
 
@@ -33,13 +36,13 @@ const Analisis = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://localhost:3006/logout', {
+      const response = await fetch('https://moodupapi.aramendi.dev/logout', {
         method: 'POST',
         credentials: 'include',
       });
 
       if (response.ok) {
-        window.location.href = 'http://localhost:5173/admin/login';
+        navigate('admin/login');
       } else {
         console.error('Error al cerrar sesión');
       }
@@ -52,7 +55,7 @@ const Analisis = () => {
     <>
       <section className="admin-container">
         <div className="header-admin">
-          <img src='../src/assets/moodup-logo.png' alt='imagen-logo' className="imagen-logo-admin" />
+          <img src={mooduplogo} alt='imagen-logo' className="imagen-logo-admin" />
           <div className="ul-header-div">
             <ul>
               <li className="li-header" onClick={handleHome}><FaHome></FaHome> Home</li>
@@ -65,11 +68,11 @@ const Analisis = () => {
           </div>
           <div className="bottom-icons">
             <ul className="ul-bottom-icons">
-              <img src="../src/assets/exit.png" className="li-bottom-icons" onClick={handleLogout}></img>
+              <img src={exit} className="li-bottom-icons" onClick={handleLogout}></img>
             </ul>
           </div>
           <div className="footer-admin">
-            <img src="../src/assets/logo-company.png" alt="company logo" className="footer-admin-logo-header"></img>
+            <img src={logocompany} alt="company logo" className="footer-admin-logo-header"></img>
           </div>
         </div>
         <div className="main-analisis">
@@ -96,19 +99,19 @@ const Analisis = () => {
           <div className="analisis-graphs-1">
             <div className="title-vertical">GENERAL</div>
             <div className="analisis-graph-1">
-              <img src="http://localhost:3006/images/grafico_10.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+              <img src="https://moodupapi.aramendi.dev/images/grafico_10.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
           <div className="analisis-graphs-1">
             <div className="title-vertical">ENTRADA</div>
             <div className="analisis-graph-1">
-              <img src="http://localhost:3006/images/grafico_11.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+              <img src="https://moodupapi.aramendi.dev/images/grafico_11.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
           <div className="analisis-graphs-2">
             <div className="title-vertical">SALIDA</div>
             <div className="analisis-graph-3">
-              <img src="http://localhost:3006/images/grafico_12.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+              <img src="https://moodupapi.aramendi.dev/images/grafico_12.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
         </div>

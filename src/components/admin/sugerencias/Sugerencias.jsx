@@ -9,6 +9,9 @@ import { FaReply } from "react-icons/fa";
 import { RiDeleteBinLine, RiSendPlaneFill } from "react-icons/ri";
 import { PiCornersOut } from "react-icons/pi";
 import { Navigate, useNavigate } from 'react-router-dom';
+import mooduplogo from '../../../assets/moodup-logo.png'
+import exit from "../../../assets/exit.png"
+import logocompany from "../../../assets/logo-company.png"
 
 const Sugerencias = () => {
   const [sugerencias, setSugerencias] = useState([]);
@@ -29,7 +32,7 @@ const Sugerencias = () => {
 
   const getSugerencias = async () => {
     try {
-      const response = await fetch('http://localhost:3006/message', {
+      const response = await fetch('https://moodupapi.aramendi.dev/message', {
         method: 'GET',
         credentials: 'include',
       });
@@ -68,13 +71,13 @@ const Sugerencias = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://localhost:3006/logout', {
+      const response = await fetch('https://moodupapi.aramendi.dev/logout', {
         method: 'POST',
         credentials: 'include',
       });
 
       if (response.ok) {
-        window.location.href = 'http://localhost:5173/admin/login';
+        navigate('admin/login');
       } else {
         console.error('Error al cerrar sesión');
       }
@@ -102,7 +105,7 @@ const Sugerencias = () => {
 
   const handleDeleteMessage = async (id) => {
     try {
-      const response = await fetch('http://localhost:3006/message/delete', {
+      const response = await fetch('https://moodupapi.aramendi.dev/message/delete', {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -127,7 +130,7 @@ const Sugerencias = () => {
 
   const handleReplyMessage = async (id) => {
     try {
-      const response = await fetch('http://localhost:3006/message/reply', {
+      const response = await fetch('https://moodupapi.aramendi.dev/message/reply', {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -160,7 +163,7 @@ const Sugerencias = () => {
     <>
       <section className="admin-container">
         <div className="header-admin">
-          <img src='../src/assets/moodup-logo.png' alt='imagen-logo' className="imagen-logo-admin" />
+          <img src={mooduplogo} alt='imagen-logo' className="imagen-logo-admin" />
           <div className="ul-header-div">
             <ul>
               <li className="li-header" onClick={handleHome}><FaHome></FaHome> Home</li>
@@ -173,11 +176,11 @@ const Sugerencias = () => {
           </div>
           <div className="bottom-icons">
             <ul className="ul-bottom-icons">
-              <img src="../src/assets/exit.png" className="li-bottom-icons" onClick={handleLogout}></img>
+              <img src={exit} className="li-bottom-icons" onClick={handleLogout}></img>
             </ul>
           </div>
           <div className="footer-admin">
-            <img src="../src/assets/logo-company.png" alt="company logo" className="footer-admin-logo-header"></img>
+            <img src={logocompany} alt="company logo" className="footer-admin-logo-header"></img>
           </div>
         </div>
         <div className="main-sugerencias">

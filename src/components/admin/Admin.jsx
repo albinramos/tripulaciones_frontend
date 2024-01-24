@@ -6,6 +6,10 @@ import { MdOutlineAlarm } from "react-icons/md";
 import { BsFillQuestionCircleFill, BsClockHistory } from "react-icons/bs";
 import { ImExit } from "react-icons/im";
 import { Navigate, useNavigate } from 'react-router-dom';
+import mooduplogo from '../../assets/moodup-logo.png';
+import logocompany from "../../assets/logo-company.png"
+import exit from "../../assets/exit.png"
+import group from "../../assets/Group 2090.png"
 
 
 
@@ -19,7 +23,7 @@ const Admin = () => {
 
   const checkIsAdmin = async () => {
     try {
-      const response = await fetch('http://localhost:3006/isadmin', {
+      const response = await fetch('https://moodupapi.aramendi.dev/isadmin', {
         method: 'GET',
         credentials: 'include',
       });
@@ -64,13 +68,13 @@ const Admin = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://localhost:3006/logout', {
+      const response = await fetch('https://moodupapi.aramendi.dev/logout', {
         method: 'POST',
         credentials: 'include',
       });
 
       if (response.ok) {
-        window.location.href = 'http://localhost:5173/admin/login';
+        navigate('/admin/login')
       } else {
         console.error('Error al cerrar sesión');
       }
@@ -84,7 +88,7 @@ const Admin = () => {
     <>
       <section className="admin-container">
         <div className="header-admin">
-        <img src='../src/assets/moodup-logo.png' alt='imagen-logo' className="imagen-logo-admin"/>
+        <img src={mooduplogo} alt='imagen-logo' className="imagen-logo-admin"/>
           <div className="ul-header-div">
             <ul>
             <li className="li-header active" onClick={() => handleNavigation("home")}><FaHome></FaHome> Home</li>
@@ -97,11 +101,11 @@ const Admin = () => {
           </div>
           <div className="bottom-icons">
             <ul className="ul-bottom-icons">
-              <img src="../src/assets/exit.png" className="li-bottom-icons" onClick={handleLogout}></img>
+              <img src={exit} className="li-bottom-icons" onClick={handleLogout}></img>
             </ul>
           </div>
           <div className="footer-admin">
-            <img src="../src/assets/logo-company.png" alt="company logo" className="footer-admin-logo-header"></img>
+            <img src={logocompany} alt="company logo" className="footer-admin-logo-header"></img>
           </div>
         </div>
         <div className="main-admin">
@@ -124,18 +128,18 @@ const Admin = () => {
           </div>
           <div className="admin-graphs-1">
             <div className="admin-graph-1">
-              <img src="http://localhost:3006/images/grafico_1.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+              <img src="https://moodupapi.aramendi.dev/images/grafico_1.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
             <div className="admin-graph-2">
-              <img src="http://localhost:3006/images/grafico_7.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+              <img src="https://moodupapi.aramendi.dev/images/grafico_7.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
           <div className="admin-graphs-2">
             <div className="admin-graph-3">
-              <img src="http://localhost:3006/images/grafico_4.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+              <img src="https://moodupapi.aramendi.dev/images/grafico_4.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
             <div className="admin-graph-4">
-              <img src="../src/assets/Group 2090.png" alt="grafico felicidad" className="grafico-indice-felicidad" />
+              <img src={group} alt="grafico felicidad" className="grafico-indice-felicidad" />
             </div>
           </div>
         </div>

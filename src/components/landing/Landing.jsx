@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./landing.css"
 import { AiOutlineTrophy } from "react-icons/ai";
 import { Navigate, useNavigate, Link } from 'react-router-dom';
+import logocompany from '../../assets/logo-company.png';
 import { FaEnvelope } from "react-icons/fa6";
 
 
@@ -22,7 +23,7 @@ const Landing = () => {
   }, []);
 
   const fetchApi = async () => {
-    const response = await fetch('http://localhost:3006/', {
+    const response = await fetch('https://moodupapi.aramendi.dev/', {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json'
@@ -50,13 +51,13 @@ const Landing = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://localhost:3006/logout', {
+      const response = await fetch('https://moodupapi.aramendi.dev/logout', {
         method: 'POST',
         credentials: 'include',
       });
 
       if (response.ok) {
-        window.location.href = 'http://localhost:5173/login';
+        navigate('/login')
       } else {
         console.error('Error al cerrar sesión');
       }
@@ -83,7 +84,7 @@ const Landing = () => {
             <div className="buzon"><FaEnvelope /></div>
           </Link>
         </div>
-        <img src="../src/assets/logo-company.png" alt="imagen retrato" className="landing-company-logo" />
+        <img src={logocompany} alt="imagen retrato" className="landing-company-logo" />
         <div className="landing-second-div">
           <AiOutlineTrophy className="landing-trophy" />
           <div className="landing-second-div-text">

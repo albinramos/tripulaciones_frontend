@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Navigate, useNavigate } from 'react-router-dom';
 import "./login.css"
+import logo from '../../assets/logo.png'
 
 const Login = () => {
 
@@ -24,7 +25,7 @@ const Login = () => {
       role
     }
     try{
-      const result = await fetch("http://localhost:3006/login", {
+      const result = await fetch("https://moodupapi.aramendi.dev/login", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -55,7 +56,7 @@ const Login = () => {
       <div >
       <section className="login-main-container">
         <div className="circulo-login">
-          <img src="../src/assets/logo.png" alt="logo" className="imagen-circular"/>
+          <img src={logo} alt="logo" className="imagen-circular"/>
         </div>
         <div className="login-second-div">
           <p className="p-login">Login</p>

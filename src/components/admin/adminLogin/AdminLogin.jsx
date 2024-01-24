@@ -24,7 +24,7 @@ const AdminLogin = () => {
       role
     }
     try{
-      const result = await fetch("http://localhost:3006/login", {
+      const result = await fetch("https://moodupapi.aramendi.dev/login", {
         method: "POST",
         credentials: "include",
         headers: {

@@ -8,6 +8,9 @@ import { PiCornersOut } from "react-icons/pi";
 import { RiUserAddLine } from "react-icons/ri";
 import { AiOutlineUser } from "react-icons/ai";
 import { Navigate, useNavigate } from 'react-router-dom';
+import mooduplogo from '../../../assets/moodup-logo.png'
+import exit from "../../../assets/exit.png"
+import logocompany from "../../../assets/logo-company.png"
 
 const Ajustes = () => {
   const [users, setUsers] = useState([]);
@@ -24,7 +27,7 @@ const Ajustes = () => {
 
   const getUsers = async () => {
     try {
-      const response = await fetch('http://localhost:3006/user', {
+      const response = await fetch('https://moodupapi.aramendi.dev/user', {
         method: 'GET',
         credentials: 'include', 
       });
@@ -77,13 +80,13 @@ const Ajustes = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://localhost:3006/logout', {
+      const response = await fetch('https://moodupapi.aramendi.dev/logout', {
         method: 'POST',
         credentials: 'include',
       });
 
       if (response.ok) {
-        window.location.href = 'http://localhost:5173/admin/login';
+        navigate('/login')
       } else {
         console.error('Error al cerrar sesión');
       }
@@ -121,7 +124,7 @@ const Ajustes = () => {
     }
 
     try{
-      const result = await fetch("http://localhost:3006/register", {
+      const result = await fetch("https://moodupapi.aramendi.dev/register", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -145,7 +148,7 @@ const Ajustes = () => {
     <>
       <section className="admin-container">
         <div className="header-admin">
-        <img src='../src/assets/moodup-logo.png' alt='imagen-logo' className="imagen-logo-admin"/>
+        <img src={mooduplogo} alt='imagen-logo' className="imagen-logo-admin"/>
           <div className="ul-header-div">
             <ul>
               <li className="li-header" onClick={handleHome}><FaHome></FaHome> Home</li>
@@ -158,11 +161,11 @@ const Ajustes = () => {
           </div>
           <div className="bottom-icons">
             <ul className="ul-bottom-icons">
-              <img src="../src/assets/exit.png" className="li-bottom-icons" onClick={handleLogout}></img>
+              <img src={exit} className="li-bottom-icons" onClick={handleLogout}></img>
             </ul>
           </div>
           <div className="footer-admin">
-            <img src="../src/assets/logo-company.png" alt="company logo" className="footer-admin-logo-header"></img>
+            <img src={logocompany} alt="company logo" className="footer-admin-logo-header"></img>
           </div>
         </div>
         <div className="main-ajustes">
